@@ -1,0 +1,242 @@
+\documentclass[oneside, 12pt]{article}
+
+% Geometry: A4 paper
+\usepackage{geometry}
+\geometry{a4paper}
+
+% Graphics and colours
+\usepackage{graphicx}
+\graphicspath{{../figures/}{logos/}}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% Define NBIS-specific green and orange colours
+\definecolor{NBIS-lgreen}{RGB}{133, 190, 66}
+\definecolor{NBIS-dgreen}{RGB}{71, 166, 47}
+\definecolor{NBIS-lorange}{RGB}{244, 125, 32}
+\definecolor{NBIS-dorange}{RGB}{164, 98, 48}
+
+% Fonts
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[font={small, sf}, labelfont=bf]{caption}
+\renewcommand{\large}{\fontsize{13pt}{17pt}\selectfont}
+\renewcommand{\normalsize}{\fontsize{11pt}{14pt}\selectfont}
+\renewcommand{\small}{\fontsize{9pt}{11pt}\selectfont}
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries\sffamily}
+\titleformat*{\subsection}{\bfseries\sffamily}
+\setcounter{secnumdepth}{0} % Don't number sections
+
+% Symbols and units
+\usepackage{amssymb}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = NBIS-lgreen,
+    urlcolor = NBIS-lgreen,
+    citecolor = NBIS-lgreen
+}
+
+% Tables
+\usepackage{multicol}
+\usepackage{multirow}
+
+% Spelling
+\usepackage[british]{babel}
+
+% Citation
+\usepackage[superscript]{cite}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\lhead{\includegraphics[height=1.1cm, width=2.96cm]{logos/nbis_logo.pdf}}
+\rhead{\includegraphics[height=1.3cm, width=4cm]{logos/scilifelab_logo.jpg}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont\thepage}
+
+% Project-specific info
+\newcommand{\redmineIssue}{\#4582}
+\newcommand{\uppmaxProj}{/b2000xxx}
+\newcommand{\requesterName}{Re Quester}
+\newcommand{\requesterMail}{re.quester@someuni.se}
+\newcommand{\piName}{Prin Cipal}
+\newcommand{\piMail}{prin.cipal@someuni.se}
+\newcommand{\organisation}{Karolinska Institutet}
+\newcommand{\refGenome}{\texttt{GRCh38}}
+
+% Staff-specific info
+\newcommand{\staffName}{Erik Fasterius}
+\newcommand{\staffMail}{erik.fasterius@nbis.se}
+\newcommand{\staffWeb}{https://nbis.se/about/staff/erik-fasterius/}
+
+% General NBIS- and support-related info
+\newcommand{\affilations}{National Bioinformatics Infrastructure Sweden, %
+    Science for Life Laboratory, Stockholm University}
+\newcommand{\supportWeb}{http://nbis.se/support/support.html}
+\newcommand{\uppmaxWeb}{http://uppmax.uu.se/support-sv/faq/general-%
+    miscellaneous-faq/acknowledging-uppmax--snic--and-uppnex}
+\newcommand{\ICMJE}{http://www.icmje.org/recommendations/}
+\newcommand{\userAgreement}{http://nbis.se/assets/doc/nbis-support-%
+    useragreement.pdf}
+\newcommand{\ngiSweden}{https://ngisweden.scilifelab.se/info/faq\#%
+    how-do-i-acknowledge-ngi-in-my-publication}
+\newcommand{\sensitiveData}{https://nbis.se/support/human-data.html}
+
+% BEGIN DOCUMENT
+\begin{document}
+\normalsize
+
+% Knitr chunk options
+<<knitr, echo=FALSE, results='asis'>>=
+knitr::opts_chunk$set(
+    echo       = TRUE,
+    size       = "small", 
+    warning    = FALSE, 
+    message    = FALSE,
+    error      = TRUE, 
+    fig.path   = "../figures",
+    cache      = TRUE, 
+    cache.path = "../../scratch/cache/")
+@
+
+% TITLE PAGE
+\begin{sffamily}
+
+    % Title
+    \title{\vspace{\fill}\LARGE Vitamin D studies}
+    \author{}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \vspace{4cm}
+    \begin{center}
+        \begin{tabular}{l r}
+            Redmine issue: & \redmineIssue \\
+            NBIS staff: & \staffName\ \emph{(\staffMail)} \\
+            Request by: & \requesterName\ \emph{(\requesterMail)} \\ 
+            Principal investigator: & \piName\ \emph{(\piMail)} \\
+            Organisation: & \organisation
+        \end{tabular}
+        \vspace{\fill}
+    \end{center}
+\end{sffamily}
+
+% TABLE OF CONTENTS
+\newpage
+\begingroup
+    \renewcommand{\contentsname}{Table of Contents}
+    \hypersetup{linkcolor=black}
+    \sffamily
+    \tableofcontents
+\endgroup
+
+% SUPPORT REQUEST
+\newpage
+\section{Support request}
+\label{session:support}
+\emph{(As copy and pasted from Redmine issue.)}
+
+% WORK LOG
+\begin{small}
+    \section{Project history}
+    \emph{A brief summary of the project's key points.}
+    \begin{description}
+        \item[2018-12-19] Meeting with the group to plan data analyes
+    \end{description}
+\end{small}
+
+% PRACTICAL INFORMATION
+\newpage
+\section{Practical information}
+
+\subsection{Data responsibilities}
+\label{DataRes}
+Unfortunately, NBIS does not have resources to keep any files associated with
+the support request; we kindly suggest that you safely store the results
+delivered by us. In addition, we kindly ask that you remove the files from
+UPPMAX/UPPNEX. The main storage at UPPNEX is optimized for high-speed and
+parallel access, which makes it expensive and not the right place for long-term
+archiving. Please be considerate of your fellow researchers by not taking up
+this expensive space.
+
+The responsibility for data archiving lies with universities and we recommend
+asking your local IT for support with long-term data storage. The
+\href{https://www.scilifelab.se/data/}{Data Center} at SciLifeLab may also be
+of help with discussing other options.
+
+Please note that special considerations may apply to human-derived, sensitive
+personal data. This should be handled according to specific laws and
+regulations as outlined at the \href{\sensitiveData}{NBIS website}.
+
+\subsection{Acknowledgments}
+\label{acknowledgments}
+If you are presenting the results in a paper, at a workshop or at aconference,
+we kindly remind you to acknowledge us according to the signed 
+\href{\userAgreement}{NBIS User Agreement}:
+
+\href{\staffWeb}{NBIS staff should be included as co-authors} if the support
+work leads to a publication and when this is merited in accordance to the
+ethical recommendations for authorship, \emph{i.e.} the \href{\ICMJE}{ICMJE
+recommendations}. If applicable, please include \emph{\staffName, \affilations}
+as co-author. If the above is not applicable, please acknowledge NBIS like so:
+\emph{Support by NBIS (National Bioinformatics Infrastructure Sweden) is
+gratefully acknowledged.}
+
+In addition, Uppmax kindly asks you to \href{\uppmaxWeb}{acknowledge UPPMAX and
+SNIC}. If applicable, please add: \emph{The computations were performed on
+resources provided by SNIC through Uppsala Multidisciplinary Center for
+Advanced Computational Science (UPPMAX) under Project {\uppmaxProj}.}
+
+In any and all publications based on data from NGI Sweden, the authors
+must \href{\ngiSweden}{acknowledge SciLifeLab, NGI and Uppmax}, like so:
+\emph{The authors would like to acknowledge support from Science for Life
+Laboratory, the National Genomics Infrastructure, NGI, and Uppmax for providing
+assistance in massive parallel sequencing and computational infrastructure.}
+
+% MATERIALS AND METHODS
+\newpage
+\begin{small}
+\section{Materials and methods}
+\subsection{M\&M 1}
+\end{small}
+
+% RESULTS
+\newpage
+\section{Results}
+\subsection{Results 1}
+
+% CLOSING PROCEDURES
+\newpage
+\section{Closing procedures}
+You should soon be contacted by one of our managers, Jessica Lindvall
+\emph{(jessica.lindvall@nbis.se)} or Henrik Lantz
+\emph{(henrik.lantz@nbis.se)}, with a request to close down the project in our
+internal system and for invoicing matters. If we do not hear from you within
+\textbf{30 days} the project will be automatically closed and invoice sent.
+Again, we would like to remind you about data responsibility and
+acknowledgements, see \nameref{DataRes} and \nameref{acknowledgments}.
+
+You are naturally more than welcome to come back to us with further data
+analysis request at any time via \href{\supportWeb}{\supportWeb}. Thank you for
+using NBIS, we wish you the best of luck with your future research!
+
+% SESSION INFO
+\small
+\section{R session info}
+\label{sessionInfo}
+<<sessionInfo>>=
+toLatex(sessionInfo(), locale = FALSE)
+@ 
+
+% REFERENCES
+\bibliographystyle{myunsrt.bst}
+\bibliography{report/references.bib}
+
+% END DOCUMENT
+\end{document}  

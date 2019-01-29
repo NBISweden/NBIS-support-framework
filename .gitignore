@@ -5,6 +5,12 @@
 
 # Project-specific files and folders
 .snakemake
-results
-scratch
-*-env
+results/*/*
+scratch/*
+*-env/*
+
+# Individual files to track
+!results/report/report.Rnw
+!results/report/myunsrt.bst
+!results/report/references.bib
+!results/report/logos
