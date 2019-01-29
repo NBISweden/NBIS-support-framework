@@ -3,13 +3,17 @@
 .Rhistory
 *.un*
 
-# Project-specific files and folders
+# Project-specific files and directories
 .snakemake
-results/*/*
-scratch/*
-*-env/*
+scratch
+*-env
 
-# Individual files to track
+# Partially ignored directories
+results/*/*
+data/*
+
+# Individual files and directories to track
+!data/example_data
 !results/report/report.Rnw
 !results/report/myunsrt.bst
 !results/report/references.bib
