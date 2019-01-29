@@ -38,6 +38,22 @@ The git repository is set to ignore any directory ending in `-env`; only the
 `environment.yml` file is needed to reproduce the workspace environment (given
 platform-specific caveats, of course).
 
+## Project reports
+
+There is a NBIS-report template available in `results/report/report.Rnw`,
+which includes all of the [recommended information][nbis-report] for such
+reports, facilitating reporting and reproducibility for `R` users. The file
+starts with some new commands for *e.g.* names and e-mails of NBIS staff,
+the requester and their PI (for example, the `\staffName` custom command).
+Start by simply changing the default mock names to what's appropriate for the
+project (*e.g.* `Prin Cipal` to the actual name of the PI). You can then start
+adding other information and analyses using `R` as the project moves along.
+
+A PDF report can be generated from the `report.Rnw` file by calling the
+`knit2pdf` function in R (or `knitr::knit2pdf("report.Rnw")` from the command
+line).
+
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
+[nbis-report]: https://github.com/NBISweden/NBIS-template-support-reports
 [snakemake-home]: https://snakemake.readthedocs.io/en/stable/
