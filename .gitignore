@@ -1,0 +1,10 @@
+# General files
+.DS_Store
+.Rhistory
+*.un*
+
+# Project-specific files and folders
+.snakemake
+results
+scratch
+*-env
