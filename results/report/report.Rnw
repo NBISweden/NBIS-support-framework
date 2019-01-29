@@ -1,3 +1,19 @@
+% Project-specific info
+\newcommand{\projTitle}{Project Title}
+\newcommand{\redmineIssue}{\#9999}
+\newcommand{\uppmaxProj}{/b2000000}
+\newcommand{\requesterName}{Re Quester}
+\newcommand{\requesterMail}{re.quester@ki.se}
+\newcommand{\piName}{Prin Cipal}
+\newcommand{\piMail}{prin.cipal@ki.se}
+\newcommand{\organisation}{Karolinska Institutet}
+
+% Staff-specific info
+\newcommand{\staffName}{Supp Ortstaff}
+\newcommand{\staffMail}{supp.ortstaff@nbis.se}
+\newcommand{\staffWeb}{https://nbis.se/about/staff/supp-ortstaff/}
+
+% PREAMBLE --------------------------------------------------------------------
 \documentclass[oneside, 12pt]{article}
 
 % Geometry: A4 paper
@@ -60,21 +76,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont\thepage}
 
-% Project-specific info
-\newcommand{\redmineIssue}{\#4582}
-\newcommand{\uppmaxProj}{/b2000xxx}
-\newcommand{\requesterName}{Re Quester}
-\newcommand{\requesterMail}{re.quester@someuni.se}
-\newcommand{\piName}{Prin Cipal}
-\newcommand{\piMail}{prin.cipal@someuni.se}
-\newcommand{\organisation}{Karolinska Institutet}
-\newcommand{\refGenome}{\texttt{GRCh38}}
-
-% Staff-specific info
-\newcommand{\staffName}{Erik Fasterius}
-\newcommand{\staffMail}{erik.fasterius@nbis.se}
-\newcommand{\staffWeb}{https://nbis.se/about/staff/erik-fasterius/}
-
 % General NBIS- and support-related info
 \newcommand{\affilations}{National Bioinformatics Infrastructure Sweden, %
     Science for Life Laboratory, Stockholm University}
@@ -109,7 +110,7 @@ knitr::opts_chunk$set(
 \begin{sffamily}
 
     % Title
-    \title{\vspace{\fill}\LARGE Vitamin D studies}
+    \title{\vspace{\fill}\LARGE \projTitle}
     \author{}
     \maketitle
     \thispagestyle{fancy}
@@ -230,7 +231,7 @@ using NBIS, we wish you the best of luck with your future research!
 \small
 \section{R session info}
 \label{sessionInfo}
-<<sessionInfo>>=
+<<sessionInfo, results='asis', echo=FALSE>>=
 toLatex(sessionInfo(), locale = FALSE)
 @ 
 
