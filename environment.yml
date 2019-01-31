@@ -10,6 +10,7 @@ dependencies:
   - r=3.5
   - r-tidyverse=1.2.1
   - r-tinytex=0.10
+  - rseqc=3.0.0
   - samtools=1.9
   - snakemake=3.13.3
   - star=2.6.1b
