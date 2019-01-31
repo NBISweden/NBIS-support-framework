@@ -9,7 +9,7 @@ dependencies:
   - python=3.5
   - r=3.5
   - r-tidyverse=1.2.1
+  - r-tinytex=0.10
   - samtools=1.9
   - snakemake=3.13.3
   - star=2.6.1b
-  - tectonic

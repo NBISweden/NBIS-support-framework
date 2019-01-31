@@ -41,9 +41,16 @@
 \renewcommand{\small}{\fontsize{9pt}{11pt}\selectfont}
 
 % Section formatting
-\usepackage{titlesec}
-\titleformat*{\section}{\large\bfseries\sffamily}
-\titleformat*{\subsection}{\bfseries\sffamily}
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                     {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                     {2.3ex \@plus.2ex}%
+                                     {\normalfont\large\bfseries\sffamily}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                        {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                        {1.5ex \@plus.2ex}%
+                                        {\normalfont\bfseries\sffamily}}
+\makeatother
 \setcounter{secnumdepth}{0} % Don't number sections
 
 % Symbols and units
@@ -57,10 +64,6 @@
     urlcolor = NBIS-lgreen,
     citecolor = NBIS-lgreen
 }
-
-% Tables
-\usepackage{multicol}
-\usepackage{multirow}
 
 % Spelling
 \usepackage[british]{babel}
