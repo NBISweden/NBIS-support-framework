@@ -7,7 +7,7 @@ fastq_files = [s.replace('.fastq.gz', '') for s in fastq_files]
 fastq_files = [s.replace(FASTQ_DIR, '') for s in fastq_files]
 
 # Include external rules
-include: "rules/fastqc.smk"
+include: "rules/FastQC.smk"
 
 # Rule: final output and cleanup
 rule all:
