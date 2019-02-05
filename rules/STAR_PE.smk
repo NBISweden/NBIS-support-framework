@@ -23,6 +23,8 @@ rule STAR_PE:
         mv results/bam/{wildcards.sample}/Aligned.sortedByCoord.out.bam \
             results/bam/{wildcards.sample}/{wildcards.sample}.bam
 
+        samtools index results/bam/{wildcards.sample}/{wildcards.sample}.bam
+
         cat results/bam/{wildcards.sample}/Log.out >> {log}
         cat results/bam/{wildcards.sample}/Log.final.out >> {log}
         """
