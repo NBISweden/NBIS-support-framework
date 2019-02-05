@@ -1,0 +1,6 @@
+__default__:
+    account: 'snic2017-7-343'
+    partition: 'devel'
+    ntasks: 1
+    time: '01:00:00'
+    log: '{rule}.{log}'
