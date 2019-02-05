@@ -3,6 +3,7 @@ import glob
 # Include external rules
 include: "rules/FastQC.smk"
 include: "rules/STAR_PE.smk"
+include: "rules/RSeqC.smk"
 
 # Config file
 configfile: "config.yml"
@@ -26,8 +27,9 @@ rule all:
 # Rule: collate MultiQC report
 rule MultiQC:
     input:
-        expand("results/qc/01-FASTQ/{fastq}_fastqc.zip", fastq=fastq_files),
-        expand("results/bam/{sample}/{sample}.bam", sample=samples)
+        expand("results/bam/{sample}/{sample}.bam", sample=samples),
+        expand("results/qc/fastqc/{fastq}_fastqc.zip", fastq=fastq_files),
+        expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples)
     output:
         "results/qc/multiqc_report.html"
     log:
