@@ -1,0 +1,6 @@
+# Indexes and reference files
+REF: "/sw/data/uppnex/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/genome.fa"
+STAR_REF: "/sw/data/uppnex/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex/"
+
+# Software parameters
+STAR_THREADS: 2
