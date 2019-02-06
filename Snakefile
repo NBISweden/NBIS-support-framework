@@ -34,7 +34,8 @@ rule MultiQC:
         expand("results/qc/rseqc/{sample}.inner_distance.txt", sample=samples),
         expand("results/qc/rseqc/{sample}.infer_experiment.txt", sample=samples),
         expand("results/qc/rseqc/{sample}.junction_saturation.txt", sample=samples),
-        expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples)
+        expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples),
+        expand("results/qc/rseqc/{sample}.tin.xls", sample=samples)
     output:
         "results/qc/multiqc_report.html"
     log:

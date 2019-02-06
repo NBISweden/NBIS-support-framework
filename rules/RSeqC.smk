@@ -100,3 +100,22 @@ rule read_distribution:
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
+
+# Calculate the Transcript Integriy Number (TIN)
+rule transcript_integrity:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.tin.xls"
+    log:
+        "results/logs/log.{sample}.tin.txt"
+    shell:
+        """
+        cd results/qc/rseqc
+        tin.py \
+            --input=../../../{input} \
+            --refgene={config[REF_GENE]} \
+                2> ../../../{log}
+        mv {wildcards.sample}.summary.txt {wildcards.sample}.tin.summary.txt
+        cd ../../..
+        """
