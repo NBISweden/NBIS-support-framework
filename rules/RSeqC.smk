@@ -1,17 +1,18 @@
 # Rules for alignment QC using RSeqC modules
 
-# Calculate genomic distribution of aligned reads
-rule read_distribution:
+# Calculate gene body coverage of reads
+rule gene_body_coverage:
     input:
         "results/bam/{sample}/{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.read_distribution.txt"
+        "results/qc/rseqc/{sample}.geneBodyCoverage.txt"
     log:
-        "results/logs/log.{sample}.read_distribution.txt"
+        "results/logs/log.{sample}.geneBodyCoverage.txt"
     shell:
         """
-        read_distribution.py \
-            --input-file={input} \
+        geneBody_coverage.py \
+            --input={input} \
+            --out-prefix=results/qc/rseqc/{wildcards.sample} \
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
@@ -50,19 +51,18 @@ rule junction_saturation:
                 > {output} 2> {log}
         """
 
-# Calculate gene body coverage of reads
-rule gene_body_coverage:
+# Calculate genomic distribution of aligned reads
+rule read_distribution:
     input:
         "results/bam/{sample}/{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.geneBodyCoverage.txt"
+        "results/qc/rseqc/{sample}.read_distribution.txt"
     log:
-        "results/logs/log.{sample}.geneBodyCoverage.txt"
+        "results/logs/log.{sample}.read_distribution.txt"
     shell:
         """
-        geneBody_coverage.py \
-            --input={input} \
-            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+        read_distribution.py \
+            --input-file={input} \
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
