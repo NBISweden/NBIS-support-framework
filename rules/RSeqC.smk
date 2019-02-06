@@ -49,3 +49,20 @@ rule junction_saturation:
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
+
+# Calculate gene body coverage of reads
+rule gene_body_coverage:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.geneBodyCoverage.txt"
+    log:
+        "results/logs/log.{sample}.geneBodyCoverage.txt"
+    shell:
+        """
+        geneBody_coverage.py \
+            --input={input} \
+            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --refgene={config[REF_GENE]} \
+                > {output} 2> {log}
+        """

@@ -30,6 +30,7 @@ rule MultiQC:
         expand("results/bam/{sample}/{sample}.bam", sample=samples),
         expand("results/qc/fastqc/{fastq}_fastqc.zip", fastq=fastq_files),
         expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples),
+        expand("results/qc/rseqc/{sample}.geneBodyCoverage.txt", sample=samples),
         expand("results/qc/rseqc/{sample}.junction_saturation.txt", sample=samples),
         expand("results/qc/rseqc/{sample}.inner_distance.txt", sample=samples)
     output:
