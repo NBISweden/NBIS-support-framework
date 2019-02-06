@@ -1,5 +1,20 @@
 # Rules for alignment QC using RSeqC modules
 
+# Summarise alignment statistics
+rule bam_stat:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.bam_stat.txt"
+    log:
+        "results/logs/log.{sample}.bam_stat.txt"
+    shell:
+        """
+        bam_stat.py \
+            --input={input} \
+                > {output} 2> {log}
+        """
+
 # Calculate gene body coverage of reads
 rule gene_body_coverage:
     input:
