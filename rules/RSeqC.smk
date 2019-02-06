@@ -15,6 +15,10 @@ rule gene_body_coverage:
             --out-prefix=results/qc/rseqc/{wildcards.sample} \
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
+
+        if [ -f log.txt ]; then
+            rm log.txt
+        fi
         """
 
 # Infer experimental design
