@@ -10,15 +10,14 @@ rule gene_body_coverage:
         "results/logs/log.{sample}.geneBodyCoverage.txt"
     shell:
         """
+        cd results/qc/rseqc/
         geneBody_coverage.py \
-            --input={input} \
-            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --input=.../../../{input} \
+            --out-prefix={wildcards.sample} \
             --refgene={config[REF_GENE]} \
-                > {output} 2> {log}
-
-        if [ -f log.txt ]; then
-            rm log.txt
-        fi
+                > ../../../{output} 2> /dev/null
+        cd ../../..
+        mv results/qc/rseqc/log.txt {log}
         """
 
 # Infer experimental design
