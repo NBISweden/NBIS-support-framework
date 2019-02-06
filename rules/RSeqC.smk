@@ -17,6 +17,22 @@ rule gene_body_coverage:
                 > {output} 2> {log}
         """
 
+# Infer experimental design
+rule infer_experiment:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.infer_experiment.txt"
+    log:
+        "results/logs/log.{sample}.infer_experiment.txt"
+    shell:
+        """
+        infer_experiment.py \
+            --input-file={input} \
+            --refgene={config[REF_GENE]} \
+                > {output} 2> {log}
+        """
+
 # Calculate the inner distance between the read pairs
 rule inner_distance:
     input:
