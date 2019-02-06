@@ -32,3 +32,20 @@ rule inner_distance:
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
+
+# Calculate junction saturation
+rule junction_saturation:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.junction_saturation.txt"
+    log:
+        "results/logs/log.{sample}.junction_saturation.txt"
+    shell:
+        """
+        junction_saturation.py \
+            --input-file={input} \
+            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --refgene={config[REF_GENE]} \
+                > {output} 2> {log}
+        """
