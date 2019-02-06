@@ -29,7 +29,8 @@ rule MultiQC:
     input:
         expand("results/bam/{sample}/{sample}.bam", sample=samples),
         expand("results/qc/fastqc/{fastq}_fastqc.zip", fastq=fastq_files),
-        expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples)
+        expand("results/qc/rseqc/{sample}.read_distribution.txt", sample=samples),
+        expand("results/qc/rseqc/{sample}.inner_distance.txt", sample=samples)
     output:
         "results/qc/multiqc_report.html"
     log:

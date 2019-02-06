@@ -15,3 +15,20 @@ rule read_distribution:
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
+
+# Calculate the inner distance between the read pairs
+rule inner_distance:
+    input:
+        "results/bam/{sample}/{sample}.bam",
+    output:
+        "results/qc/rseqc/{sample}.inner_distance.txt"
+    log:
+        "results/logs/log.{sample}.inner_distance.txt"
+    shell:
+        """
+        inner_distance.py \
+            --input-file={input} \
+            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --refgene={config[REF_GENE]} \
+                > {output} 2> {log}
+        """
