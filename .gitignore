@@ -4,19 +4,31 @@
 *.un*
 
 # Project-specific files and directories
-.snakemake
-scratch
-*-env
+.snakemake/
+*-env/
 
 # Partially ignored directories
 data/*
-report/*
 results/*
 
-# Exceptions
-!data/test_data
+reports/*
+reports/knitr-pdf/*
 
-!report/report.Rnw
-!report/myunsrt.bst
-!report/references.bib
-!report/logos
+scratch/*
+
+# Exceptions
+!*/README.md
+
+!data/test_data/
+!data/data_management/
+
+!doc/
+
+!reports/myunsrt.bst
+!reports/references.bib
+!reports/logos/
+
+!reports/knitr-pdf/
+!reports/knitr-pdf/report.Rnw
+
+!scratch/README.md

@@ -1,14 +1,30 @@
-# A template for NBIS support projects
+# NBIS Support Framework
 
 ## Introduction
 
-This is a template for Short-/Medium-term Support projects at NBIS, and is
-intended to be a starting point for new projects. The structure is based on
-[Conda][conda-home] and [Snakemake][snakemake-home], with the aim of both
-increasing reproducibility and transparency as well as facilitating code re-use
-and teamwork.
+The NBIS Support Framework (NBIS-SF) is about creating a collaborative
+framework for NBIS support projects and the related data management plans. The
+idea is to have a common framework and knowledge-base that NBIS experts may
+choose to adopt and expand as they perform support-related work. This includes
+tools for reproducibility (*e.g.* Conda, Snakemake), version control (git,
+GitHub), templates for reports (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter) and
+support-related information (data management plans, consultation guidelines,
+contract templates, *etc.*).
 
-## Installation
+**Objectives:**
+ * Facilitate reproducibility of bioinformatic analyses
+ * Foster collaboration across support projects
+ * Provide out-of-the-box tools for routine support-tasks
+ * Provide information regarding data management and administrative matters
+
+You can read more about the separate sections here:
+ * [Raw data][sf-data] and [temporary files][sf-scratch]
+ * [Report templates][sf-report]
+ * [Results and analyses][sf-results]
+ * [Workflows and Snakemake rules][sf-rules]
+ * [Data management][sf-dmp] and [administrative matters][sf-admin]
+
+## Installation with Conda
 
 A local [installation of Conda][conda-install] is required for the setup,
 but is available as a module on Uppmax. The first step is to simply install
@@ -38,22 +54,27 @@ The git repository is set to ignore any directory ending in `-env`; only the
 `environment.yml` file is needed to reproduce the workspace environment (given
 platform-specific caveats, of course).
 
-## Project reports
 
-There is a NBIS-report template available in `results/report/report.Rnw`,
-which includes all of the [recommended information][nbis-report] for such
-reports, facilitating reporting and reproducibility for `R` users. The file
-starts with some new commands for *e.g.* names and e-mails of NBIS staff,
-the requester and their PI (for example, the `\staffName` custom command).
-Start by simply changing the default mock names to what's appropriate for the
-project (*e.g.* `Prin Cipal` to the actual name of the PI). You can then start
-adding other information and analyses using `R` as the project moves along.
+## Running with Snakemake
 
-A PDF report can be generated from the `report.Rnw` file by calling the
-`knit2pdf` function in R (or `knitr::knit2pdf("report.Rnw")` from the command
-line).
+[Snakemake][snakemake-home] is a workflow management system which can easily be
+run on Uppmax. A main file containing the overall workflow is provided in
+`Snakefile`, and modularised rules can be found in the `rules/` directory.
+
+## Contributing
+
+Anybody employed at NBIS can contribute to this repository. Simply create a new
+branch (`git checkout -b <branch>`) and work on your contribution on that
+branch - the `master` branch should always be deployable, and any new feature
+should ideally have been tested before its merging into master.
 
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
-[nbis-report]: https://github.com/NBISweden/NBIS-template-support-reports
+[sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
+[sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
+[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data_management
+[sf-report]: https://github.com/NBISweden/NBIS-support-framework/tree/master/reports
+[sf-results]: https://github.com/NBISweden/NBIS-support-framework/tree/master/results
+[sf-rules]: https://github.com/NBISweden/NBIS-support-framework/tree/master/rules
+[sf-scratch]: https://github.com/NBISweden/NBIS-support-framework/tree/master/scratch
 [snakemake-home]: https://snakemake.readthedocs.io/en/stable/
