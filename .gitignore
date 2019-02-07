@@ -13,8 +13,9 @@ data/*
 report/*
 results/*
 
-# Individual files and directories to track
-!data/example_data
+# Exceptions
+!data/test_data
+
 !report/report.Rnw
 !report/myunsrt.bst
 !report/references.bib
