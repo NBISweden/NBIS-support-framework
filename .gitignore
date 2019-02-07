@@ -9,12 +9,13 @@ scratch
 *-env
 
 # Partially ignored directories
-results/*/*
 data/*
+report/*
+results/*
 
 # Individual files and directories to track
 !data/example_data
-!results/report/report.Rnw
-!results/report/myunsrt.bst
-!results/report/references.bib
-!results/report/logos
+!report/report.Rnw
+!report/myunsrt.bst
+!report/references.bib
+!report/logos
