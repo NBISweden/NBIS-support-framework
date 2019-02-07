@@ -1,30 +1,38 @@
+# Configuration file
+configfile: "config.yml"
+
+# Paths
+datadir = config["datadir"]
+aligndir = config["aligndir"]
+
 # Rule: STAR 2-pass with paired-end reads
 rule STAR_PE:
     input:
-        r1 = "data/example_data/fastq/{sample}_1.fastq.gz",
-        r2 = "data/example_data/fastq/{sample}_2.fastq.gz"
+        read_1 = datadir + "{sample}_1.fastq.gz",
+        read_2 = datadir + "{sample}_2.fastq.gz"
     output:
-        "results/bam/{sample}/{sample}.bam"
+        aligndir + "{sample}.bam"
     log:
-        "results/logs/log.{sample}.STAR-PE.txt"
+        aligndir + "log.{sample}.STAR-PE.txt"
     shell:
         """
-        mkdir -p results/bam/{wildcards.sample}
+        OUTDIR=$(dirname {output})
+        mkdir -p $OUTDIR
         STAR \
             --genomeDir {config[STAR_REF]} \
             --runThreadN {config[STAR_THREADS]} \
-            --readFilesIn {input.r1} {input.r2} \
+            --readFilesIn {input.read_1} {input.read_2} \
             --readFilesCommand zcat \
             --twopassMode Basic \
             --outSAMtype BAM SortedByCoordinate \
-            --outFileNamePrefix results/bam/{wildcards.sample}/ \
+            --outFileNamePrefix $OUTDIR/ \
                 > {log} 2>&1
 
-        mv results/bam/{wildcards.sample}/Aligned.sortedByCoord.out.bam \
-            results/bam/{wildcards.sample}/{wildcards.sample}.bam
+        mv $OUTDIR/Aligned.sortedByCoord.out.bam \
+            $OUTDIR/{wildcards.sample}.bam
 
-        samtools index results/bam/{wildcards.sample}/{wildcards.sample}.bam
+        samtools index $OUTDIR/{wildcards.sample}.bam
 
-        cat results/bam/{wildcards.sample}/Log.out >> {log}
-        cat results/bam/{wildcards.sample}/Log.final.out >> {log}
+        cat $OUTDIR/Log.out >> {log}
+        cat $OUTDIR/Log.final.out >> {log}
         """

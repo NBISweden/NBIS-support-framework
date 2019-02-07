@@ -1,14 +1,21 @@
-# Rule: running FastQC
+# Configuration file
+configfile: "config.yml"
+
+# Paths
+datadir = config["datadir"]
+fastqcdir = config["fastqcdir"]
+
+# Rule: run FastQC
 rule FastQC:
     input:
-        "data/example_data/fastq/{fastq}.fastq.gz"
+        datadir + "{fastq}.fastq.gz"
     output:
-        "results/qc/fastqc/{fastq}_fastqc.html",
-        "results/qc/fastqc/{fastq}_fastqc.zip"
+        html = fastqcdir + "{fastq}_fastqc.html",
+        data = fastqcdir + "{fastq}_fastqc.zip"
     log:
-        "results/logs/log.{fastq}.FastQC.txt"
+        fastqcdir + "log.{fastq}.fastqc.txt"
     shell:
         """
-        fastqc {input} -o results/qc/fastqc/ \
+        fastqc {input} -o $(dirname {output.data}) \
             > {log} 2>&1
         """

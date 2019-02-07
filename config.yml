@@ -1,3 +1,10 @@
+# Paths
+datadir: "data/example_data/fastq/"
+fastqcdir: "results/test/fastqc/{sample}/"
+aligndir: "results/test/star/{sample}/"
+rseqcdir: "results/test/rseqc/{sample}/"
+multiqcdir: "results/test/multiqc/"
+
 # Indexes and reference files
 REF: "/sw/data/uppnex/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/genome.fa"
 STAR_REF: "/sw/data/uppnex/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex/"

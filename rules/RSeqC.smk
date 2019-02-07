@@ -1,13 +1,18 @@
-# Rules for alignment QC using RSeqC modules
+# Configuration file
+configfile: "config.yml"
+
+# Paths
+aligndir = config["aligndir"]
+rseqcdir = config["rseqcdir"]
 
 # Summarise alignment statistics
 rule bam_stat:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.bam_stat.txt"
+        rseqcdir + "{sample}.bam_stat.txt"
     log:
-        "results/logs/log.{sample}.bam_stat.txt"
+        rseqcdir + "log.{sample}.bam_stat.txt"
     shell:
         """
         bam_stat.py \
@@ -18,31 +23,35 @@ rule bam_stat:
 # Calculate gene body coverage of reads
 rule gene_body_coverage:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.geneBodyCoverage.txt"
+        rseqcdir + "{sample}.geneBodyCoverage.txt"
     log:
-        "results/logs/log.{sample}.geneBodyCoverage.txt"
+        rseqcdir + "log.{sample}.geneBodyCoverage.txt"
     shell:
         """
-        cd results/qc/rseqc/
+        WORKDIR=$(pwd)
+        INPUT=$(readlink -f {input})
+        OUTPUT=$(readlink -f {output})
+        OUTDIR=$(dirname $OUTPUT)
+        cd $OUTDIR
         geneBody_coverage.py \
-            --input=.../../../{input} \
+            --input=$INPUT \
             --out-prefix={wildcards.sample} \
             --refgene={config[REF_GENE]} \
-                > ../../../{output} 2> /dev/null
-        cd ../../..
-        mv results/qc/rseqc/log.txt {log}
+                > $OUTPUT 2> /dev/null
+        cd $WORKDIR
+        mv $OUTDIR/log.txt {log}
         """
 
 # Infer experimental design
 rule infer_experiment:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.infer_experiment.txt"
+        rseqcdir + "{sample}.infer_experiment.txt"
     log:
-        "results/logs/log.{sample}.infer_experiment.txt"
+        rseqcdir + "log.{sample}.infer_experiment.txt"
     shell:
         """
         infer_experiment.py \
@@ -54,16 +63,16 @@ rule infer_experiment:
 # Calculate the inner distance between the read pairs
 rule inner_distance:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.inner_distance.txt"
+        rseqcdir + "{sample}.inner_distance.txt"
     log:
-        "results/logs/log.{sample}.inner_distance.txt"
+        rseqcdir + "log.{sample}.inner_distance.txt"
     shell:
         """
         inner_distance.py \
             --input-file={input} \
-            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --out-prefix=$(dirname {output})/ \
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
@@ -71,16 +80,16 @@ rule inner_distance:
 # Calculate junction saturation
 rule junction_saturation:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.junction_saturation.txt"
+        rseqcdir + "{sample}.junction_saturation.txt"
     log:
-        "results/logs/log.{sample}.junction_saturation.txt"
+        rseqcdir + "log.{sample}.junction_saturation.txt"
     shell:
         """
         junction_saturation.py \
             --input-file={input} \
-            --out-prefix=results/qc/rseqc/{wildcards.sample} \
+            --out-prefix=$(dirname {output})/ \
             --refgene={config[REF_GENE]} \
                 > {output} 2> {log}
         """
@@ -88,11 +97,11 @@ rule junction_saturation:
 # Calculate genomic distribution of aligned reads
 rule read_distribution:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.read_distribution.txt"
+        rseqcdir + "{sample}.read_distribution.txt"
     log:
-        "results/logs/log.{sample}.read_distribution.txt"
+        rseqcdir + "log.{sample}.read_distribution.txt"
     shell:
         """
         read_distribution.py \
@@ -104,18 +113,21 @@ rule read_distribution:
 # Calculate the Transcript Integriy Number (TIN)
 rule transcript_integrity:
     input:
-        "results/bam/{sample}/{sample}.bam",
+        aligndir + "{sample}.bam",
     output:
-        "results/qc/rseqc/{sample}.tin.xls"
+        rseqcdir + "{sample}.tin.xls"
     log:
-        "results/logs/log.{sample}.tin.txt"
+        rseqcdir + "log.{sample}.tin.txt"
     shell:
         """
-        cd results/qc/rseqc
+        WORKDIR=$(pwd)
+        INPUT=$(readlink -f {input})
+        OUTDIR=$(dirname $(readlink -f {output}))
+        cd $(dirname {output})
         tin.py \
-            --input=../../../{input} \
+            --input=$INPUT \
             --refgene={config[REF_GENE]} \
-                2> ../../../{log}
+                2> $(basename {log})
         mv {wildcards.sample}.summary.txt {wildcards.sample}.tin.summary.txt
-        cd ../../..
+        cd $WORKDIR
         """
