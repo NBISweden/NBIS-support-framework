@@ -11,6 +11,7 @@ other useful things.
  * [Documents and forms][nbis-docs]
  * [Timelogging examples][nbis-time] for short-term experts
  * [Routines][nbis-routines] for short-term projects
+ * NBIS course for [reproducible research][rep-res]
 
 **TODO:**
 Are the some links superfluous or useful (*i.e.* NBIS/Redmine wiki links)?
@@ -26,4 +27,5 @@ the [NBIS-templates-contract][nbis-contract] repo.
 [nbis-time]: https://projects.nbis.se/projects/internal-documents/wiki/Time_logging_instructions
 [nbis-web]: https://nbis.se/
 [redmine-issue]: https://projects.nbis.se/issues/4646
+[rep-res]: https://nbis-reproducible-research.readthedocs.io/en/latest/tutorial_intro/
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
