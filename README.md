@@ -24,36 +24,34 @@ You can read more about the separate sections here:
  * [Workflows and Snakemake rules][sf-rules]
  * [Data management][sf-dmp] and [administrative matters][sf-admin]
 
-## Installation with Conda
+## Setup
 
-A local [installation of Conda][conda-install] is required for the setup,
-but is available as a module on Uppmax. The first step is to simply install
-the required software packages through Conda using the supplied
-`environment.yml` file in the repository, like so:
-
-```bash
-conda env create --prefix [env-name] --file environment.yml
-```
-
-... where the `[env-name]` could be the Redmine issue followed by `-env`, or
-some other name you deem appropriate. A Conda environment containing some of
-the more "standard" HTS-software packages (such as `FastQC` and `samtools`)
-will then be created in the current directory, and can be activated through
-`conda activate [env-name]`.
-
-When you add more software to your environment as you perform more analyses,
-you should update the `environment.yml` file to include them. If you want an
-*exact* specification of your particular environment (which will most likely
-not be sharable across platforms) you may do the following:
+First create an empty GitHub repository that you wish to work on, *e.g.* the
+Redmine issue plus a descriptive name on the NBISweden GitHub. The following
+steps mirrors NBIS-SF to the new repo and installs the Conda environment.
 
 ```bash
-conda env export --prefix [env-name] > environment.yml
+# Clone the original repo and create a mirror in a new one
+git clone --bare https://github.com/NBISweden/NBIS-support-framework
+cd NBIS-support-framework
+git push --mirror <new-repo-location>
+
+# Clone the mirror and delete the original clone
+git clone <new-repo-location> ..
+cd ../<new-repo>
+rm -rf ../NBIS-support-framwork
+
+# Create and activate the Conda environment
+module load conda
+conda env create --prefix <env-name> --file environment.yml
+conda activate <env-name>
 ```
-
-The git repository is set to ignore any directory ending in `-env`; only the
-`environment.yml` file is needed to reproduce the workspace environment (given
-platform-specific caveats, of course).
-
+Conda environment containing some of the more "standard" HTS-software packages
+(such as `FastQC` and `samtools`) will then be created in the current
+directory. You can then add more packages through `conda install <package>` as
+you need them during the project's lifetime. Git is set to ignore any directory
+ending in `-env`; only the `environment.yml` file is needed to reproduce the
+workspace environment (given platform-specific caveats, of course).
 
 ## Running with Snakemake
 
