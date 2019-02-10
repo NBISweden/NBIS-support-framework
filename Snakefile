@@ -35,7 +35,7 @@ rule all:
 rule MultiQC:
     input:
         expand(aligndir + "{sample}.bam", sample=samples),
-        expand(fastqcdir + "{fastq}_fastqc.zip", sample=fastq_samples, fastq=fastq_files),
+        expand(fastqcdir + "{fastq}_fastqc.zip", zip, sample=fastq_samples, fastq=fastq_files),
         expand(rseqcdir + "{sample}.bam_stat.txt", sample=samples),
         expand(rseqcdir + "{sample}.geneBodyCoverage.txt", sample=samples),
         expand(rseqcdir + "{sample}.inner_distance.txt", sample=samples),
