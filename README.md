@@ -26,9 +26,11 @@ You can read more about the separate sections here:
 
 ## Setup
 
-First create an empty GitHub repository that you wish to work on, *e.g.* the
-Redmine issue plus a descriptive name on the NBISweden GitHub. The following
-steps mirrors NBIS-SF to the new repo and installs the Conda environment.
+### Set-up Github repo with Redmine issue number
+Create an empty GitHub repository that you wish to work on. If Redmine issue is available for the project, name the repo with the
+Redmine issue number plus a descriptive name on the NBISweden GitHub, e.g. 4412-mast, 3939-ctcf.
+
+### Mirror NBIS-SF
 
 ```bash
 # Clone the original repo and create a mirror in a new one
@@ -40,7 +42,9 @@ git push --mirror <new-repo-location>
 git clone <new-repo-location> ..
 cd ../<new-repo>
 rm -rf ../NBIS-support-framwork
-
+```
+### Install Conda environment
+```bash
 # Create and activate the Conda environment
 module load conda
 conda env create --prefix <env-name> --file environment.yml
@@ -48,7 +52,7 @@ conda activate <env-name>
 ```
 Conda environment containing some of the more "standard" HTS-software packages
 (such as `FastQC` and `samtools`) will then be created in the current
-directory. You can then add more packages through `conda install <package>` as
+directory. You can add more packages through `conda install <package>` as
 you need them during the project's lifetime. Git is set to ignore any directory
 ending in `-env`; only the `environment.yml` file is needed to reproduce the
 workspace environment (given platform-specific caveats, of course).
@@ -59,12 +63,30 @@ workspace environment (given platform-specific caveats, of course).
 run on Uppmax. A main file containing the overall workflow is provided in
 `Snakefile`, and modularised rules can be found in the `rules/` directory.
 
-## Contributing
+## How to contribute?
+Anybody employed at NBIS is welcome to contribute to this repo. The central idea behind this repo is to develop up-to-date support framework, to share know-how and streamline common bioinformatics tasks.
 
-Anybody employed at NBIS can contribute to this repository. Simply create a new
-branch (`git checkout -b <branch>`) and work on your contribution on that
-branch - the `master` branch should always be deployable, and any new feature
-should ideally have been tested before its merging into master.
+To contribute, create a new feature branch to work on. The `master` branch should always be deployable, and any new feature should ideally have been tested before its merging into master.
+
+```bash
+# Clone NBIS-SF
+git clone https://github.com/NBISweden/NBIS-support-framework.git
+
+# Checkout a new feature branch
+git checkout -b <branch>
+
+# Add to staging arena
+git add *
+
+# Commit when ready
+git push origin <branch>
+
+# Review your code on commits page (NBIS Github site).
+# Create a merge request.
+# Your team lead will review the code & merge it to the main branch
+```
+
+
 
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
