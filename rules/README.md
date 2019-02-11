@@ -7,7 +7,7 @@ in many projects, such as read alignment and quality controls. Additional rules
 can then be added as the need arises, facilitating repeated analyses and
 general scientific reproducibility.
 
-### Included rules
+## Included rules
 
 **FastQC.smk** \
 This rule runs [FastQC][fastqc-home] on any FASTQ files in a given input
@@ -15,10 +15,10 @@ directory, defined in the `config.yml` file. The output directory is also
 specified in the same config file, which is `results/fastqc/<sample>/` by
 default.
 
-**STAR\_PE.smk** \
-This rule runs [STAR][star-home] in 2-pass mode on paired-end FASTQ files
-given in the `config.yml` file, same as for the FastQC-rule; the output is
-`results/star/<sample>/` by default.
+**STAR\_PE.smk / STAR\_SE.smk** \
+This rule runs [STAR][star-home] in 2-pass mode on paired- or single-end FASTQ
+files given in the `config.yml` file, same as for the FastQC-rule; the output
+is `results/star/<sample>/` by default.
 
 **RSeqC.smk** \
 This rules runs [RSeqC][rseqc-home] on aligned data in the `.bam` format,
