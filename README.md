@@ -27,7 +27,7 @@ You can read more about the separate sections here:
 ## Setup
 
 ### Set-up Github repo with Redmine issue number
-Create an empty GitHub repository that you wish to work on. If Redmine issue is available for the project, name the repo with the
+Create an empty GitHub repository that you wish to work on. If a Redmine issue is available for the project, name the repo with the
 Redmine issue number plus a descriptive name on the NBISweden GitHub, e.g. 4412-mast, 3939-ctcf.
 
 ### Mirror NBIS-SF
@@ -39,9 +39,9 @@ cd NBIS-support-framework
 git push --mirror <new-repo-location>
 
 # Clone the mirror and delete the original clone
-git clone <new-repo-location> ..
-cd ../<new-repo>
-rm -rf ../NBIS-support-framwork
+cd ..
+git clone <new-repo-location>
+rm -rf NBIS-support-framwork
 ```
 ### Install Conda environment
 ```bash
