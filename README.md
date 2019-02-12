@@ -92,7 +92,6 @@ git add *
 # Commit changes and push when ready
 git push origin <branch>
 ```
-
 Finally, review your code, and end with a pull-request. Your team lead will
 then review the code and merge it into the master branch.
 
@@ -107,3 +106,6 @@ then review the code and merge it into the master branch.
 [sf-rules]: https://github.com/NBISweden/NBIS-support-framework/tree/master/rules
 [sf-scratch]: https://github.com/NBISweden/NBIS-support-framework/tree/master/scratch
 [snakemake-home]: https://snakemake.readthedocs.io/en/stable/
+
+
+Email: 
