@@ -26,14 +26,18 @@ You can read more about the separate sections here:
 
 ## Setup
 
-### Set-up Github repo with Redmine issue number
-Create an empty GitHub repository that you wish to work on. If a Redmine issue is available for the project, name the repo with the
-Redmine issue number plus a descriptive name on the NBISweden GitHub, e.g. 4412-mast, 3939-ctcf.
+**Create a project repo at NBISweden** \
+First create an empty GitHub repository that you wish to work on. If a Redmine
+issue is available for the project, name the repo with the issue number plus a
+descriptive name on the [NBISweden GitHub][nbissweden], *e.g.* *4412-mast* or
+*3939-ctcf*.
 
-### Mirror NBIS-SF
+**Mirror the NBIS-SF repository** \
+The next step is to mirror the original NBIS-SF repository at your new project
+location.
 
 ```bash
-# Clone the original repo and create a mirror in a new one
+# Clone the original repo and mirror it to the new location
 git clone --bare https://github.com/NBISweden/NBIS-support-framework
 cd NBIS-support-framework
 git push --mirror <new-repo-location>
@@ -43,19 +47,22 @@ cd ..
 git clone <new-repo-location>
 rm -rf NBIS-support-framwork
 ```
-### Install Conda environment
+
+**Install the Conda environment** \
+The last step is to install the Conda environment. The NBIS-SF contains a
+Conda environment file with some of the more "standard" HTS-software packages,
+such as `FastQC` and `samtools`. You can add more packages through `conda
+install <package>` as you need them during the project's lifetime, or directly
+add them to the `environment.yml` file before installation. Git is set
+to ignore any directory ending in `-env`; only the `environment.yml` file is
+needed to reproduce the workspace environment (given platform-specific caveats,
+of course).
+
 ```bash
-# Create and activate the Conda environment
 module load conda
 conda env create --prefix <env-name> --file environment.yml
 conda activate <env-name>
 ```
-Conda environment containing some of the more "standard" HTS-software packages
-(such as `FastQC` and `samtools`) will then be created in the current
-directory. You can add more packages through `conda install <package>` as
-you need them during the project's lifetime. Git is set to ignore any directory
-ending in `-env`; only the `environment.yml` file is needed to reproduce the
-workspace environment (given platform-specific caveats, of course).
 
 ## Running with Snakemake
 
@@ -63,10 +70,14 @@ workspace environment (given platform-specific caveats, of course).
 run on Uppmax. A main file containing the overall workflow is provided in
 `Snakefile`, and modularised rules can be found in the `rules/` directory.
 
-## How to contribute?
-Anybody employed at NBIS is welcome to contribute to this repo. The central idea behind this repo is to develop up-to-date support framework, to share know-how and streamline common bioinformatics tasks.
+## How to contribute
+Anybody employed at NBIS is welcome to contribute to this repo. The central
+idea behind this repo is to develop an up-to-date support framework, to share
+knowledge and to streamline common bioinformatics tasks.
 
-To contribute, create a new feature branch to work on. The `master` branch should always be deployable, and any new feature should ideally have been tested before its merging into master.
+To contribute, create a new feature branch to work on. The `master` branch
+should always be deployable, and any new feature should ideally have been
+tested before its merging into master.
 
 ```bash
 # Clone NBIS-SF
@@ -78,18 +89,16 @@ git checkout -b <branch>
 # Add to staging arena
 git add *
 
-# Commit when ready
+# Commit changes and push when ready
 git push origin <branch>
-
-# Review your code on commits page (NBIS Github site).
-# Create a merge request.
-# Your team lead will review the code & merge it to the main branch
 ```
 
-
+Finally, review your code, and end with a pull-request. Your team lead will
+then review the code and merge it into the master branch.
 
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
+[nbissweden]: https://github.com/NBISweden
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
 [sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data_management
