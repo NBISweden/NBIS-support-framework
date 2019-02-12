@@ -68,7 +68,62 @@ conda activate <env-name>
 
 [Snakemake][snakemake-home] is a workflow management system which can easily be
 run on Uppmax. A main file containing the overall workflow is provided in
-`Snakefile`, and modularised rules can be found in the `rules/` directory.
+`Snakefile`, and modularised rules can be found in the `rules/` directory. In
+order to correctly run the workflow, there are a number of steps you need to
+perform.
+
+**Change the `config.yml` file** \
+The first step is to change the paths and directories in the configuration
+file. You should, for example, change the `datadir: "data/test_data/fastq"` to
+point to wherever your raw FASTQ files are stored. You may also wish to change
+the reference genome path, *i.e.* `REF: "..."` and `STAR_REF: "..."`.
+
+**Configure the desired outputs** \
+The second step is to edit the `Snakefile` to specify your desired outputs. The
+simple pipeline provided out-of-the-box includes alignment with *STAR* (either
+paired- or single-end data), quality controls of both raw and aligned data
+(*FastQC* and *RSeqC*, respectively) and a *MultiQC* report of the QC data.
+If you desire all of these outputs you do not need to change anything else.
+If you only want some FASTQ quality metrics, however, you can change the
+`MultiQC` rule, like so:
+
+```python
+rule MultiQC:
+    input:
+        expand(fastqcdir + "{fastq}_fastqc.zip", zip, sample=fastq_samples,
+               fastq=fastq_files)
+    output:
+        ...
+```
+
+**Run the pipeline locally** \
+If you want to run the pipeline locally, simply make sure you've activated the
+Conda environment (`conda activate <env-name>`) and run `snakemake`. You
+should, however, perform a dry-run with `snakemake -n` first, which allows you
+to inspect what Snakemake will attempt to do for you.
+
+**Run the pipeline on Uppmax** \
+If you want to run the pipeline on the Uppmax cluster, you first need to change
+the cluster configuration information. This includes things such as the account
+to use when submitting to SLURM (*i.e.* change `account: 'snic2017-7-343'`) or
+how many cores to use (`partition: 'devel'`). You can also add rule-specific
+configurations:
+
+```bash
+STAR_PE:
+    ntasks: 8
+    time: '00:30:00'
+```
+
+You will then want to run a terminal session through *e.g.* `tmux`, because
+Snakemake will continuously monitor the job queue and what parts of the
+pipeline that have been successfully run. This can be run on the login-nodes,
+however, making the final step of running the submission-wrapper easy:
+
+```bash
+tmux new
+./submit_snakemake.sh
+```
 
 ## How to contribute
 Anybody employed at NBIS is welcome to contribute to this repo. The central
