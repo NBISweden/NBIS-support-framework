@@ -41,3 +41,5 @@ optional parameter specifications in the `config.yml` file.
 Once you have pushed your code to `origin <branch>`, open a new pull-request at
 GitHub. The code will then be reviewed and subsequently merged into `master`,
 at which point other people can start using it as well.
+
+[git-commits]: https://chris.beams.io/posts/git-commit/
