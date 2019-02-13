@@ -125,32 +125,6 @@ tmux new
 ./submit_snakemake.sh
 ```
 
-## How to contribute
-Anybody employed at NBIS is welcome to contribute to this repo. The central
-idea behind this repo is to develop an up-to-date support framework, to share
-knowledge and to streamline common bioinformatics tasks.
-
-To contribute, create a new feature branch to work on. The `master` branch
-should always be deployable, and any new feature should ideally have been
-tested before its merging into master.
-
-```bash
-# Clone NBIS-SF
-git clone https://github.com/NBISweden/NBIS-support-framework.git
-
-# Checkout a new feature branch
-git checkout -b <branch>
-
-# Add to staging arena
-git add *
-
-# Commit changes and push when ready
-git push origin <branch>
-```
-
-Finally, review your code, and end with a pull-request. Your team lead will
-then review the code and merge it into the master branch.
-
 Questions can be sent to [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF])
 or [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
