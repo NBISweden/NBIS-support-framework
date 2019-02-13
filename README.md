@@ -74,7 +74,7 @@ perform.
 
 **Change the `config.yml` file** \
 The first step is to change the paths and directories in the configuration
-file. You should, for example, change the `datadir: "data/test_data/fastq"` to
+file. You should, for example, change the `datadir: "data/test-data/fastq"` to
 point to wherever your raw FASTQ files are stored. You may also wish to change
 the reference genome path, *i.e.* `REF: "..."` and `STAR_REF: "..."`.
 
@@ -110,7 +110,7 @@ how many cores to use (`partition: 'devel'`). You can also add rule-specific
 configurations:
 
 ```bash
-STAR_PE:
+STAR-PE:
     ntasks: 8
     time: '00:30:00'
 ```
@@ -133,7 +133,7 @@ or [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 [nbissweden]: https://github.com/NBISweden
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
-[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data_management
+[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data-management
 [sf-report]: https://github.com/NBISweden/NBIS-support-framework/tree/master/reports
 [sf-results]: https://github.com/NBISweden/NBIS-support-framework/tree/master/results
 [sf-rules]: https://github.com/NBISweden/NBIS-support-framework/tree/master/rules
