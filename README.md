@@ -151,6 +151,9 @@ git push origin <branch>
 Finally, review your code, and end with a pull-request. Your team lead will
 then review the code and merge it into the master branch.
 
+Questions can be sent to [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF])
+or [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
+
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 [nbissweden]: https://github.com/NBISweden
