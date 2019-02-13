@@ -31,7 +31,7 @@ be separated by a blank line, start with a capital letter, and the subject line
 should not end with a period. You can read more about [good commit messages]
 [git-commits], and a minimal example is provided below:
 
-```bash
+```
 Add Snakemake rule for Tophat alignment
 
 Add a Snakemake rule for RNA-seq read alignment using Tophat, including
