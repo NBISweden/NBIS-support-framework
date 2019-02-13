@@ -133,7 +133,7 @@ or [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 [nbissweden]: https://github.com/NBISweden
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
-[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin/data-management
+[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/doc/data-management
 [sf-report]: https://github.com/NBISweden/NBIS-support-framework/tree/master/reports
 [sf-results]: https://github.com/NBISweden/NBIS-support-framework/tree/master/results
 [sf-rules]: https://github.com/NBISweden/NBIS-support-framework/tree/master/rules
