@@ -2,7 +2,7 @@ import glob
 
 # Include external rules
 include: "rules/FastQC.smk"
-include: "rules/STAR_PE.smk"
+include: "rules/STAR-PE.smk"
 include: "rules/RSeqC.smk"
 
 # Config file

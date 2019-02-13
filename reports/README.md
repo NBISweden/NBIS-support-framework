@@ -5,7 +5,7 @@ found. While the exact structure and means of creation of these reports do not
 have to conform to a specific standard, there is some [required information]
 [report-info] that has to be included.
 
-### Included templates
+## Included templates
 
 **knitr-PDF** \
 `knitr-pdf/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
@@ -29,7 +29,7 @@ R, either from inside R or from the command line, like so:
 Rscript -e 'knitr::knit2pdf("report.Rnw")'
 ```
 
-### Common files
+## Common files
 
 Some files common to all templates are also included, such as NBIS and SciLife
 logos (`logos`), a test bibliography (`references.bib`) and a custom LaTeX

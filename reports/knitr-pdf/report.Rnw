@@ -74,8 +74,8 @@
 % Header and footer
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
-\lhead{\includegraphics[height=1.1cm, width=2.96cm]{nbis_logo.pdf}}
-\rhead{\includegraphics[height=1.3cm, width=4cm]{scilifelab_logo.jpg}}
+\lhead{\includegraphics[height=1.1cm, width=2.96cm]{nbis-logo.pdf}}
+\rhead{\includegraphics[height=1.3cm, width=4cm]{scilifelab-logo.jpg}}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont\thepage}
 

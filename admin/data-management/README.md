@@ -1,6 +1,6 @@
 # Data management
 
-This is the `data_management` directory, containing information and guidelines
+This is the `data-management` directory, containing information and guidelines
 regarding data management and how to help clients plan for their data
 acquisition and storage. There is a [Data Management Plan][nbis-dmp]
 work-in-progress (created by Niclas Jareborg), from which a light-weight

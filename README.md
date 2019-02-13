@@ -122,7 +122,7 @@ however, making the final step of running the submission-wrapper easy:
 
 ```bash
 tmux new
-./submit_snakemake.sh
+./submit-snakemake.sh
 ```
 
 Questions can be sent to [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF])

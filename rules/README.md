@@ -15,7 +15,7 @@ directory, defined in the `config.yml` file. The output directory is also
 specified in the same config file, which is `results/fastqc/<sample>/` by
 default.
 
-**STAR\_PE.smk / STAR\_SE.smk** \
+**STAR-PE.smk / STAR-SE.smk** \
 This rule runs [STAR][star-home] in 2-pass mode on paired- or single-end FASTQ
 files given in the `config.yml` file, same as for the FastQC-rule; the output
 is `results/star/<sample>/` by default.
