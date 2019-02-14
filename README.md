@@ -28,9 +28,9 @@ You can read more about the separate sections here:
 
 **Create a project repo at NBISweden** \
 First create an empty GitHub repository that you wish to work on. If a Redmine
-issue is available for the project, name the repo with the issue number plus a
-descriptive name on the [NBISweden GitHub][nbissweden], *e.g.* *4412-mast* or
-*3939-ctcf*.
+issue is available for the project, name the repo with the issue number, year,
+plus a descriptive name and on the [NBISweden GitHub][nbissweden], *e.g.*
+*4412-18-mast* or *3939-20-ctcf*.
 
 **Mirror the NBIS-SF repository** \
 The next step is to mirror the original NBIS-SF repository at your new project
