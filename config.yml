@@ -1,5 +1,5 @@
 # Data path
-datadir: "data/test_data/fastq/"
+datadir: "data/test-data/fastq/"
 
 # Software paths
 fastqcdir: "results/fastqc/{sample}/"
