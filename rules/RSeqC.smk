@@ -30,16 +30,26 @@ rule gene_body_coverage:
         rseqcdir + "log.{sample}.geneBodyCoverage.txt"
     shell:
         """
+        # Get working directory and absolute paths
         WORKDIR=$(pwd)
         INPUT=$(readlink -f {input})
         OUTPUT=$(readlink -f {output})
         OUTDIR=$(dirname $OUTPUT)
+
+        # cd into output directory and calculate gene body coverage
         cd $OUTDIR
         geneBody_coverage.py \
             --input=$INPUT \
             --out-prefix={wildcards.sample} \
             --refgene={config[REF_GENE]} \
                 > $OUTPUT 2> /dev/null
+
+        # Fix data output to be readable by MultiQC
+        echo $(echo "Percentile"; seq 1 100) | tr ' ' '\t' > temp_data.txt
+        tail -n +4 $OUTPUT >> temp_data.txt
+        mv temp_data.txt $OUTPUT
+
+        # Move back into working directory
         cd $WORKDIR
         mv $OUTDIR/log.txt {log}
         """
