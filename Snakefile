@@ -52,5 +52,6 @@ rule MultiQC:
         multiqc results \
             --outdir $(dirname {output}) \
             --ignore *_STAR* \
+            --force \
                 > {log} 2>&1
         """
