@@ -1,10 +1,3 @@
-# Configuration file
-configfile: "config.yml"
-
-# Paths
-aligndir = config["aligndir"]
-rseqcdir = config["rseqcdir"]
-
 # Summarise alignment statistics
 rule bam_stat:
     input:

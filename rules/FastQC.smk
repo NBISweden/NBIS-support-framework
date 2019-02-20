@@ -1,10 +1,3 @@
-# Configuration file
-configfile: "config.yml"
-
-# Paths
-datadir = config["datadir"]
-fastqcdir = config["fastqcdir"]
-
 # Rule: run FastQC
 rule FastQC:
     input:

@@ -1,10 +1,5 @@
 import glob
 
-# Include external rules
-include: "rules/FastQC.smk"
-include: "rules/STAR-PE.smk"
-include: "rules/RSeqC.smk"
-
 # Config file
 configfile: "config.yml"
 
@@ -25,6 +20,11 @@ samples = [s.replace('_1', '') for s in fastq_files]
 samples = [s.replace('_2', '') for s in samples]
 fastq_samples = samples
 samples = list(set(samples))
+
+# Include external rules
+include: "rules/FastQC.smk"
+include: "rules/STAR-PE.smk"
+include: "rules/RSeqC.smk"
 
 # Rule: final output and cleanup
 rule all:

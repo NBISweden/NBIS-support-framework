@@ -1,10 +1,3 @@
-# Configuration file
-configfile: "config.yml"
-
-# Paths
-datadir = config["datadir"]
-aligndir = config["aligndir"]
-
 # Rule: STAR 2-pass with paired-end reads
 rule STAR_PE:
     input:
