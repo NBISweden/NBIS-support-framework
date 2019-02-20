@@ -76,7 +76,8 @@ perform.
 The first step is to change the paths and directories in the configuration
 file. You should, for example, change the `datadir: "data/test-data/fastq"` to
 point to wherever your raw FASTQ files are stored. You may also wish to change
-the reference genome path, *i.e.* `REF: "..."` and `STAR_REF: "..."`.
+the index location(s) through either absolute paths or by using symbolic links 
+(*e.g.* `REF: "data/idx/genome.fa"` or `STAR_REF: "data/idx/STARIndex/"`).
 
 **Configure the desired outputs** \
 The second step is to edit the `Snakefile` to specify your desired outputs. The
