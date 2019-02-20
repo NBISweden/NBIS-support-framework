@@ -1,11 +1,11 @@
-# Rule: STAR 2-pass with single-end reads
+# Rule: STAR 2-pass with paired-end reads
 rule STAR_SE:
     input:
         datadir + "{sample}.fastq.gz",
     output:
-        aligndir + "{sample}.bam"
+        aligndir + "{sample}/{sample}.bam"
     log:
-        aligndir + "log.{sample}.STAR-SE.txt"
+        aligndir + "{sample}/log.{sample}.STAR-SE.txt"
     shell:
         """
         OUTDIR=$(dirname {output})

@@ -34,15 +34,15 @@ rule all:
 # Rule: collate MultiQC report
 rule MultiQC:
     input:
-        expand(aligndir + "{sample}.bam", sample=samples),
         expand(fastqcdir + "{fastq}_fastqc.zip", zip, sample=fastq_samples, fastq=fastq_files),
-        expand(rseqcdir + "{sample}.bam_stat.txt", sample=samples),
-        expand(rseqcdir + "{sample}.geneBodyCoverage.txt", sample=samples),
-        expand(rseqcdir + "{sample}.inner_distance.txt", sample=samples),
-        expand(rseqcdir + "{sample}.infer_experiment.txt", sample=samples),
-        expand(rseqcdir + "{sample}.junction_saturation.txt", sample=samples),
-        expand(rseqcdir + "{sample}.read_distribution.txt", sample=samples),
-        expand(rseqcdir + "{sample}.tin.xls", sample=samples)
+        expand(aligndir + "{sample}/{sample}.bam", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.bam_stat.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.geneBodyCoverage.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.inner_distance.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.infer_experiment.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.junction_saturation.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.read_distribution.txt", sample=samples),
+        expand(rseqcdir + "{sample}/{sample}.tin.xls", sample=samples)
     output:
         multiqcdir + "multiqc_report.html"
     log:

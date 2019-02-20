@@ -1,14 +1,13 @@
 # Rule: run FastQC
 rule FastQC:
     input:
-        datadir + "{fastq}.fastq.gz"
+        datadir + "{sample}.fastq.gz"
     output:
-        html = fastqcdir + "{fastq}_fastqc.html",
-        data = fastqcdir + "{fastq}_fastqc.zip"
+        fastqcdir + "{sample}/{sample}_fastqc.zip"
     log:
-        fastqcdir + "log.{fastq}.fastqc.txt"
+        fastqcdir + "{sample}/log.{sample}.fastqc.txt"
     shell:
         """
-        fastqc {input} -o $(dirname {output.data}) \
+        fastqc {input} -o $(dirname {output}) \
             > {log} 2>&1
         """

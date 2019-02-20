@@ -2,9 +2,9 @@
 datadir: "data/test-data/fastq/"
 
 # Software paths
-fastqcdir: "results/fastqc/{sample}/"
-aligndir: "results/star/{sample}/"
-rseqcdir: "results/rseqc/{sample}/"
+fastqcdir: "results/fastqc/"
+aligndir: "results/star/"
+rseqcdir: "results/rseqc/"
 multiqcdir: "results/multiqc/"
 
 # Indexes and reference files

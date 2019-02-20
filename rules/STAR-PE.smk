@@ -4,9 +4,9 @@ rule STAR_PE:
         read_1 = datadir + "{sample}_1.fastq.gz",
         read_2 = datadir + "{sample}_2.fastq.gz"
     output:
-        aligndir + "{sample}.bam"
+        aligndir + "{sample}/{sample}.bam"
     log:
-        aligndir + "log.{sample}.STAR-PE.txt"
+        aligndir + "{sample}/log.{sample}.STAR-PE.txt"
     shell:
         """
         OUTDIR=$(dirname {output})
