@@ -45,7 +45,7 @@ git push --mirror <new-repo-location>
 # Clone the mirror and delete the original clone
 cd ..
 git clone <new-repo-location>
-rm -rf NBIS-support-framwork
+rm -rf NBIS-support-framework
 ```
 
 **Install the Conda environment** \
