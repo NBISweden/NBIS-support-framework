@@ -2,8 +2,8 @@
 
 This is the `report` directory, in which templates for NBIS reports can be
 found. While the exact structure and means of creation of these reports do not
-have to conform to a specific standard, there is some [required information]
-[report-info] that has to be included.
+have to conform to a specific standard, there is some [required
+information][report-info] that has to be included.
 
 ## Included templates
 
