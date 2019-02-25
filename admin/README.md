@@ -11,6 +11,7 @@ other useful things.
  * [Documents and forms][nbis-docs]
  * [Timelogging examples][nbis-time] for short-term experts
  * [Routines][nbis-routines] for short-term projects
+ * A list of past [NBIS courses][nbis-courses]
  * NBIS course for [reproducible research][rep-res]
  * A collection of [NBIS outreach materials][nbis-outreach]
 
@@ -23,6 +24,7 @@ the [NBIS-templates-contract][nbis-contract] repo.
 [*(back to project home directory)*][sf-home]
 
 [nbis-contract]: https://github.com/NBISweden/NBIS-templates-contract
+[nbis-courses]: https://scilifelab.github.io/courses/
 [nbis-docs]: https://nbis.se/about/doc/
 [nbis-outreach]: https://github.com/NBISweden/NBIS-template-outreach
 [nbis-routines]: https://projects.nbis.se/projects/internal-documents/wiki/New_routines_Feb_2018
