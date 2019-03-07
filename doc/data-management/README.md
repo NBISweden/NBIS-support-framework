@@ -11,9 +11,9 @@ A light version document to be created based on work-in-progress DMPs, incl.
 **TODO:**
 - get feedback and improve DMP-light version
 - less or more information?
-- create a more practical version, from life scientist point of view, from experts' point of view?
+- create a more practical version, from life scientist's point of view, from experts' point of view?
 - case study examples?
-- how the DMP information should be collected, stored and shared with NBIS.
+- how the DMP information should be collected, stored and shared with NBIS?
 
 [*(back to project home directory)*][sf-home]
 
