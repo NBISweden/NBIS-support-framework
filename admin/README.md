@@ -14,17 +14,13 @@ other useful things.
  * A list of past [NBIS courses][nbis-courses]
  * NBIS course for [reproducible research][rep-res]
  * A collection of [NBIS outreach materials][nbis-outreach]
-
-**TODO:**
-Are the some links superfluous or useful (*i.e.* NBIS/Redmine wiki links)?
-
-**TODO:** Potentially incorporate (or more explicitly link / add as submodule)
-the [NBIS-templates-contract][nbis-contract] repo.
+ * Short guidelines for [data management plans][nbis-dmp]
 
 [*(back to project home directory)*][sf-home]
 
 [nbis-contract]: https://github.com/NBISweden/NBIS-templates-contract
 [nbis-courses]: https://scilifelab.github.io/courses/
+[nbis-dmp]: https://docs.google.com/document/d/1gotMFF7R02dEEnzoVaEtxoSzUD2QuVlkwuDbzRGulWw/edit#heading=h.wmrnkk9cdn3h
 [nbis-docs]: https://nbis.se/about/doc/
 [nbis-outreach]: https://github.com/NBISweden/NBIS-template-outreach
 [nbis-routines]: https://projects.nbis.se/projects/internal-documents/wiki/New_routines_Feb_2018
