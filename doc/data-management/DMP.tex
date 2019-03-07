@@ -1,0 +1,307 @@
+\documentclass[10pt,a4paper,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={NBIS: document},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{NBIS: document}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{Data management plan for support projects}
+  \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+% Defining header
+\addtolength{\headheight}{2.5cm} % make more space for the header
+\pagestyle{fancyplain} % use fancy for all pages except chapter start
+\lhead{\includegraphics[height=1.4cm, width=2.2cm]{NBIS-logo.png}} % left logo
+\rhead{\includegraphics[height=1.4cm, width=4cm]{SciLifeLab-logo.jpg}} % right logo
+%\rhead{\today}
+\addtolength{\headheight}{-2.5cm} % make more space for the header
+\cfoot{\thepage\ (\pageref{LastPage})}
+\lfoot{Org number: 202100-2932}
+\rfoot{https://nbis.se}
+\renewcommand{\headrulewidth}{0pt} % remove rule below header
+
+\begin{document}
+\maketitle
+
+\subsection{Introduction}\label{introduction}
+
+Research data management plans (DMP) has become a crucial part of life
+science research. Good data management practices help to organised,
+analyse, store, publish and re-use data. DMPs are not only a good
+practice, but may and will be required to consider and document under
+the policy of various research founders, e.g.~VR. This document contains
+some key points to consider when having data analysed with NBIS.
+
+\subsection{Overview}\label{overview}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Project title
+\item
+  Project issue number
+\item
+  Project contact person
+\item
+  Data contact person
+\item
+  Data management contact person
+\item
+  Is DMP available? Yes/No. If yes, provide details. If no, provide the
+  information below. Refer to
+  \href{https://docs.google.com/document/d/1g6vJNIrkSnylASkNHB9Zwm5N6jvTgoSxBjS_bexRPsY/edit\#heading=h.y6r21qqu4ir4}{extended
+  online version of this document} for sections examples and more
+  information.
+\end{enumerate}
+
+\subsection{Data description}\label{data-description}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Primary data, \emph{incl. a) what type of data will be generated? b)
+  from which type of samples? c) how many samples? d) from what
+  technical platform?}
+\item
+  Additional data, \emph{incl. a) what other data will you need to
+  perform the project?, b) do you have the necessary permission(s) to
+  use that data? c) how does your re-use complies with terms and
+  conditions?}
+\end{enumerate}
+
+\subsection{Ethical \& Legal aspects}\label{ethical-legal-aspects}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Data owner(s), \emph{incl. a) which host university/universities owns
+  the data?}
+\item
+  Intellectual property rights (IPR)/Copyrights, \emph{incl. a) are
+  there IPR or copyright issues to consider? b) will the data
+  potentially be used to generate IPR?}
+\item
+  Legal Agreements (if applicable), \emph{incl a) what are the
+  agreements with other stakeholders? b) what agreements are needed to
+  regulate relationships between collaborators. c) do you need Data
+  Processing Agreements between collaborators for personal data?}
+\item
+  Sensitive Human Data (if applicable), \emph{incl. a) does your project
+  have approval by an ethics committee?, b) what informed consents exist
+  for the samples?, c) are they any consent codes that can be assigned
+  to the samples?}
+\end{enumerate}
+
+\subsection{Data documentation}\label{data-documentation}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sample metadata documentation, \emph{incl. a) what metadata will be
+  provided with the collected/generated/reused data? b) are there
+  metadata standards that you can use?}
+\item
+  Dataset documentation, \emph{incl. a) which file formats and data
+  types will be used for the data?, b) what is the estimated total size
+  of the data?}
+\end{enumerate}
+
+\subsection{Data storage \& backup}\label{data-storage-backup}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Storage, \emph{incl. a) how, b) where, and c) for how long will the
+  data be stored during the analysis phase of the project?}
+\item
+  Backup, \emph{incl. a) how, b) where and c) at what intervals will the
+  data be backed-up? d) how will data be recovered in the case of a data
+  loss incident?}
+\item
+  Security, \emph{incl. a) how will you ensure that only authorized
+  persons have access to the data?, b) how will sensitive data be
+  protected, if applicable?}
+\end{enumerate}
+
+\subsection{Data publication \&
+archiving}\label{data-publication-archiving}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Long-term storage, \emph{incl. a) how and b) where will the data be
+  stored after the project's completion?}
+\item
+  Data publishing, \emph{incl. a) will you deposit your data to a
+  trusted data repository? b) if so, when during the project will you
+  submit the data to the archive? c) in what formats will you submit the
+  data to the repository?, d) will your data receive a persistent
+  identifier?}
+\item
+  Data access, \emph{incl. a) will your data be available Open or
+  Controlled Access? b) when will the data become accessible? c) if
+  Controlled Access, who controls access?, d) will all data and
+  metadata, or only parts of it, be published?, e) under what licence(s)
+  or terms will you share your data and code?, f) Are there any
+  restrictions that prevents the publication of all the material? and g)
+  if so, what actions must be taken before the material can be made
+  available?}
+\end{enumerate}
+
+\subsection{Costs}\label{costs}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Are there costs you need to consider to buy and manage specific
+  software or hardware?
+\item
+  What are the costs you need to consider for storage and backup?
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsection{Ultra-short general
+recommendations}\label{ultra-short-general-recommendations}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If you have no specific insight, include a data management and
+  archiving cost of 5-10\% of the project budget for a large-scale omics
+  project, provided that you can largely rely on SNIC systems. This does
+  not include any personnel cost to analyse the data.
+\item
+  If you cannot use SNIC systems for your data analysis/storage, you
+  need a major budget post to cover for this, and you should investigate
+  this carefully.
+\item
+  Human sequencing data are classified as sensitive data under GDPR, and
+  needs special attention. More information under
+  \url{https://nbis.se/support/human-data.html}
+\item
+  Submit data to public repositories early in the project, i.e.~under
+  embargo, to ensure an extra backup.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsection{More information}\label{more-information}
+
+\begin{itemize}
+\tightlist
+\item
+  Extension of this document with examples and including
+  \href{https://docs.google.com/document/d/1g6vJNIrkSnylASkNHB9Zwm5N6jvTgoSxBjS_bexRPsY/edit\#heading=h.wvltu9dpdsqz}{DMP
+  knowlege hub}
+\item
+  SNIC resources for compute and storage during active phase of the
+  project \url{http://snic.se}
+\item
+  Working with sensitive data:
+  \url{https://nbis.se/support/human-data.html}
+\item
+  A list of public deposition databases can be found on
+  \href{https://www.elixir-europe.org/platforms/data/elixir-deposition-databases}{Elixir
+  Deposition Databases List}
+\item
+  A Quick Guide to Organizing Computational Biology Projects
+  \citep{Noble2009} 
+\end{itemize}
+
+\bibliography{bibliography.bib}
+
+
+\end{document}
