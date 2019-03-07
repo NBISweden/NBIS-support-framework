@@ -5,9 +5,6 @@ analyses. Intermediate or processed data can either be put either in the
 `results` directory (if you want to keep it) or the `scratch` directory (if the
 data can be discarded).
 
-Remember to help the client with coming up with a [data management plan][sf-dmp]
-and backup solutions! 
-
 [*(back to project home directory)*][sf-home]
 
 [sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data_management
