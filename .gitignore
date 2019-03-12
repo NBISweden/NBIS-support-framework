@@ -18,6 +18,7 @@ scratch/*
 
 # Exceptions
 !*/README.md
+!*/*/README.md
 
 !data/test_data/
 !data/data_management/
@@ -26,9 +27,8 @@ scratch/*
 
 !reports/myunsrt.bst
 !reports/references.bib
-!reports/logos/
-
-!reports/knitr-pdf/
-!reports/knitr-pdf/report.Rnw
+!reports/*/
+!reports/*/*.Rnw
+!reports/*/*.pdf
 
 !scratch/README.md
