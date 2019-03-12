@@ -1,10 +1,10 @@
 # knitr-PDF
 
 `knitr-pdf/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
-can easily to compiled into a nice-looking PDF document using [knitr][knitr-
-home]. It contains several shorthand commands in the beginning of the document,
-which by default contain mock names and e-mails. These should be changed prior
-to compilation:
+can easily to compiled into a nice-looking PDF document using
+[knitr][knitr-home]. It contains several shorthand commands in the beginning of
+the document, which by default contain mock names and e-mails. These should be
+changed prior to compilation:
 
 ```tex
 # Default (mock) command
