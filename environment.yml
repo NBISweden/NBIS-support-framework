@@ -12,5 +12,5 @@ dependencies:
   - r-tinytex=0.10
   - rseqc=3.0.0
   - samtools=1.9
-  - snakemake=3.13.3
+  - snakemake=5.4
   - star=2.6.1b
