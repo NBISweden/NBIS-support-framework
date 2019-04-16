@@ -53,16 +53,22 @@ The last step is to install the Conda environment. The NBIS-SF contains a
 Conda environment file with some of the more "standard" HTS-software packages,
 such as `FastQC` and `samtools`. You can add more packages through `conda
 install <package>` as you need them during the project's lifetime, or directly
-add them to the `environment.yml` file before installation. Git is set
-to ignore any directory ending in `-env`; only the `environment.yml` file is
-needed to reproduce the workspace environment (given platform-specific caveats,
-of course).
+add them to the `environment.yml` file before installation.
+
+You can change the contents of the provided `environment.yml` file by opening
+it and deleting/adding whatever software is needed for your particular project.
+It lists all software and what they are used for, so that you may adapt it for
+your specific needs.
 
 ```bash
 module load conda
 conda env create --prefix <env-name> --file environment.yml
 conda activate <env-name>
 ```
+
+Git is set to ignore any directory ending in `-env`; only the `environment.yml`
+file is needed to reproduce the workspace environment (given platform-specific
+caveats, of course).
 
 ## Running with Snakemake
 
