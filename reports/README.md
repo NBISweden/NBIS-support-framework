@@ -13,9 +13,9 @@ can easily to compiled into a nice-looking PDF document.
 
 ## Common files
 
-Some files common to all templates are also included, such as NBIS and SciLife
-logos (`logos`), a test bibliography (`references.bib`) and a custom LaTeX
-bibliography-style (`myunstr.bst`).
+Some files common to all templates are also included in the `common` directory,
+such as NBIS and SciLife logos (`logos`), a test bibliography
+(`references.bib`) and a custom LaTeX bibliography-style (`myunstr.bst`).
 
 ## Adding templates
 
