@@ -22,7 +22,7 @@
 
 % Graphics and colours
 \usepackage{graphicx}
-\graphicspath{{../logos/}}
+\graphicspath{{../common/logos/}}
 \usepackage{colortbl}
 \usepackage{xcolor}
 
@@ -240,7 +240,7 @@ toLatex(sessionInfo(), locale = FALSE)
 
 % REFERENCES
 \bibliographystyle{../myunsrt.bst}
-\bibliography{../references.bib}
+\bibliography{../common/references.bib}
 
 % END DOCUMENT
 \end{document}  
