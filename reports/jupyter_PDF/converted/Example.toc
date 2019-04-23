@@ -1,0 +1,20 @@
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Description}{3}{section.1}
+\contentsline {section}{\numberline {2}Support Request}{4}{section.2}
+\contentsline {section}{\numberline {3}Methods}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Method Section 1}{5}{subsection.3.1}
+\contentsline {section}{\numberline {4}Results}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}Results 1}{6}{subsection.4.1}
+\contentsline {section}{\numberline {5}Closing procedures}{7}{section.5}
+\contentsline {section}{\numberline {6}Practical Information}{8}{section.6}
+\contentsline {section}{\numberline {7}Markdown}{9}{section.7}
+\contentsline {subsection}{\numberline {7.1}Todo notes}{9}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Text Output}{9}{subsection.7.2}
+\contentsline {section}{\numberline {8}Images and Figures}{10}{section.8}
+\contentsline {subsection}{\numberline {8.1}References and Citations}{12}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Displaying a plot with its code}{12}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Displaying a plot without its code}{13}{subsection.8.3}
+\contentsline {section}{\numberline {9}Tables (with pandas)}{14}{section.9}
+\contentsline {section}{\numberline {10}Equations (with ipython or sympy)}{15}{section.10}
+\contentsline {section}{\numberline {11}Embed interactive HTML (like ipywidgets)}{16}{section.11}
+\contentsline {section}{\numberline {12}References}{17}{section.12}

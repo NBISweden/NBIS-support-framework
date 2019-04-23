@@ -1,0 +1,747 @@
+INFO:ipypublish:started ipypublish v0.9.4 at Tue Apr 23 09:56:50 2019
+INFO:ipypublish:logging to: /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.nbpub.log
+INFO:ipypublish:running for ipynb(s) at: Example.ipynb
+INFO:ipypublish:with conversion configuration: latex_ipypublish_nocode
+INFO:nbmerge:Reading notebook
+INFO:ipypublish:finding conversion configuration: latex_ipypublish_nocode
+INFO:ipypublish:loading conversion configuration
+INFO:ipypublish:creating exporter
+INFO:ipypublish:creating template and loading filters
+INFO:ipypublish:creating process configuration
+INFO:ipypublish:running nbconvert
+INFO:root:adding ipub defaults to notebook
+INFO:root:splitting outputs into separate cells
+INFO:resolve_links:resolving external file paths in ipub metadata to: Example.ipynb
+WARNING:resolve_links:referenced file(s) do not exist: ['/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/\\cref{datares}', '/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/\\cred{acknowledgements}']
+INFO:captions:extracting caption cells
+INFO:remove-folder:removing folder: /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example_files
+INFO:write-text-file:writing stream to file: /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.tex
+INFO:write-resource-files:writing files in resources[outputs] to: /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted
+INFO:copy-resource-paths:copying files in resources[external_file_paths] to: /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example_files
+INFO:pdf-export:running pdf conversion
+INFO:pdf-export:running: latexmk -xelatex -bibtex -pdf /Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.tex
+INFO:pdf-export:latexmk: Latexmk: This is Latexmk, John Collins, 17 Jan. 2018, version: 4.55.
+INFO:pdf-export:latexmk: Rule 'pdflatex': File changes, etc:
+INFO:pdf-export:latexmk: Changed files, or newly in use since previous run(s):
+INFO:pdf-export:latexmk: '/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.tex'
+INFO:pdf-export:latexmk: 'Example.tex'
+INFO:pdf-export:latexmk: No-longer-existing files:
+INFO:pdf-export:latexmk: 'Example_files/output_35_0.png'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Run number 1 of rule 'pdflatex'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Running 'pdflatex  -recorder  "/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.tex"'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Latexmk: applying rule 'pdflatex'...
+INFO:pdf-export:latexmk: This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+INFO:pdf-export:latexmk: restricted \write18 enabled.
+INFO:pdf-export:latexmk: entering extended mode
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: (/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example
+INFO:pdf-export:latexmk: .tex
+INFO:pdf-export:latexmk: LaTeX2e <2018-04-01> patch level 2
+INFO:pdf-export:latexmk: Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
+INFO:pdf-export:latexmk: Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize10pt.clo)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/british.ldf
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)))))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathpazo.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/trimclip.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/collectbox/collectbox.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/enumerate.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+INFO:pdf-export:latexmk: For additional information on amsmath, use the `?' option.
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/eurosym/eurosym.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/ucs.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/data/uni-global.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/utf8x.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+INFO:pdf-export:latexmk: Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
+INFO:pdf-export:latexmk: <2008/02/07> (tvz))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grffile.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty))))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/translations/translations.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/todonotes/todonotes.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+INFO:pdf-export:latexmk: x
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+INFO:pdf-export:latexmk: sts.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+INFO:pdf-export:latexmk: ode.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+INFO:pdf-export:latexmk: ef
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+INFO:pdf-export:latexmk: df.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+INFO:pdf-export:latexmk: code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+INFO:pdf-export:latexmk: )
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+INFO:pdf-export:latexmk: tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+INFO:pdf-export:latexmk: nometric.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+INFO:pdf-export:latexmk: m.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+INFO:pdf-export:latexmk: rison.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+INFO:pdf-export:latexmk: erarithmetics.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+INFO:pdf-export:latexmk: )
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+INFO:pdf-export:latexmk: ruct.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+INFO:pdf-export:latexmk: ate.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+INFO:pdf-export:latexmk: ations.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+INFO:pdf-export:latexmk: ode.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+INFO:pdf-export:latexmk: ssing.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+INFO:pdf-export:latexmk: e.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+INFO:pdf-export:latexmk: code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+INFO:pdf-export:latexmk: ncy.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+INFO:pdf-export:latexmk: code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+INFO:pdf-export:latexmk: tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+INFO:pdf-export:latexmk: -0-65.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+INFO:pdf-export:latexmk: -1-18.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+INFO:pdf-export:latexmk: ) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+INFO:pdf-export:latexmk: e.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+INFO:pdf-export:latexmk: dlers.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+INFO:pdf-export:latexmk: s/tikzlibrarytopaths.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+INFO:pdf-export:latexmk: s/tikzlibrarypositioning.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/chngcntr/chngcntr.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlayer.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/doi/doi.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/newfloat.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/mdframed.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/needspace/needspace.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/md-frame-1.mdf))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty)
+INFO:pdf-export:latexmk: (./Example.aux) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1ppl.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INFO:pdf-export:latexmk: [Loading MPS to PDF converter (version 2006.09.02).]
+INFO:pdf-export:latexmk: ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/ucsencs.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+INFO:pdf-export:latexmk: (./Example.out) (./Example.out)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/translations/translations-basic-d
+INFO:pdf-export:latexmk: ictionary-english.trsl)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-ppl.cfg)
+INFO:pdf-export:latexmk: ABD: EveryShipout initializing macros
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Package scrlayer-scrpage Warning: Very small head height detected!
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                Using scrlayer-scrpage the head height
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                should be at least \baselineskip, which is
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                12.0pt currently.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                But head height is currently 0.0pt only.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                You may use
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                geometry option `head=12.0pt'
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                \relax to avoid this warning.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: *geometry* driver: auto-detecting
+INFO:pdf-export:latexmk: *geometry* detected driver: pdftex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlzplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omszplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxzplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1zplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/usr/loc
+INFO:pdf-export:latexmk: al/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd) (./Example.toc)
+INFO:pdf-export:latexmk: (./Example.lof) (./Example.lot)
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Class scrartcl Warning: \float@listhead detected!
+INFO:pdf-export:latexmk: (scrartcl)              Implementation of \float@listhead became
+INFO:pdf-export:latexmk: (scrartcl)              deprecated in KOMA-Script v3.01 2008/11/14 and
+INFO:pdf-export:latexmk: (scrartcl)              has been replaced by several more flexible
+INFO:pdf-export:latexmk: (scrartcl)              features of package `tocbasic`.
+INFO:pdf-export:latexmk: (scrartcl)              Maybe implementation of \float@listhead will
+INFO:pdf-export:latexmk: (scrartcl)              be removed from KOMA-Script soon.
+INFO:pdf-export:latexmk: (scrartcl)              Loading of package `scrhack' may help to
+INFO:pdf-export:latexmk: (scrartcl)              avoid this warning, if you are using a
+INFO:pdf-export:latexmk: (scrartcl)              a package that still implements the
+INFO:pdf-export:latexmk: (scrartcl)              deprecated \float@listhead interface  on input line 477
+INFO:pdf-export:latexmk: .
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: (./Example.frm)
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Package scrlayer-scrpage Warning: \headheight to low.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                At least 12.0pt needed,
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                but only 0.0pt found.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                I'll enlarge \headheight, for further
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                processing, but you should do this yourself,
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                e.g., setting geometry's option
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                `head=12.0pt'.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                I'll also decrease \topmargin on input line 4
+INFO:pdf-export:latexmk: 81.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Overfull \vbox (12.0pt too high) has occurred while \output is active [2]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd)
+INFO:pdf-export:latexmk: Underfull \hbox (badness 5771) in paragraph at lines 509--521
+INFO:pdf-export:latexmk: \T1/ppl/m/n/10 (+20) To con-vert to pdf run - \T1/cmtt/m/n/10 nbpublish -pdf -l
+INFO:pdf-export:latexmk: b Example.ipynb --pdf-debug --clear-files \T1/ppl/m/n/10 (+20) -
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Underfull \hbox (badness 10000) in paragraph at lines 509--521
+INFO:pdf-export:latexmk: \T1/cmtt/m/n/10 nbpublish -pdf -lb -f latex_ipypublish_nocode Example.ipynb --p
+INFO:pdf-export:latexmk: df-debug  --clear-files
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ppl.fd) [3] [4]
+INFO:pdf-export:latexmk: [5] [6] [7] [8]
+INFO:pdf-export:latexmk: Overfull \hbox (9.49997pt too wide) in paragraph at lines 657--657
+INFO:pdf-export:latexmk: []
+INFO:pdf-export:latexmk: [9] [10 <./Example_files/output_25_0.png> <./Example_files/output_26_0.png>]
+INFO:pdf-export:latexmk: [11 <./Example_files/output_27_0.png>]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmtt.fd) [12 <./Example_f
+INFO:pdf-export:latexmk: iles/output_28_0.png>] [13 <./Example_files/output_34_0.png> <./Example_files/o
+INFO:pdf-export:latexmk: utput_36_0.png>] [14] [15] (./Example.bbl [16]) [17] (./Example.aux)
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Package rerunfilecheck Warning: File `Example.out' has changed.
+INFO:pdf-export:latexmk: (rerunfilecheck)                Rerun to get outlines right
+INFO:pdf-export:latexmk: (rerunfilecheck)                or use package `bookmark'.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: )
+INFO:pdf-export:latexmk: (see the transcript file for additional information){/usr/local/texlive/2018/te
+INFO:pdf-export:latexmk: xmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2018/tex
+INFO:pdf-export:latexmk: mf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/e
+INFO:pdf-export:latexmk: nc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/typ
+INFO:pdf-export:latexmk: e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+INFO:pdf-export:latexmk: 1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+INFO:pdf-export:latexmk: public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+INFO:pdf-export:latexmk: ublic/mathpazo/fplmri.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+INFO:pdf-export:latexmk: c/cm-super/sfsx1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+INFO:pdf-export:latexmk: cm-super/sfsx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
+INFO:pdf-export:latexmk: -super/sfsx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-s
+INFO:pdf-export:latexmk: uper/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/
+INFO:pdf-export:latexmk: uplb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplbi8a
+INFO:pdf-export:latexmk: .pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></
+INFO:pdf-export:latexmk: usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/loc
+INFO:pdf-export:latexmk: al/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+INFO:pdf-export:latexmk: Output written on Example.pdf (17 pages, 922193 bytes).
+INFO:pdf-export:latexmk: Transcript written on Example.log.
+INFO:pdf-export:latexmk: Latexmk: Found input bbl file 'Example.bbl'
+INFO:pdf-export:latexmk: Latexmk: References changed.
+INFO:pdf-export:latexmk: Latexmk: References changed.
+INFO:pdf-export:latexmk: Latexmk: Log file says output to 'Example.pdf'
+INFO:pdf-export:latexmk: === TeX engine is 'pdfTeX'
+INFO:pdf-export:latexmk: Latexmk: Found bibliography file(s) [Example_files/example.bib]
+INFO:pdf-export:latexmk: Rule 'bibtex Example': File changes, etc:
+INFO:pdf-export:latexmk: Changed files, or newly in use since previous run(s):
+INFO:pdf-export:latexmk: 'Example.aux'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Run number 1 of rule 'bibtex Example'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Running 'bibtex  "Example"'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Latexmk: applying rule 'bibtex Example'...
+INFO:pdf-export:latexmk: For rule 'bibtex Example', running '&run_bibtex(  )' ...
+INFO:pdf-export:latexmk: This is BibTeX, Version 0.99d (TeX Live 2018)
+INFO:pdf-export:latexmk: The top-level auxiliary file: Example.aux
+INFO:pdf-export:latexmk: The style file: unsrtnat.bst
+INFO:pdf-export:latexmk: Database file #1: Example_files/example.bib
+INFO:pdf-export:latexmk: Rule 'pdflatex': File changes, etc:
+INFO:pdf-export:latexmk: Changed files, or newly in use since previous run(s):
+INFO:pdf-export:latexmk: 'Example.aux'
+INFO:pdf-export:latexmk: 'Example.out'
+INFO:pdf-export:latexmk: 'Example.toc'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Run number 2 of rule 'pdflatex'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Running 'pdflatex  -recorder  "/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example.tex"'
+INFO:pdf-export:latexmk: ------------
+INFO:pdf-export:latexmk: Latexmk: applying rule 'pdflatex'...
+INFO:pdf-export:latexmk: This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+INFO:pdf-export:latexmk: restricted \write18 enabled.
+INFO:pdf-export:latexmk: entering extended mode
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: (/Users/rui.benfeitas/OneDrive/WORK/GitHub/CLEAN_REPO/Reports/converted/Example
+INFO:pdf-export:latexmk: .tex
+INFO:pdf-export:latexmk: LaTeX2e <2018-04-01> patch level 2
+INFO:pdf-export:latexmk: Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
+INFO:pdf-export:latexmk: Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize10pt.clo)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/british.ldf
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)))))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathpazo.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/trimclip.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/collectbox/collectbox.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/enumerate.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+INFO:pdf-export:latexmk: For additional information on amsmath, use the `?' option.
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/eurosym/eurosym.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/ucs.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/data/uni-global.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/utf8x.def))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+INFO:pdf-export:latexmk: Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
+INFO:pdf-export:latexmk: <2008/02/07> (tvz))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grffile.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty))))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/translations/translations.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/todonotes/todonotes.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+INFO:pdf-export:latexmk: x
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+INFO:pdf-export:latexmk: sts.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+INFO:pdf-export:latexmk: ode.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+INFO:pdf-export:latexmk: ef
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+INFO:pdf-export:latexmk: df.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+INFO:pdf-export:latexmk: code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+INFO:pdf-export:latexmk: )
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+INFO:pdf-export:latexmk: tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+INFO:pdf-export:latexmk: nometric.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+INFO:pdf-export:latexmk: m.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+INFO:pdf-export:latexmk: rison.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+INFO:pdf-export:latexmk: code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+INFO:pdf-export:latexmk: erarithmetics.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+INFO:pdf-export:latexmk: )
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+INFO:pdf-export:latexmk: ruct.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+INFO:pdf-export:latexmk: .code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+INFO:pdf-export:latexmk: ate.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+INFO:pdf-export:latexmk: ations.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+INFO:pdf-export:latexmk: ode.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+INFO:pdf-export:latexmk: ssing.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+INFO:pdf-export:latexmk: e.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+INFO:pdf-export:latexmk: code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+INFO:pdf-export:latexmk: de.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+INFO:pdf-export:latexmk: ncy.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+INFO:pdf-export:latexmk: code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+INFO:pdf-export:latexmk: tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+INFO:pdf-export:latexmk: -0-65.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+INFO:pdf-export:latexmk: -1-18.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+INFO:pdf-export:latexmk: ) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+INFO:pdf-export:latexmk: e.tex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+INFO:pdf-export:latexmk: dlers.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+INFO:pdf-export:latexmk: e.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+INFO:pdf-export:latexmk: s/tikzlibrarytopaths.code.tex)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+INFO:pdf-export:latexmk: s/tikzlibrarypositioning.code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/chngcntr/chngcntr.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlayer.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/doi/doi.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/newfloat.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/mdframed.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def)))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/needspace/needspace.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/md-frame-1.mdf))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty)
+INFO:pdf-export:latexmk: (./Example.aux) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1ppl.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INFO:pdf-export:latexmk: [Loading MPS to PDF converter (version 2006.09.02).]
+INFO:pdf-export:latexmk: ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/ucsencs.def)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+INFO:pdf-export:latexmk: (./Example.out) (./Example.out)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/translations/translations-basic-d
+INFO:pdf-export:latexmk: ictionary-english.trsl)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-ppl.cfg)
+INFO:pdf-export:latexmk: ABD: EveryShipout initializing macros
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Package scrlayer-scrpage Warning: Very small head height detected!
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                Using scrlayer-scrpage the head height
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                should be at least \baselineskip, which is
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                12.0pt currently.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                But head height is currently 0.0pt only.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                You may use
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                geometry option `head=12.0pt'
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                \relax to avoid this warning.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: *geometry* driver: auto-detecting
+INFO:pdf-export:latexmk: *geometry* detected driver: pdftex
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlzplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omszplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxzplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1zplm.fd)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/usr/loc
+INFO:pdf-export:latexmk: al/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd) (./Example.toc)
+INFO:pdf-export:latexmk: (./Example.lof) (./Example.lot)
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Class scrartcl Warning: \float@listhead detected!
+INFO:pdf-export:latexmk: (scrartcl)              Implementation of \float@listhead became
+INFO:pdf-export:latexmk: (scrartcl)              deprecated in KOMA-Script v3.01 2008/11/14 and
+INFO:pdf-export:latexmk: (scrartcl)              has been replaced by several more flexible
+INFO:pdf-export:latexmk: (scrartcl)              features of package `tocbasic`.
+INFO:pdf-export:latexmk: (scrartcl)              Maybe implementation of \float@listhead will
+INFO:pdf-export:latexmk: (scrartcl)              be removed from KOMA-Script soon.
+INFO:pdf-export:latexmk: (scrartcl)              Loading of package `scrhack' may help to
+INFO:pdf-export:latexmk: (scrartcl)              avoid this warning, if you are using a
+INFO:pdf-export:latexmk: (scrartcl)              a package that still implements the
+INFO:pdf-export:latexmk: (scrartcl)              deprecated \float@listhead interface  on input line 477
+INFO:pdf-export:latexmk: .
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: (./Example.frm)
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Package scrlayer-scrpage Warning: \headheight to low.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                At least 12.0pt needed,
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                but only 0.0pt found.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                I'll enlarge \headheight, for further
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                processing, but you should do this yourself,
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                e.g., setting geometry's option
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                `head=12.0pt'.
+INFO:pdf-export:latexmk: (scrlayer-scrpage)                I'll also decrease \topmargin on input line 4
+INFO:pdf-export:latexmk: 81.
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Overfull \vbox (12.0pt too high) has occurred while \output is active [2]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd)
+INFO:pdf-export:latexmk: Underfull \hbox (badness 5771) in paragraph at lines 509--521
+INFO:pdf-export:latexmk: \T1/ppl/m/n/10 (+20) To con-vert to pdf run - \T1/cmtt/m/n/10 nbpublish -pdf -l
+INFO:pdf-export:latexmk: b Example.ipynb --pdf-debug --clear-files \T1/ppl/m/n/10 (+20) -
+INFO:pdf-export:latexmk: 
+INFO:pdf-export:latexmk: Underfull \hbox (badness 10000) in paragraph at lines 509--521
+INFO:pdf-export:latexmk: \T1/cmtt/m/n/10 nbpublish -pdf -lb -f latex_ipypublish_nocode Example.ipynb --p
+INFO:pdf-export:latexmk: df-debug  --clear-files
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ppl.fd) [3] [4]
+INFO:pdf-export:latexmk: [5] [6] [7] [8]
+INFO:pdf-export:latexmk: Overfull \hbox (9.49997pt too wide) in paragraph at lines 657--657
+INFO:pdf-export:latexmk: []
+INFO:pdf-export:latexmk: [9] [10 <./Example_files/output_25_0.png> <./Example_files/output_26_0.png>]
+INFO:pdf-export:latexmk: [11 <./Example_files/output_27_0.png>]
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty)
+INFO:pdf-export:latexmk: (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmtt.fd) [12 <./Example_f
+INFO:pdf-export:latexmk: iles/output_28_0.png>] [13 <./Example_files/output_34_0.png> <./Example_files/o
+INFO:pdf-export:latexmk: utput_36_0.png>] [14] [15] (./Example.bbl [16]) [17] (./Example.aux) )
+INFO:pdf-export:latexmk: (see the transcript file for additional information){/usr/local/texlive/2018/te
+INFO:pdf-export:latexmk: xmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2018/tex
+INFO:pdf-export:latexmk: mf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/e
+INFO:pdf-export:latexmk: nc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/typ
+INFO:pdf-export:latexmk: e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+INFO:pdf-export:latexmk: 1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+INFO:pdf-export:latexmk: public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+INFO:pdf-export:latexmk: ublic/mathpazo/fplmri.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+INFO:pdf-export:latexmk: c/cm-super/sfsx1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+INFO:pdf-export:latexmk: cm-super/sfsx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
+INFO:pdf-export:latexmk: -super/sfsx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-s
+INFO:pdf-export:latexmk: uper/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/
+INFO:pdf-export:latexmk: uplb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplbi8a
+INFO:pdf-export:latexmk: .pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></
+INFO:pdf-export:latexmk: usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/loc
+INFO:pdf-export:latexmk: al/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+INFO:pdf-export:latexmk: Output written on Example.pdf (17 pages, 922275 bytes).
+INFO:pdf-export:latexmk: Transcript written on Example.log.
+INFO:pdf-export:latexmk: Latexmk: Found input bbl file 'Example.bbl'
+INFO:pdf-export:latexmk: Latexmk: Log file says output to 'Example.pdf'
+INFO:pdf-export:latexmk: === TeX engine is 'pdfTeX'
+INFO:pdf-export:latexmk: Latexmk: Found bibliography file(s) [Example_files/example.bib]
+INFO:pdf-export:latexmk: Latexmk: All targets (Example.pdf) are up-to-date
+INFO:pdf-export:pdf conversion complete
+INFO:ipypublish:process finished successfully

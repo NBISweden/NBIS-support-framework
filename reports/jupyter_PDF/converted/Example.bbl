@@ -1,0 +1,67 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Rolland et~al.(2014)Rolland, Tasan, Charloteaux, Pevzner, Zhong,
+  Sahni, Yi, Lemmens, Fontanillo, Mosca, Kamburov, Ghiassian, Yang, Ghamsari,
+  Balcha, Begg, Braun, Brehme, Broly, Carvunis, Convery-Zupan, Corominas,
+  Coulombe-Huntington, Dann, Dreze, Dricot, Fan, Franzosa, Gebreab, Gutierrez,
+  Hardy, Jin, Kang, Kiros, Lin, Luck, MacWilliams, Menche, Murray, Palagi,
+  Poulin, Rambout, Rasla, Reichert, Romero, Ruyssinck, Sahalie, Scholz, Shah,
+  Sharma, Shen, Spirohn, Tam, Tejeda, Trigg, Twizere, Vega, Walsh, Cusick, Xia,
+  Barabasi, Iakoucheva, Aloy, De~Las~Rivas, Tavernier, Calderwood, Hill, Hao,
+  Roth, and Vidal]{rolland_proteome-scale_2014}
+T.~Rolland, M.~Tasan, B.~Charloteaux, S.~J. Pevzner, Q.~Zhong, N.~Sahni, S.~Yi,
+  I.~Lemmens, C.~Fontanillo, R.~Mosca, A.~Kamburov, S.~D. Ghiassian, X.~Yang,
+  L.~Ghamsari, D.~Balcha, B.~E. Begg, P.~Braun, M.~Brehme, M.~P. Broly, A.~R.
+  Carvunis, D.~Convery-Zupan, R.~Corominas, J.~Coulombe-Huntington, E.~Dann,
+  M.~Dreze, A.~Dricot, C.~Fan, E.~Franzosa, F.~Gebreab, B.~J. Gutierrez, M.~F.
+  Hardy, M.~Jin, S.~Kang, R.~Kiros, G.~N. Lin, K.~Luck, A.~MacWilliams,
+  J.~Menche, R.~R. Murray, A.~Palagi, M.~M. Poulin, X.~Rambout, J.~Rasla,
+  P.~Reichert, V.~Romero, E.~Ruyssinck, J.~M. Sahalie, A.~Scholz, A.~A. Shah,
+  A.~Sharma, Y.~Shen, K.~Spirohn, S.~Tam, A.~O. Tejeda, S.~A. Trigg, J.~C.
+  Twizere, K.~Vega, J.~Walsh, M.~E. Cusick, Y.~Xia, A.~L. Barabasi, L.~M.
+  Iakoucheva, P.~Aloy, J.~De~Las~Rivas, J.~Tavernier, M.~A. Calderwood, D.~E.
+  Hill, T.~Hao, F.~P. Roth, and M.~Vidal.
+\newblock A proteome-scale map of the human interactome network.
+\newblock \emph{Cell}, 159\penalty0 (5):\penalty0 1212--26, November 2014.
+\newblock ISSN 1097-4172 (Electronic) 0092-8674 (Linking).
+\newblock \doi{10.1016/j.cell.2014.10.050}.
+
+\bibitem[Thul et~al.(2017)Thul, Akesson, Wiking, Mahdessian, Geladaki,
+  Ait~Blal, Alm, Asplund, Bjork, Breckels, Backstrom, Danielsson, Fagerberg,
+  Fall, Gatto, Gnann, Hober, Hjelmare, Johansson, Lee, Lindskog, Mulder,
+  Mulvey, Nilsson, Oksvold, Rockberg, Schutten, Schwenk, Sivertsson, Sjostedt,
+  Skogs, Stadler, Sullivan, Tegel, Winsnes, Zhang, Zwahlen, Mardinoglu, Ponten,
+  von Feilitzen, Lilley, Uhlen, and Lundberg]{thul_subcellular_2017}
+P.~J. Thul, L.~Akesson, M.~Wiking, D.~Mahdessian, A.~Geladaki, H.~Ait~Blal,
+  T.~Alm, A.~Asplund, L.~Bjork, L.~M. Breckels, A.~Backstrom, F.~Danielsson,
+  L.~Fagerberg, J.~Fall, L.~Gatto, C.~Gnann, S.~Hober, M.~Hjelmare,
+  F.~Johansson, S.~Lee, C.~Lindskog, J.~Mulder, C.~M. Mulvey, P.~Nilsson,
+  P.~Oksvold, J.~Rockberg, R.~Schutten, J.~M. Schwenk, A.~Sivertsson,
+  E.~Sjostedt, M.~Skogs, C.~Stadler, D.~P. Sullivan, H.~Tegel, C.~Winsnes,
+  C.~Zhang, M.~Zwahlen, A.~Mardinoglu, F.~Ponten, K.~von Feilitzen, K.~S.
+  Lilley, M.~Uhlen, and E.~Lundberg.
+\newblock A subcellular map of the human proteome.
+\newblock \emph{Science}, 356\penalty0 (6340), May 2017.
+\newblock ISSN 1095-9203 (Electronic) 0036-8075 (Linking).
+\newblock \doi{10.1126/science.aal3321}.
+
+\bibitem[Uhlen et~al.(2017)Uhlen, Zhang, Lee, Sjostedt, Fagerberg, Bidkhori,
+  Benfeitas, Arif, Liu, Edfors, Sanli, von Feilitzen, Oksvold, Lundberg, Hober,
+  Nilsson, Mattsson, Schwenk, Brunnstrom, Glimelius, Sjoblom, Edqvist,
+  Djureinovic, Micke, Lindskog, Mardinoglu, and Ponten]{uhlen_pathology_2017}
+M.~Uhlen, C.~Zhang, S.~Lee, E.~Sjostedt, L.~Fagerberg, G.~Bidkhori,
+  R.~Benfeitas, M.~Arif, Z.~Liu, F.~Edfors, K.~Sanli, K.~von Feilitzen,
+  P.~Oksvold, E.~Lundberg, S.~Hober, P.~Nilsson, J.~Mattsson, J.~M. Schwenk,
+  H.~Brunnstrom, B.~Glimelius, T.~Sjoblom, P.~H. Edqvist, D.~Djureinovic,
+  P.~Micke, C.~Lindskog, A.~Mardinoglu, and F.~Ponten.
+\newblock A pathology atlas of the human cancer transcriptome.
+\newblock \emph{Science}, 357\penalty0 (6352), August 2017.
+\newblock ISSN 1095-9203 (Electronic) 0036-8075 (Linking).
+\newblock \doi{10.1126/science.aan2507}.
+
+\end{thebibliography}

@@ -11,6 +11,10 @@ information][report-info] that has to be included.
 `knitr-pdf/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
 can easily to compiled into a nice-looking PDF document.
 
+**jupyter-PDF** \
+An example jupyter notebook is included with details on how to convert it to 
+pdf using ipypublish and nbconvert. Note that this requires a LaTeX installation.
+
 ## Common files
 
 Some files common to all templates are also included, such as NBIS and SciLife
