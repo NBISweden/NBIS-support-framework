@@ -53,7 +53,9 @@ The last step is to install the Conda environment. The NBIS-SF contains a
 Conda environment file with some of the more "standard" HTS-software packages,
 such as `FastQC` and `samtools`. You can add more packages through `conda
 install <package>` as you need them during the project's lifetime, or directly
-add them to the `environment.yml` file before installation.
+add them to the `environment.yml` file before installation. A local version of
+Conda and all its packages are also kept on Bianca, allowing you to easily
+use Conda both locally and anywhere on Uppmax.
 
 You can change the contents of the provided `environment.yml` file by opening
 it and deleting/adding whatever software is needed for your particular project.
