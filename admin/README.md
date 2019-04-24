@@ -4,7 +4,7 @@ This is the `admin` directory, in which you can find information regarding NBIS
 administrative matter such as consultation guidelines, routines and other
 things.
 
-**General information:**
+### General information
  * The [Redmine issue][redmine-issue] for NBIS-SF is **#4646**
  * NBIS at [GitHub][nbis-github]
  * NBIS at [BitBucket][nbis-bitbucket]
@@ -13,23 +13,23 @@ things.
  * A collection of [NBIS outreach materials][nbis-outreach]
  * User guides for [Uppmax][uppmax-guides]
 
-**Support-related information:**
+### Support-related information
  * [Contract templates][nbis-contract] for short-term projects
  * [Routines][nbis-routines] for short-term projects
  * The long-term support [Wiki][lts-wiki]
  * Brief guidelines for [data management plans][nbis-dmp]
 
-**Teaching and courses:**
+### Teaching and courses:
  * A list of past [NBIS courses][nbis-courses]
  * NBIS course for [reproducible research][rep-res]
 
-**Employment and administration:**
+### Employment and administration
  * [Timelogging examples][nbis-time] for short-term experts
  * Terms for employees at [Stockholm University][admin-su]
  * The SciLifeLab [intranet][scilife-intra]
  * Room booking for [SciLifeLab Solna][scilife-rooms]
 
-**Internal NBIS journal clubs:**
+### Internal NBIS journal clubs
  * [Single-cell RNA-seq][club-scrnaseq]
 
 [*(back to project home directory)*][sf-home]
