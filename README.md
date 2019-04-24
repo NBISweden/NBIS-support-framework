@@ -134,8 +134,9 @@ tmux new
 ./submit-snakemake.sh
 ```
 
-Questions can be sent to [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF])
-or [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
+Questions and feedback can be sent to
+[Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
+[Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
 [conda-home]: https://conda.io/en/latest/
 [conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
