@@ -39,6 +39,7 @@ URL to your new NBISweden GitHub address.
 ```bash
 # Clone the repo into a new project folder
 git clone https://github.com/NBISweden/NBIS-support-framework <project-folder>
+cd <project-folder>
 
 # Change the remote location and push
 git remote set-url origin <new-repo-github-address>
