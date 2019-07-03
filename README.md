@@ -32,20 +32,17 @@ issue is available for the project, name the repo with the issue number, year,
 plus a descriptive name and on the [NBISweden GitHub][nbissweden], *e.g.*
 *4412-18-mast* or *3939-20-ctcf*.
 
-**Mirror the NBIS-SF repository** \
-The next step is to mirror the original NBIS-SF repository at your new project
-location.
+**Copy the NBIS-SF repository to your new project repo** \
+The next step is to clone the original NBIS-SF, followed by changing the remote
+URL to your new NBISweden GitHub address.
 
 ```bash
-# Clone the original repo and mirror it to the new location
-git clone --bare https://github.com/NBISweden/NBIS-support-framework
-cd NBIS-support-framework
-git push --mirror <new-repo-location>
+# Clone the repo into a new project folder
+git clone https://github.com/NBISweden/NBIS-support-framework <project-folder>
 
-# Clone the mirror and delete the original clone
-cd ..
-git clone <new-repo-location>
-rm -rf NBIS-support-framework
+# Change the remote location and push
+git remote set-url origin <new-repo-github-address>
+git push origin master
 ```
 
 **Install the Conda environment** \
