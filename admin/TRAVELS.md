@@ -12,8 +12,8 @@ our travel arrangements related to work through them. You can book your trip
 and hotels through their self booking system as well. Below are the links for
 the employees at Lund  and Stockholm University
 
-* Self-booking system at [Lund University][egencia-lu]
-* Self-booking system at [Stockholm University][egencia-su]
+* Self booking system at [Lund University][egencia-lu]
+* Self booking system at [Stockholm University][egencia-su]
 
 More information about how to book your trip and other related cab be at [Lund][travel-lu]
  and [Stockholm][travel-su] University.
@@ -27,8 +27,8 @@ different procedures. However, Primula is a system used at Lund and Stockholm
 University. This is a page most of the administration related to your employment
 including travels, vacation and many others are managed. Here, you can start
 an issue for each of your travel and upload your tickets to the respective
-issue. The system will them calculate the amount that you will get reimbursed
-and it will beautomatically sent to your financial administrator. However, you
+issue. The system will then calculate the amount that you will get reimbursed
+and it will be automatically sent to your financial administrator. However, you
  need to have a bit more information like the financial account number your
  employment is related to and so on. This you can obtain from your financial
  administrator in your local department. Below are the links for the
