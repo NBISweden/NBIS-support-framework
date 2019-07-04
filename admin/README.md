@@ -12,6 +12,7 @@ things.
  * [Documents and forms][nbis-docs]
  * A collection of [NBIS outreach materials][nbis-outreach]
  * User guides for [Uppmax][uppmax-guides]
+ * User guide to [Slack][sf-slack]
 
 ### Support-related information
  * [Contract templates][nbis-contract] for short-term projects
@@ -46,11 +47,20 @@ things.
  * Room booking for [SciLifeLab Solna][scilife-rooms]
 
 ### Internal NBIS journal clubs
+ * [Integrative Journal Club][club-integrative] - Journal club about Integrative Omics. Requires permission to view. Contact Bengt Sennblad (bengt.sennblad@scilifelab.se) to have access.
+ * DNA club - Open weekly club about various bioinformatic themes. To access please contact dna_club@scilifelab.se
+ * [Non-model organism][club-nonmodel]
  * [Single-cell RNA-seq][club-scrnaseq]
+
+### Policies for going to conferences/travel expenses
+ * NBIS is spread across different parts of Sweden that involves travelling for representation, teaching, staff meetings, retreats *etc*. Travel bookings should follow the instructions from the local employer, *e.g.*, train travel should be preferred over flight when the time difference the two modes of travel is less than 2 hours. The cost of daily meals and local transports and transits should be reimbursed in the form of daily allowance and/or provision of receipts as per local policies.
+ * NBIS allows participation in one international conference per year as a routine for employee's own development. The travel budget should be discussed with the corresponding manager. Apart from one international conference travel, NBIS offers a reasonable degree of freedom and flexibility in local and European conferences and symposia for traning and representation. The cost related to such participation should be discussed with the corresponding manager before the arrangement is made.  
 
 [*(back to project home directory)*][sf-home]
 
 [admin-su]: https://www.su.se/english/staff/personnel/2.258/you-and-your-workplace-1.107592
+[club-integrative]: https://wabi-wiki.scilifelab.se/display/IJC/Integrative+Journal+Club+Home
+[club-nonmodel]: https://wabi-wiki.scilifelab.se/display/NOJC/Non-model+organisms+Journal+Club
 [club-scrnaseq]: https://groups.google.com/a/scilifelab.se/forum/#!forum/lts-scrnaseq
 [conda]: https://conda.io/en/latest/
 [docker]: https://www.docker.com/
@@ -74,6 +84,8 @@ things.
 [scilife-intra]: http://intranet.scilifelab.se/
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
+[sf-slack]: https://github.com/NBISweden/NBIS-support-framework/blob/master/admin/SLACK.md
 [singularity]: https://sylabs.io/singularity/
 [snakemake]: https://snakemake.readthedocs.io/en/stable/
+[uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
