@@ -36,6 +36,9 @@ things.
  * [Non-model organism][club-nonmodel]
  * [Single-cell RNA-seq][club-scrnaseq]
 
+### Policies for going to conferences/travel expenses
+ * NBIS is spread across different parts of Sweden that involves travelling for representation, teaching, staff meetings, retreats *etc*. Travel bookings should follow the instructions from the local employer, *e.g.*, train travel should be preferred over flight when the time difference the two modes of travel is less than 2 hours. The cost of daily meals and local transports and transits should be reimbursed in the form of daily allowance and/or provision of receipts as per local policies.
+ * NBIS allows participation in one international conference per year as a routine for employee's own development. The travel budget should be discussed with the corresponding manager. Apart from one international conference travel, NBIS offers a reasonable degree of freedom and flexibility in local and European conferences and symposia for traning and representation. The cost related to such participation should be discussed with the corresponding manager before the arrangement is made.  
 
 [*(back to project home directory)*][sf-home]
 
