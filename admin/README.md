@@ -42,9 +42,11 @@ things.
 
 ### Employment and administration
  * [Timelogging examples][nbis-time] for short-term experts
- * Terms for employees at [Stockholm University][admin-su]
+ * Terms of employment at [Stockholm University][admin-su]
+ * Terms of employment at [Lund University][admin-lu]
  * The SciLifeLab [intranet][scilife-intra]
  * Room booking for [SciLifeLab Solna][scilife-rooms]
+ * Travel and reimbursement related information [here](TRAVELS.md) 
 
 ### Internal NBIS journal clubs
  * [Integrative Journal Club][club-integrative] - Journal club about Integrative Omics. Requires permission to view. Contact Bengt Sennblad (bengt.sennblad@scilifelab.se) to have access.
@@ -59,6 +61,7 @@ things.
 [*(back to project home directory)*][sf-home]
 
 [admin-su]: https://www.su.se/english/staff/personnel/2.258/you-and-your-workplace-1.107592
+[admin-lu]: https://www.staff.lu.se/employment/terms-of-employment
 [club-integrative]: https://wabi-wiki.scilifelab.se/display/IJC/Integrative+Journal+Club+Home
 [club-nonmodel]: https://wabi-wiki.scilifelab.se/display/NOJC/Non-model+organisms+Journal+Club
 [club-scrnaseq]: https://groups.google.com/a/scilifelab.se/forum/#!forum/lts-scrnaseq
@@ -87,5 +90,4 @@ things.
 [sf-slack]: https://github.com/NBISweden/NBIS-support-framework/blob/master/admin/SLACK.md
 [singularity]: https://sylabs.io/singularity/
 [snakemake]: https://snakemake.readthedocs.io/en/stable/
-[uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
