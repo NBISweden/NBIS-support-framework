@@ -19,9 +19,25 @@ things.
  * The long-term support [Wiki][lts-wiki]
  * Brief guidelines for [data management plans][nbis-dmp]
 
-### Teaching and courses:
+### Resources for reproducible research
+ * [Git][git] is a version control software, allowing you to easily track and
+   store history of code, documents and projects, as well as to collaborate
+   with others
+ * [Conda][conda] is a package management software that allows you to clearly
+   define and install working environments for different projects
+ * [Snakemake][snakemake] and [Nextflow][nextflow] are workflow management
+   systems that can be used to create and run analytical pipelines
+ * [RMarkdown][rmarkdown] and [Jupyter][jupyter] are tools for mixing text and
+   code together to form reports and run analyses
+ * [Docker][docker] and [Singularity][singularity] are container-based tools
+   for building and sharing entire pipelines and analyses in a platform-
+   independent way
+ * NBIS also has a course for [reproducible research][rep-res] that covers
+   these topics in detail, and is a good starting point if you want to learn
+   more about reproducibility and how to achieve it
+
+### Teaching and courses
  * A list of past [NBIS courses][nbis-courses]
- * NBIS course for [reproducible research][rep-res]
 
 ### Employment and administration
  * [Timelogging examples][nbis-time] for short-term experts
@@ -36,6 +52,10 @@ things.
 
 [admin-su]: https://www.su.se/english/staff/personnel/2.258/you-and-your-workplace-1.107592
 [club-scrnaseq]: https://groups.google.com/a/scilifelab.se/forum/#!forum/lts-scrnaseq
+[conda]: https://conda.io/en/latest/
+[docker]: https://www.docker.com/
+[git]: https://git-scm.com/
+[jupyter]: https://jupyter.org/
 [lts-wiki]: https://wabi-wiki.scilifelab.se/display/KB/
 [nbis-bitbucket]: https://bitbucket.org/scilifelab-lts/
 [nbis-contract]: https://github.com/NBISweden/NBIS-templates-contract
@@ -47,9 +67,13 @@ things.
 [nbis-routines]: https://projects.nbis.se/projects/internal-documents/wiki/New_routines_Feb_2018
 [nbis-time]: https://projects.nbis.se/projects/internal-documents/wiki/Time_logging_instructions
 [nbis-web]: https://nbis.se/
+[nextflow]: https://www.nextflow.io/
 [redmine-issue]: https://projects.nbis.se/issues/4646
 [rep-res]: https://nbis-reproducible-research.readthedocs.io/en/latest/tutorial_intro/
+[rmarkdown]: https://rmarkdown.rstudio.com/
 [scilife-intra]: http://intranet.scilifelab.se/
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
+[singularity]: https://sylabs.io/singularity/
+[snakemake]: https://snakemake.readthedocs.io/en/stable/
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
