@@ -53,5 +53,5 @@ things.
 [scilife-intra]: http://intranet.scilifelab.se/
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
-[slack-guides]: https://github.com/NBISweden/NBIS-support/framework/admin/slack-guide.md 
+[slack-guides]: https://github.com/NBISweden/NBIS-support/framework/admin/SLACK.md 
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/

@@ -20,8 +20,8 @@ Other interesting channels relate to specific events and technologies. Examples:
 Feel free to browse the existing channels by pressing *Channels* on the left. All the channels
 that you see can be joined by yourself, or you can invite people to join existing channels.
 
-![menus](menus.png)
-![channels preview](channels.png)
+![menus](img/menu.png)
+![channels preview](img/channels.png)
 
 [intro-slack]: https://get.slack.help/hc/en-us/sections/360000110083-Intro-to-Slack
 [nbis-slack]: https://nbisweden.slack.com  
