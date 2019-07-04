@@ -29,7 +29,7 @@ things.
  * Terms of employment at [Lund University][admin-lu]
  * The SciLifeLab [intranet][scilife-intra]
  * Room booking for [SciLifeLab Solna][scilife-rooms]
- * Travel and reimbursement related information [here](Work_travels.md) 
+ * Travel and reimbursement related information [here](TRAVELS.md) 
 
 ### Internal NBIS journal clubs
  * [Single-cell RNA-seq][club-scrnaseq]
