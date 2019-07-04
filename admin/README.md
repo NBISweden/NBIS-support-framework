@@ -12,6 +12,7 @@ things.
  * [Documents and forms][nbis-docs]
  * A collection of [NBIS outreach materials][nbis-outreach]
  * User guides for [Uppmax][uppmax-guides]
+ * User guide to [Slack][slack-guides]
 
 ### Support-related information
  * [Contract templates][nbis-contract] for short-term projects
@@ -52,4 +53,5 @@ things.
 [scilife-intra]: http://intranet.scilifelab.se/
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
+[slack-guides]: https://github.com/NBISweden/NBIS-support/framework/admin/slack-guide.md 
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
