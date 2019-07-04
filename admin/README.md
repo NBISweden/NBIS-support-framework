@@ -25,9 +25,11 @@ things.
 
 ### Employment and administration
  * [Timelogging examples][nbis-time] for short-term experts
- * Terms for employees at [Stockholm University][admin-su]
+ * Terms of employment at [Stockholm University][admin-su]
+ * Terms of employment at [Lund University][admin-lu]
  * The SciLifeLab [intranet][scilife-intra]
  * Room booking for [SciLifeLab Solna][scilife-rooms]
+ * Travel and reimbursement related information [here](Work_travels.md) 
 
 ### Internal NBIS journal clubs
  * [Single-cell RNA-seq][club-scrnaseq]
@@ -35,6 +37,7 @@ things.
 [*(back to project home directory)*][sf-home]
 
 [admin-su]: https://www.su.se/english/staff/personnel/2.258/you-and-your-workplace-1.107592
+[admin-lu]: https://www.staff.lu.se/employment/terms-of-employment
 [club-scrnaseq]: https://groups.google.com/a/scilifelab.se/forum/#!forum/lts-scrnaseq
 [lts-wiki]: https://wabi-wiki.scilifelab.se/display/KB/
 [nbis-bitbucket]: https://bitbucket.org/scilifelab-lts/
