@@ -12,6 +12,7 @@ things.
  * [Documents and forms][nbis-docs]
  * A collection of [NBIS outreach materials][nbis-outreach]
  * User guides for [Uppmax][uppmax-guides]
+ * User guide to [Slack][sf-slack]
 
 ### Support-related information
  * [Contract templates][nbis-contract] for short-term projects
@@ -30,6 +31,9 @@ things.
  * Room booking for [SciLifeLab Solna][scilife-rooms]
 
 ### Internal NBIS journal clubs
+ * [Integrative Journal Club][club-integrative] - Journal club about Integrative Omics. Requires permission to view. Contact Bengt Sennblad (bengt.sennblad@scilifelab.se) to have access.
+ * DNA club - Open weekly club about various bioinformatic themes. To access please contact dna_club@scilifelab.se
+ * [Non-model organism][club-nonmodel]
  * [Single-cell RNA-seq][club-scrnaseq]
 
 ### Policies for going to conferences/travel expenses
@@ -39,6 +43,8 @@ things.
 [*(back to project home directory)*][sf-home]
 
 [admin-su]: https://www.su.se/english/staff/personnel/2.258/you-and-your-workplace-1.107592
+[club-integrative]: https://wabi-wiki.scilifelab.se/display/IJC/Integrative+Journal+Club+Home
+[club-nonmodel]: https://wabi-wiki.scilifelab.se/display/NOJC/Non-model+organisms+Journal+Club
 [club-scrnaseq]: https://groups.google.com/a/scilifelab.se/forum/#!forum/lts-scrnaseq
 [lts-wiki]: https://wabi-wiki.scilifelab.se/display/KB/
 [nbis-bitbucket]: https://bitbucket.org/scilifelab-lts/
@@ -56,4 +62,5 @@ things.
 [scilife-intra]: http://intranet.scilifelab.se/
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
+[sf-slack]: https://github.com/NBISweden/NBIS-support-framework/blob/master/admin/SLACK.md
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
