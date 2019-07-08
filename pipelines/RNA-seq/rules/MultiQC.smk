@@ -1,7 +1,7 @@
 # Rule: collate MultiQC report
 rule MultiQC:
     input:
-        expand(fastqcdir + "{sample}/{fastq}_fastqc.zip", zip, sample=fastq_samples, fastq=fastq_files),
+        expand(fastqcdir + "{fastq}/{fastq}_fastqc.zip", fastq=fastq_files),
         expand(aligndir + "{sample}/{sample}.bam", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.bam_stat.txt", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.geneBodyCoverage.txt", sample=samples),
