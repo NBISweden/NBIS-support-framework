@@ -46,12 +46,23 @@ git remote set-url origin <new-repo-github-address>
 git push origin master
 ```
 
+## Contributing
+
+All contributions are welcome, small and large! The central idea behind NBIS-SF
+is to develop an up-to-date framework for NBIS support projects, to share
+knowledge and to streamline common bioinformatics tasks. Anybody working at
+NBIS is welcome to contribute to the repo with their own templates, rules and
+code. NBIS-SF should be modular, so that anybody can pick and choose among all
+modules which are most appropriate for the project at hand. If you want to
+contribute something, please see the [CONTRIBUTING.md][sf-contribute] file.
+
 Questions and feedback can be sent to
 [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
 [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
 [nbissweden]: https://github.com/NBISweden
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
+[sf-contribute]: https://github.com/NBISweden/NBIS-support-framework/blob/master/CONTRIBUTING.md
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
 [sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/doc/data-management
 [sf-pipelines]: https://github.com/NBISweden/NBIS-support-framework/tree/master/pipelines
