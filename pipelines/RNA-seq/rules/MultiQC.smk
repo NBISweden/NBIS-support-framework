@@ -9,7 +9,8 @@ rule MultiQC:
         expand(rseqcdir + "{sample}/{sample}.infer_experiment.txt", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.junction_saturation.txt", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.read_distribution.txt", sample=samples),
-        expand(rseqcdir + "{sample}/{sample}.tin.xls", sample=samples)
+        expand(rseqcdir + "{sample}/{sample}.tin.xls", sample=samples),
+        expand(countdir + "{sample}/{sample}.gene-counts.txt", sample=samples)
     output:
         multiqcdir + "multiqc_report.html"
     log:
