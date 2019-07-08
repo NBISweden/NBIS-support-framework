@@ -21,7 +21,7 @@ You can read more about the separate sections here:
  * [Raw data][sf-data] and [temporary files][sf-scratch]
  * [Report templates][sf-report]
  * [Results and analyses][sf-results]
- * [Workflows and Snakemake rules][sf-rules]
+ * [Workflows and pipelines][sf-pipelines]
  * [Data management][sf-dmp] and [administrative matters][sf-admin]
 
 ## Setup
@@ -46,104 +46,15 @@ git remote set-url origin <new-repo-github-address>
 git push origin master
 ```
 
-**Install the Conda environment** \
-The last step is to install the Conda environment. The NBIS-SF contains a
-Conda environment file with some of the more "standard" HTS-software packages,
-such as `FastQC` and `samtools`. You can add more packages through `conda
-install <package>` as you need them during the project's lifetime, or directly
-add them to the `environment.yml` file before installation. A local version of
-Conda and all its packages are also kept on Bianca, allowing you to easily
-use Conda both locally and anywhere on Uppmax.
-
-You can change the contents of the provided `environment.yml` file by opening
-it and deleting/adding whatever software is needed for your particular project.
-It lists all software and what they are used for, so that you may adapt it for
-your specific needs.
-
-```bash
-module load conda
-conda env create --prefix <env-name> --file environment.yml
-conda activate <env-name>
-```
-
-Git is set to ignore any directory ending in `-env`; only the `environment.yml`
-file is needed to reproduce the workspace environment (given platform-specific
-caveats, of course).
-
-## Running with Snakemake
-
-[Snakemake][snakemake-home] is a workflow management system which can easily be
-run on Uppmax. A main file containing the overall workflow is provided in
-`Snakefile`, and modularised rules can be found in the `rules/` directory. In
-order to correctly run the workflow, there are a number of steps you need to
-perform.
-
-**Change the `config.yml` file** \
-The first step is to change the paths and directories in the configuration
-file. You should, for example, change the `datadir: "data/test-data/fastq"` to
-point to wherever your raw FASTQ files are stored. You may also wish to change
-the index location(s) through either absolute paths or by using symbolic links 
-(*e.g.* `REF: "data/idx/genome.fa"` or `STAR_REF: "data/idx/STARIndex/"`).
-
-**Configure the desired outputs** \
-The second step is to edit the `Snakefile` to specify your desired outputs. The
-simple pipeline provided out-of-the-box includes alignment with *STAR* (either
-paired- or single-end data), quality controls of both raw and aligned data
-(*FastQC* and *RSeqC*, respectively) and a *MultiQC* report of the QC data.
-If you desire all of these outputs you do not need to change anything else.
-If you only want some FASTQ quality metrics, however, you can change the
-`MultiQC` rule, like so:
-
-```python
-rule MultiQC:
-    input:
-        expand(fastqcdir + "{fastq}_fastqc.zip", zip, sample=fastq_samples,
-               fastq=fastq_files)
-    output:
-        ...
-```
-
-**Run the pipeline locally** \
-If you want to run the pipeline locally, simply make sure you've activated the
-Conda environment (`conda activate <env-name>`) and run `snakemake`. You
-should, however, perform a dry-run with `snakemake -n` first, which allows you
-to inspect what Snakemake will attempt to do for you.
-
-**Run the pipeline on Uppmax** \
-If you want to run the pipeline on the Uppmax cluster, you first need to change
-the cluster configuration information. This includes things such as the account
-to use when submitting to SLURM (*i.e.* change `account: 'snic2017-7-343'`) or
-how many cores to use (`partition: 'devel'`). You can also add rule-specific
-configurations:
-
-```bash
-STAR-PE:
-    ntasks: 8
-    time: '00:30:00'
-```
-
-You will then want to run a terminal session through *e.g.* `tmux`, because
-Snakemake will continuously monitor the job queue and what parts of the
-pipeline that have been successfully run. This can be run on the login-nodes,
-however, making the final step of running the submission-wrapper easy:
-
-```bash
-tmux new
-./submit-snakemake.sh
-```
-
 Questions and feedback can be sent to
 [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
 [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
-[conda-home]: https://conda.io/en/latest/
-[conda-install]: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 [nbissweden]: https://github.com/NBISweden
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
 [sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/doc/data-management
+[sf-pipelines]: https://github.com/NBISweden/NBIS-support-framework/tree/master/pipelines
 [sf-report]: https://github.com/NBISweden/NBIS-support-framework/tree/master/reports
 [sf-results]: https://github.com/NBISweden/NBIS-support-framework/tree/master/results
-[sf-rules]: https://github.com/NBISweden/NBIS-support-framework/tree/master/rules
 [sf-scratch]: https://github.com/NBISweden/NBIS-support-framework/tree/master/scratch
-[snakemake-home]: https://snakemake.readthedocs.io/en/stable/
