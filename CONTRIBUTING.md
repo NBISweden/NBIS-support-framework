@@ -1,12 +1,5 @@
 # Contributing to NBIS-SF
 
-The central idea behind this repository is to develop an up-to-date framework 
-for NBIS support projects, to share knowledge and to streamline common
-bioinformatics tasks. Anybody working at NBIS is welcome to contribute to
-the repo with their own templates, rules and code. NBIS-SF should be modular,
-so that anybody can pick and choose among all modules which are most appropriate
-for the project at hand.
-
 To contribute, first create a new feature branch to work on. The `master`
 branch should always be deployable, and any new feature should ideally have
 been tested before merging it into master. 
