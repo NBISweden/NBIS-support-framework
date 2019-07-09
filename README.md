@@ -26,25 +26,14 @@ You can read more about the separate sections here:
 
 ## Setup
 
-**Create a project repo at NBISweden** \
-First create an empty GitHub repository that you wish to work on. If a Redmine
-issue is available for the project, name the repo with the issue number, year,
-plus a descriptive name and on the [NBISweden GitHub][nbissweden], *e.g.*
-*4412-18-mast* or *3939-20-ctcf*.
-
-**Copy the NBIS-SF repository to your new project repo** \
-The next step is to clone the original NBIS-SF, followed by changing the remote
-URL to your new NBISweden GitHub address.
-
-```bash
-# Clone the repo into a new project folder
-git clone https://github.com/NBISweden/NBIS-support-framework <project-folder>
-cd <project-folder>
-
-# Change the remote location and push
-git remote set-url origin <new-repo-github-address>
-git push origin master
-```
+**Create a project repo at NBISweden using NBIS-SF as template** \
+First create a new repository for your project by using NBIS-SF as a template.
+You can do this directly from the NBIS-SF GitHub by pressing the *"Use this
+template"* button. This will take you through the creation of your new repo
+like normal, but it will contain all the content currently available on NBIS-SF
+in a single, initial commit. Name your new repository with the Redmine issue
+number, year plus a descriptive name and on the [NBISweden GitHub][nbissweden],
+*e.g.* *4412-18-mast* or *3939-20-ctcf*.
 
 **Install the Conda environment** \
 The last step is to install the Conda environment. The NBIS-SF contains a
