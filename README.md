@@ -33,7 +33,8 @@ template"* button. This will take you through the creation of your new repo
 like normal, but it will contain all the content currently available on NBIS-SF
 in a single, initial commit. Name your new repository with the Redmine issue
 number, year plus a descriptive name and on the [NBISweden GitHub][nbissweden],
-*e.g.* *4412-18-mast* or *3939-20-ctcf*.
+*e.g.* *4412-18-mast* or *3939-20-ctcf*. You can then clone your new repository
+like you would normally.
 
 **Install the Conda environment** \
 The last step is to install the Conda environment. The NBIS-SF contains a
