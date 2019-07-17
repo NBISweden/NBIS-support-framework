@@ -6,6 +6,7 @@ configfile: "config.yml"
 # Paths
 datadir = config["datadir"]
 fastqcdir = config["fastqcdir"]
+sortmernadir = config["sortmernadir"]
 aligndir = config["aligndir"]
 rseqcdir = config["rseqcdir"]
 countdir = config["countdir"]
@@ -24,10 +25,11 @@ samples = list(set(samples))
 
 # Include external rules
 include: "rules/FastQC.smk"
-include: "rules/STAR-PE.smk"
-include: "rules/RSeqC.smk"
 include: "rules/featureCounts.smk"
 include: "rules/MultiQC.smk"
+include: "rules/RSeqC.smk"
+include: "rules/SortMeRNA.smk"
+include: "rules/STAR-PE.smk"
 
 # Rule: final output and cleanup
 rule all:

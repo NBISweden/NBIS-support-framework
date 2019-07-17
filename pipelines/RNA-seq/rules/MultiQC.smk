@@ -2,6 +2,7 @@
 rule MultiQC:
     input:
         expand(fastqcdir + "{fastq}/{fastq}_fastqc.zip", fastq=fastq_files),
+        expand(sortmernadir + "stats.{fastq}.txt", fastq=fastq_files),
         expand(aligndir + "{sample}/{sample}.bam", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.bam_stat.txt", sample=samples),
         expand(rseqcdir + "{sample}/{sample}.geneBodyCoverage.txt",
