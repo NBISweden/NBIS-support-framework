@@ -26,6 +26,10 @@ This rule runs [RSeqC][rseqc-home] on aligned data in the `.bam` format,
 such as out the output of the STAR-rule; the output is
 `results/rseqc/<sample>/` by default.
 
+**featureCounts.smk** \
+This rule performs gene counting with [featureCounts][featurecounts-home] at
+the exon-level; the output is in `results/counts/` by default.
+
 **MultiQC.smk** \
 This rule runs [MultiQC][mqc-home] and collects all the quality metrics from
 the previous steps in this pipeline; the output is in `results/multiqc/` by
@@ -117,6 +121,7 @@ tmux new
 
 [conda-home]: https://conda.io/en/latest/
 [fastqc-home]: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+[featurecounts-home]: http://bioinf.wehi.edu.au/featureCounts/
 [mqc-home]: https://multiqc.info/
 [rseqc-home]: http://rseqc.sourceforge.net/
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
