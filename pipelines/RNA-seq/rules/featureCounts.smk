@@ -7,7 +7,7 @@ rule featureCounts:
     params:
         gtf = config["REF_GTF"]
     log:
-        countdir + "{sample}/logs/log.{sample}.featureCounts.txt"
+        countdir + "{sample}/log.{sample}.featureCounts.txt"
     shell:
         """
         # Count reads
@@ -22,13 +22,24 @@ rule featureCounts:
             {input} \
                 > {log} 2>&1
 
-        # Fix header
-        bash scripts/fix-count-header.sh \
-            {output} \
-            1,7,8 \
-            ENSGID \
-            {output}.tmp \
-                2> {log}
+        # Get new header
+        HEADER=$(tail -n +2 {output} | head -1 \
+            | cut -f 1,7,8 \
+            | tr '\t' '\n' \
+            | sed "s/Geneid/ENSGID/g" \
+            | sed 's/gene_name/gene/g' \
+            | sed 's/.*\///g' \
+            | sed 's/\.bam//g' \
+            | xargs \
+            | tr ' ' '\t') \
+                2>> {log}
+
+        # Set the new header
+        cat <(echo "$HEADER") \
+            <(tail -n +3 {output} \
+                | cut -f 1,7,8) \
+            > {output}.tmp \
+                2>> {log}
         mv {output}.tmp {output}
         """
 
@@ -53,12 +64,13 @@ rule collect_counts:
                 <(cat "$FILE" | cut -f 1,3) \
                 > {output}.new
             mv {output}.new {output}.joined
-        done 2> {log}
+        done 2>> {log}
 
         # Finalise output and remove intermediate files
         cat {output}.joined \
             | tr ' ' '\t' \
-            > {output} 2> {log}
+            > {output} \
+                2>> {log}
         rm {output}.joined \
-            2> {log}
+            2>> {log}
         """
