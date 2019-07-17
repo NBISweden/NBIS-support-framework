@@ -8,6 +8,8 @@ rule FastQC:
         fastqcdir + "{sample}/log.{sample}.fastqc.txt"
     shell:
         """
-        fastqc {input} -o $(dirname {output}) \
-            > {log} 2>&1
+        fastqc \
+            {input} \
+            -o $(dirname {output}) \
+                > {log} 2>&1
         """

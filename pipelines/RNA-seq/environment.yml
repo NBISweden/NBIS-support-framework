@@ -1,0 +1,26 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+
+  # Base Python/R installations
+  - python=3.5
+  - r=3.5
+
+  # Workflow management with Snakemake
+  - snakemake=5.4
+
+  # Software for working with and analysing HTS data
+  - fastqc=0.11.8  # FastQC, for quality control of raw sequencing data
+  - htslib=1.9     # featureCounts, for counting of aligned RNA-seq data
+  - multiqc=1.5    # MultiQC, for aggregating multiple QC metrics of HTS data
+  - rseqc=3.0.0    # RSeqC, for quality control of aligned data
+  - samtools=1.9   # Samtools, for working with alignmend (SAM/BAM) files
+  - star=2.6.1b    # STAR, for aligning RNA-seq data
+
+  # General data analysis and statistics
+  - r-tidyverse=1.2.1  # R-tidyverse, for data and statistics within R
+
+  # Compiling templates and reports
+  - r-tinytex=0.10  # Packages needed for compiling the `knitr-PDR` report

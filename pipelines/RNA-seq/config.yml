@@ -5,12 +5,14 @@ datadir: "data/test-data/fastq/"
 fastqcdir: "results/fastqc/"
 aligndir: "results/star/"
 rseqcdir: "results/rseqc/"
+countdir: "results/counts/"
 multiqcdir: "results/multiqc/"
 
 # Indexes and reference files
 REF: "data/idx/genome.fa"
 STAR_REF: "data/idx/STARIndex/"
 REF_GENE: "data/idx/genes.bed"
+REF_GTF: "data/idx/genes.gtf"
 
 # Software parameters
 STAR_THREADS: 2

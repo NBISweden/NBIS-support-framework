@@ -8,6 +8,7 @@ datadir = config["datadir"]
 fastqcdir = config["fastqcdir"]
 aligndir = config["aligndir"]
 rseqcdir = config["rseqcdir"]
+countdir = config["countdir"]
 multiqcdir = config["multiqcdir"]
 
 # Get all first-pair FASTQ files in the fastq data directory
@@ -25,6 +26,7 @@ samples = list(set(samples))
 include: "rules/FastQC.smk"
 include: "rules/STAR-PE.smk"
 include: "rules/RSeqC.smk"
+include: "rules/featureCounts.smk"
 include: "rules/MultiQC.smk"
 
 # Rule: final output and cleanup
