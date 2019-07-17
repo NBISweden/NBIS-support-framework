@@ -12,8 +12,8 @@ scientific reproducibility.
 
 [**RNA-seq**][sf-rnaseq] \
 This is a standard RNA-seq pipeline written in snakemake, which includes
-quality controls of raw reads, alignment of reads and quality controls of the
-aligned reads.
+alignment, gene counting and quality controls using well-characterised and
+common RNA-seq software packages.
 
 [*(back to project home directory)*][sf-home]
 
