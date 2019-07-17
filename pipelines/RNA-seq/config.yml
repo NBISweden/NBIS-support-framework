@@ -1,6 +1,6 @@
 # Paths
 datadir: "data/test-data/fastq/"
-analysisdir: "results/"
+resultsdir: "results/"
 
 # Indexes and reference files
 REF: "data/idx/genome.fa"

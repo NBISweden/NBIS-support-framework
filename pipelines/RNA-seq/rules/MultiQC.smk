@@ -18,14 +18,20 @@ rule MultiQC:
         expand(rseqcdir + "{sample}/{sample}.tin.xls", sample=samples),
         expand(countdir + "{sample}/{sample}.counts.txt", sample=samples)
     output:
-        multiqcdir + "multiqc_report.html"
+        resultsdir + "multiqc-report.html"
+    params:
+        multiqcdir = multiqcdir
     log:
         multiqcdir + "log.multiqc.txt"
     shell:
         """
+        # Run MultiQC
         multiqc results \
-            --outdir $(dirname {output}) \
+            --outdir {params.multiqcdir} \
             --ignore *_STAR* \
             --force \
                 > {log} 2>&1
+
+        # Move report file to results directory
+        mv {params.multiqcdir}/multiqc_report.html {output}
         """

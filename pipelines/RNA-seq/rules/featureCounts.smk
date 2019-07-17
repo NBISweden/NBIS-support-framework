@@ -48,7 +48,7 @@ rule collect_counts:
     input:
         expand(countdir + "{sample}/{sample}.counts.txt", sample=samples)
     output:
-        countdir + "collected-counts.txt"
+        resultsdir + "collected-counts.txt"
     log:
         countdir + "log.collect-counts.txt"
     shell:

@@ -1,17 +1,17 @@
 import glob
 
-# Config file
+# Config
 configfile: "config.yml"
-
-# Paths
 datadir = config["datadir"]
-analysisdir = config["analysisdir"]
-fastqcdir = analysisdir + "fastqc/"
-sortmernadir = analysisdir + "sortmerna/"
-aligndir = analysisdir + "star/"
-rseqcdir = analysisdir + "rseqc/"
-countdir = analysisdir + "counts/"
-multiqcdir = analysisdir + "multiqc/"
+resultsdir = config["resultsdir"]
+
+# Relative paths
+fastqcdir = resultsdir + "fastqc/"
+sortmernadir = resultsdir + "sortmerna/"
+aligndir = resultsdir + "star/"
+rseqcdir = resultsdir + "rseqc/"
+countdir = resultsdir + "counts/"
+multiqcdir = resultsdir + "multiqc/"
 
 # Get all first-pair FASTQ files in the fastq data directory
 fastq_files = glob.glob(datadir + "*.fastq.gz")
@@ -32,8 +32,8 @@ include: "rules/RSeqC.smk"
 include: "rules/SortMeRNA.smk"
 include: "rules/STAR-PE.smk"
 
-# Rule: final output and cleanup
+# Rule: final outputs
 rule all:
     input:
-        multiqcdir + "multiqc_report.html",
-        countdir + "collected-counts.txt"
+        resultsdir + "multiqc-report.html",
+        resultsdir + "collected-counts.txt"
