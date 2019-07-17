@@ -1,13 +1,6 @@
-# Data path
+# Paths
 datadir: "data/test-data/fastq/"
-
-# Software paths
-fastqcdir: "results/fastqc/"
-sortmernadir: "results/sortmerna/"
-aligndir: "results/star/"
-rseqcdir: "results/rseqc/"
-countdir: "results/counts/"
-multiqcdir: "results/multiqc/"
+analysisdir: "results/"
 
 # Indexes and reference files
 REF: "data/idx/genome.fa"

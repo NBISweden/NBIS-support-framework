@@ -5,12 +5,13 @@ configfile: "config.yml"
 
 # Paths
 datadir = config["datadir"]
-fastqcdir = config["fastqcdir"]
-sortmernadir = config["sortmernadir"]
-aligndir = config["aligndir"]
-rseqcdir = config["rseqcdir"]
-countdir = config["countdir"]
-multiqcdir = config["multiqcdir"]
+analysisdir = config["analysisdir"]
+fastqcdir = analysisdir + "fastqc/"
+sortmernadir = analysisdir + "sortmerna/"
+aligndir = analysisdir + "star/"
+rseqcdir = analysisdir + "rseqc/"
+countdir = analysisdir + "counts/"
+multiqcdir = analysisdir + "multiqc/"
 
 # Get all first-pair FASTQ files in the fastq data directory
 fastq_files = glob.glob(datadir + "*.fastq.gz")
