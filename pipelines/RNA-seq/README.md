@@ -28,7 +28,7 @@ such as out the output of the STAR-rule; the output is
 
 **featureCounts.smk** \
 This rule performs gene counting with [featureCounts][featurecounts-home] at
-the exon-level; the output is in `results/counts/` by default.
+the exon-level; the output is in `results/counts/<sample>/` by default.
 
 **MultiQC.smk** \
 This rule runs [MultiQC][mqc-home] and collects all the quality metrics from
