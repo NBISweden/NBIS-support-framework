@@ -3,7 +3,6 @@ datadir: "data/test-data/fastq/"
 resultsdir: "results/"
 
 # Indexes and reference files
-REF: "data/idx/genome.fa"
 STAR_REF: "data/idx/STARIndex/"
 REF_GENE: "data/idx/genes.bed"
 REF_GTF: "data/idx/genes.gtf"
