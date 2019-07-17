@@ -8,8 +8,8 @@
 *-env/
 
 # Partially ignored directories
-data/*
-results/*
+**/data/*
+**/results/*
 
 reports/*
 reports/knitr-pdf/*
