@@ -35,4 +35,5 @@ include: "rules/STAR-PE.smk"
 # Rule: final output and cleanup
 rule all:
     input:
-        multiqcdir + "multiqc_report.html"
+        multiqcdir + "multiqc_report.html",
+        countdir + "collected-counts.txt"
