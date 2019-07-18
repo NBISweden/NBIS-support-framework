@@ -14,7 +14,7 @@
 reports/*
 reports/knitr-pdf/*
 
-scratch/*
+**/scratch/*
 
 # Exceptions
 !*/README.md

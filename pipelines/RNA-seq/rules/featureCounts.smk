@@ -1,32 +1,46 @@
+# Rule: Download Ensembl GTF file
+rule download_gtf:
+    output:
+        "scratch/" + config["ASSEMBLY"] + ".gtf.gz"
+    log:
+        "scratch/log.download-gtf.txt"
+    shell:
+        """
+        ADDRESS="rsync://ftp.ensembl.org/ensembl/pub/release-97/gtf"
+        ADDRESS="$ADDRESS/homo_sapiens/{config[ASSEMBLY]}.gtf.gz"
+        rsync -avP $ADDRESS {output} \
+            > {log} 2>&1
+        """
+
 # Read counting
 rule featureCounts:
     input:
-        aligndir + "{sample}/{sample}.bam"
+        gtf = "scratch/" + config["ASSEMBLY"] + ".gtf.gz",
+        bam = aligndir + "{sample}/{sample}.bam"
     output:
         countdir + "{sample}/{sample}.counts.txt"
-    params:
-        gtf = config["REF_GTF"]
     log:
         countdir + "{sample}/log.{sample}.featureCounts.txt"
     shell:
         """
         # Count reads
         featureCounts \
-            -a {params.gtf} \
+            -a {input.gtf} \
             -o {output} \
             -T 1 \
             -t exon \
             -g gene_id \
             -s 2 \
             --extraAttributes gene_name \
-            {input} \
+            {input.bam} \
                 > {log} 2>&1
 
         # Get new header
-        HEADER=$(tail -n +2 {output} | head -1 \
+        HEADER=$(head -n 2 {output} \
+            | tail -n +2 \
             | cut -f 1,7,8 \
             | tr '\t' '\n' \
-            | sed "s/Geneid/ENSGID/g" \
+            | sed 's/Geneid/ENSGID/g' \
             | sed 's/gene_name/gene/g' \
             | sed 's/.*\///g' \
             | sed 's/\.bam//g' \
@@ -50,7 +64,7 @@ rule collect_counts:
     output:
         resultsdir + "collected-counts.txt"
     log:
-        countdir + "log.collect-counts.txt"
+        multiqcdir + "log.collect-counts.txt"
     shell:
         """
         # Initialise counts with first file
