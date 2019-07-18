@@ -18,4 +18,4 @@ dependencies:
   - samtools=1.9   # Samtools, for working with aligned data
   - sortmerna=2.0  # SortMeRNA, for quantifying rRNA contaminations
   - star=2.6.1b    # STAR, for aligning RNA-seq data
-  - subread
+  - subread=1.6    # featureCounts, for counting aligned reads
