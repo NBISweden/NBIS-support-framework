@@ -13,9 +13,9 @@ dependencies:
 
   # Software for working with and analysing HTS data
   - fastqc=0.11.8  # FastQC, for quality control of raw sequencing data
-  - htslib=1.9     # featureCounts, for counting of aligned RNA-seq data
   - multiqc=1.5    # MultiQC, for aggregating multiple QC metrics of HTS data
   - rseqc=3.0.0    # RSeqC, for quality control of aligned data
   - samtools=1.9   # Samtools, for working with aligned data
   - sortmerna=2.0  # SortMeRNA, for quantifying rRNA contaminations
   - star=2.6.1b    # STAR, for aligning RNA-seq data
+  - subread
