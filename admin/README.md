@@ -13,6 +13,7 @@ things.
  * A collection of [NBIS outreach materials][nbis-outreach]
  * User guides for [Uppmax][uppmax-guides]
  * User guide to [Slack][sf-slack]
+ * User guide for [virtual conference rooms][sf-vconf]
 
 ### Support-related information
  * [Contract templates][nbis-contract] for short-term projects
@@ -88,6 +89,7 @@ things.
 [scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
 [sf-slack]: https://github.com/NBISweden/NBIS-support-framework/blob/master/admin/SLACK.md
+[sf-vconf]: https://github.com/NBISweden/NBIS-support-framework/blob/master/admin/VCONF.md
 [singularity]: https://sylabs.io/singularity/
 [snakemake]: https://snakemake.readthedocs.io/en/stable/
 [uppmax-guides]: https://www.uppmax.uu.se/support/user-guides/
