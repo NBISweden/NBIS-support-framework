@@ -17,7 +17,7 @@ time of the meeting, you need simply to do the following:
  2. If the web browser asks for permission to use your camera and microphone,
     answer "yes"
  3. Enter the name that you wish to use for the call
- 4. Click "Call"
+ 4. Click "Content"
  5. In the box that appears, type the address to the virtual room you booked,
     *e.g.* SciLifeLab4@vconf.kth.se
  6. Enter either the PIN 8800 (if you are joining a call) or 8808 (if you are
