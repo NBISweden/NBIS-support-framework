@@ -6,7 +6,7 @@ SciLifeLab5@vconf.kth.se. These can be used for video meetings either with
 NBIS colleagues on other sites, or with groups. In order to use these virtual
 conference rooms, there are a number of things you need to do beforehand:
 
- 1. Go to the [SciLifeLab intranet room booking][scilife-intra] and select
+ 1. Go to the [SciLifeLab intranet room booking][scilife-rooms] and select
     "Virtual conference room"
  2. Find the day and time of interest and make a booking
 
