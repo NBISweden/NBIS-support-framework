@@ -13,7 +13,7 @@ conference rooms, there are a number of things you need to do beforehand:
 After having booked a timeslot at either of the rooms, you are ready! At the
 time of the meeting, you need simply to do the following:
 
- 1. Go to [https://vconf.kth.se][]
+ 1. Go to https://vconf.kth.se
  2. If the web browser asks for permission to use your camera and microphone,
     answer "yes"
  3. Enter the name that you wish to use for the call
@@ -31,4 +31,4 @@ You can also read more about the video conference system at the
 [SciLifeLab intranet][scilife-intra].
 
 [scilife-intra]: http://intranet.scilifelab.se/room-instrument-booking/room_booking/
-[scilife-rooms]: https://intranet.scilifelab.se/rooms/day.php?
+[scilife-rooms]: https://intranet.scilifelab.se/rooms/
