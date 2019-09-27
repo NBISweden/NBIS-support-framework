@@ -27,10 +27,11 @@ First create a new repository for your project by using NBIS-SF as a template.
 You can do this directly from the NBIS-SF GitHub by pressing the *"Use this
 template"* button. This will take you through the creation of your new repo
 like normal, but it will contain all the content currently available on NBIS-SF
-in a single, initial commit. Name your new repository with the Redmine issue
-number, year plus a descriptive name and on the [NBISweden GitHub][nbissweden],
-*e.g.* *4412-18-mast* or *3939-20-ctcf*. You can then clone your new repository
-like you would normally.
+in a single, initial commit. Name your new repository with the type of project
+it is (LTS, SMS or PP), the Redmine issue number, the year, plus a descriptive
+name and on the [NBISweden GitHub][nbissweden], *e.g.* *SMS-4412-18-mast* or
+*LTS-3939-20-ctcf*. You can then clone your new repository like you would
+normally.
 
 ## Contributing
 
