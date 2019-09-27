@@ -11,18 +11,14 @@ GitHub), templates for reports (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter) and
 support-related information (data management plans, consultation guidelines,
 contract templates, *etc.*).
 
-**Objectives:**
- * Facilitate reproducibility of bioinformatic analyses
- * Foster collaboration across support projects
- * Provide out-of-the-box tools for routine support-tasks
- * Provide information regarding data management and administrative matters
-
 You can read more about the separate sections here:
- * [Raw data][sf-data] and [temporary files][sf-scratch]
- * [Report templates][sf-report]
- * [Results and analyses][sf-results]
+ * [Report templates](reports/)
  * [Workflows and pipelines][sf-pipelines]
- * [Data management][sf-dmp] and [administrative matters][sf-admin]
+ * [Data management guidelines][sf-dmp]
+
+You can also find more information relating to NBIS organisational matters
+(such as routines, policies and other administrative material) at the
+[NBIS Information][nbis-info] repository.
 
 ## Setup
 
@@ -51,6 +47,7 @@ Questions and feedback can be sent to
 [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
 [nbissweden]: https://github.com/NBISweden
+[nbis-info]: https://github.com/NBISweden/NBIS-info
 [sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
 [sf-contribute]: https://github.com/NBISweden/NBIS-support-framework/blob/master/CONTRIBUTING.md
 [sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
