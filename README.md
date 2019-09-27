@@ -22,7 +22,6 @@ You can also find more information relating to NBIS organisational matters
 
 ## Setup
 
-**Create a project repo at NBISweden using NBIS-SF as template** \
 First create a new repository for your project by using NBIS-SF as a template.
 You can do this directly from the NBIS-SF GitHub by pressing the *"Use this
 template"* button. This will take you through the creation of your new repo
