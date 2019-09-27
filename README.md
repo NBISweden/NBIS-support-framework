@@ -13,8 +13,8 @@ contract templates, *etc.*).
 
 You can read more about the separate sections here:
  * [Report templates](reports/)
- * [Workflows and pipelines][sf-pipelines]
- * [Data management guidelines][sf-dmp]
+ * [Workflows and pipelines](pipelines/)
+ * [Data management guidelines](doc/data-management/)
 
 You can also find more information relating to NBIS organisational matters
 (such as routines, policies and other administrative material) at the
@@ -40,7 +40,7 @@ knowledge and to streamline common bioinformatics tasks. Anybody working at
 NBIS is welcome to contribute to the repo with their own templates, rules and
 code. NBIS-SF should be modular, so that anybody can pick and choose among all
 modules which are most appropriate for the project at hand. If you want to
-contribute something, please see the [CONTRIBUTING.md][sf-contribute] file.
+contribute something, please see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Questions and feedback can be sent to
 [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
@@ -48,11 +48,3 @@ Questions and feedback can be sent to
 
 [nbissweden]: https://github.com/NBISweden
 [nbis-info]: https://github.com/NBISweden/NBIS-info
-[sf-admin]: https://github.com/NBISweden/NBIS-support-framework/tree/master/admin
-[sf-contribute]: https://github.com/NBISweden/NBIS-support-framework/blob/master/CONTRIBUTING.md
-[sf-data]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data
-[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/doc/data-management
-[sf-pipelines]: https://github.com/NBISweden/NBIS-support-framework/tree/master/pipelines
-[sf-report]: https://github.com/NBISweden/NBIS-support-framework/tree/master/reports
-[sf-results]: https://github.com/NBISweden/NBIS-support-framework/tree/master/results
-[sf-scratch]: https://github.com/NBISweden/NBIS-support-framework/tree/master/scratch
