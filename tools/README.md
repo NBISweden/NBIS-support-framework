@@ -18,7 +18,7 @@ that a pipeline or tool is missing, please add it!
 
  * [NBIS-MAGS][nbis-mags]: analyses of individual microbial genomes such as
    *metagenome assembled genomes* or *single amplified genomes*
- * [NBIS-Metagenomics]: a workflow for metagenomic projects
+ * [NBIS-Metagenomics][nbis-meta]: a workflow for metagenomic projects
 
 ## Single-cell
 
