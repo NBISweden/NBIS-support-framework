@@ -37,10 +37,8 @@ normally.
 All contributions are welcome, small and large! The central idea behind NBIS-SF
 is to develop an up-to-date framework for NBIS support projects, to share
 knowledge and to streamline common bioinformatics tasks. Anybody working at
-NBIS is welcome to contribute to the repo with their own templates, rules and
-code. NBIS-SF should be modular, so that anybody can pick and choose among all
-modules which are most appropriate for the project at hand. If you want to
-contribute something, please see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+NBIS is welcome to contribute! If you want to contribute something, please see
+the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Questions and feedback can be sent to
 [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
