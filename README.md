@@ -13,7 +13,7 @@ contract templates, *etc.*).
 
 You can read more about the separate sections here:
  * [Report templates](reports/)
- * [Workflows and pipelines](pipelines/)
+ * [Workflows and pipelines](tools/)
  * [Data management guidelines](doc/data-management/)
 
 You can also find more information relating to NBIS organisational matters
