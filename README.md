@@ -16,10 +16,6 @@ You can read more about the separate sections here:
  * [Tools and pipelines](tools/)
  * [Data management guidelines](doc/data-management/)
 
-You can also find more information relating to NBIS organisational matters
-(such as routines, policies and other administrative material) at the
-[NBIS Information][nbis-info] repository.
-
 ## Setup
 
 First create a new repository for your project by using NBIS-SF as a template.
