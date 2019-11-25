@@ -7,9 +7,13 @@ information][report-info] that has to be included.
 
 ## Included templates
 
-**knitr-PDF** \
-`sweave/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
+**Sweave** \
+`sweave/report.Rnw` is a Sweave file, a mix between R and LaTeX, and
 can easily to compiled into a nice-looking PDF document.
+
+**RMarkdown** \
+`rmarkdown/report.Rmd` is a RMarkdown file, a mix between R and markdown, which
+can easily to compiled into a nice-looking HTML document.
 
 ## Common files
 
