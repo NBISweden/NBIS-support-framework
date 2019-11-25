@@ -6,9 +6,9 @@ channels:
 
 dependencies:
 
-  # Base Python/R installations
+  # Base R installations
   - r=3.5
 
-  # Packages needed for compiling the `knitr-PDR` report
+  # Packages needed for compiling the report
   - r-knitr=1.23
-  - r-tinytex=0.8  
+  - r-tinytex=0.8
