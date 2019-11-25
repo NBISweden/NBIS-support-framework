@@ -1,0 +1,13 @@
+channels:
+
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+
+  # Base R installation
+  - r=3
+
+  # Packages needed for compiling the report
+  - r-rmarkdown
