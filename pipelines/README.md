@@ -13,6 +13,9 @@
      * [Metagenomics](#metagenomics)
      * [Single-cell](#single-cell)
      * [Variant analysis](#variant-analysis)
+     * [Transcriptome assembly](#transcriptome-assembly)
+     * [Functional annotation](#functional-annotation)
+     * [Related to genome annotation](#related-to-genome-annotation)
 
 # Foreword
 
@@ -71,11 +74,26 @@ We don't approach tools here because so numerous exist. We advise to use as most
  * [Sauron][lts-sauron]: a workflow for running analyses on single-cell
    RNA-seq count data
 
-## Variant analysis
+### Variant analysis
 
  * [Sarek][sarek]: a pipeline for detecting germline or somatic variants from
    whole genome or targeted sequencing
 
+
+### Transcriptome assembly
+
+ * see among [GAAS nextflow][nbis_nextflow]
+ * see among [GAAS bpipe][nbis_bpipe]
+ 
+### Functional annotation
+
+ * see among [GAAS nextflow][nbis_nextflow]
+ * see among [GAAS bpipe][nbis_bpipe]
+
+### Related to genome annotation
+
+ * see among [GAAS nextflow][nbis_nextflow]
+ * see among [GAAS bpipe][nbis_bpipe]
 
 [*(back to project home directory)*][sf-home]
 
