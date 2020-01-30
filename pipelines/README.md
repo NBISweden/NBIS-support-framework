@@ -16,6 +16,9 @@
      * [Transcriptome assembly](#transcriptome-assembly)
      * [Functional annotation](#functional-annotation)
      * [Related to genome annotation](#related-to-genome-annotation)
+* [About pipelines frameworks](#about-pipelines-frameworks)
+  * [List of pipeline frameworks](#list-of-pipeline-frameworks)
+  * [Pipelines comparison](#pipelines-comparison)
 
 # Foreword
 
@@ -94,6 +97,23 @@ We don't approach tools here because so numerous exist. We advise to use as most
 
  * see among [GAAS nextflow][nbis_nextflow]
  * see among [GAAS bpipe][nbis_bpipe]
+
+
+# About pipelines frameworks
+
+## List of pipeline frameworks
+
+ * [https://github.com/pditommaso/awesome-pipeline](https://github.com/pditommaso/awesome-pipeline)
+ * [https://github.com/common-workflow-language/common-workflow-language/wiki/Existing-Workflow-systems](https://github.com/common-workflow-language/common-workflow-language/wiki/Existing-Workflow-systems)
+ * [https://www.biostars.org/p/91301/](https://www.biostars.org/p/91301/)
+
+## Pipelines comparison
+
+ * [Di Tommaso, P. et al. Nextflow enables reproducible computational workflows. Nat. Biotechnol. 35, 316–319 (2017)](https://www.nature.com/articles/nbt.3820/tables/1)
+ * [Leipzig J. A review of bioinformatic pipeline frameworks Brief. Bioinform. (2016)](https://academic.oup.com/bib/article/18/3/530/2562749)
+
+
+
 
 [*(back to project home directory)*][sf-home]
 
