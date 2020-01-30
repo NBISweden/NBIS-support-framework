@@ -13,7 +13,7 @@ contract templates, *etc.*).
 
 You can read more about the separate sections here:
  * [Report templates](reports/)
- * [Tools and pipelines](tools/)
+ * [Pipelines](pipelines/)
  * [Data management guidelines](doc/data-management/)
 
 ## Setup
