@@ -4,6 +4,7 @@
 
 * [Foreword](#foreword)
 * [Pipelines](#pipelines)
+  * [Plan to develop a new pipeline?](#plan-to-develop-a-new-pipeline)
   * [Pipelines per workflow](#pipelines-per-workflow)
      * [Bash](#bash)
      * [Bpipe](#bpipe)
@@ -30,6 +31,15 @@ that a pipeline is missing, please add it!
 We don't approach tools here because so numerous exist. We advise to use as most as possible tools available into [conda](https://anaconda.org), we emphase the tools developed at [SciLifeLab][slopen] and at [NBIS][nbis_tools], and promote the use of [bio.tools](https://bio.tools) for searching existing tools.
 
 # Pipelines
+
+## Plan to develop a new pipeline?
+
+NBIS has currently two repositories for easy development of pipelines. They are modules based,
+which means each module is dedicated for one task. Modules can be picked and connected to each other at your convenience to create complex workflows.
+
+  * for *nextflow* pipelines see [pipelines-nextflow][nbis_nextflow].
+  * for *bpipe* pipelines see [pipelines-bpipe][nbis_bpipe].
+  * for *snakemake* -- TO DO --
 
 ## Pipelines per workflow
 
