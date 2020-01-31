@@ -82,7 +82,6 @@ We don't approach tools here because so numerous exist. We advise to use as most
  * [Sarek][sarek]: a pipeline for detecting germline or somatic variants from
    whole genome or targeted sequencing
 
-
 ### Transcriptome assembly
 
  * see among [GAAS nextflow][nbis_nextflow]
@@ -117,8 +116,8 @@ We don't approach tools here because so numerous exist. We advise to use as most
 
 [*(back to project home directory)*][sf-home]
 
-[nbis_bpipe]: https://github.com/NBISweden/pipelines
-[nbis_nextflow]: https://github.com/NBISweden/pipelines
+[nbis_bpipe]: https://github.com/NBISweden/pipelines-bpipe
+[nbis_nextflow]: https://github.com/NBISweden/pipelines-nextflow
 [lts-sauron]: https://bitbucket.org/scilifelab-lts/sauron/src/seurat3/
 [lts-scrnaseq]: https://bitbucket.org/scilifelab-lts/lts-workflows-sm-scrnaseq/src/master/
 [nbis-mags]: https://bitbucket.org/scilifelab-lts/nbis-mags/src/master/
