@@ -7,15 +7,11 @@ framework for NBIS support projects and the related data management plans. The
 idea is to have a common framework and knowledge-base that NBIS experts may
 choose to adopt and expand as they perform support-related work. This includes
 tools for reproducibility (*e.g.* Conda, Snakemake), version control (git,
-GitHub), templates for reports (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter) and
-support-related information (data management plans, consultation guidelines,
-contract templates, *etc.*).
-
-You can read more about the separate sections here:
- * [Report templates](reports/)
- * [Pipelines](https://github.com/NBISweden/pipelines/) - Link to the NBIS
-pipeline registry.
- * [Data management guidelines](doc/data-management/)
+GitHub), [report templates](reports/) (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter)
+and support-related information ([data management guidelines](
+doc/data-management/), consultation guidelines, contract templates, *etc.*).
+NBIS also has a separate repository for pipelines, which you can find at
+[NBISweden/pipelines][nbis-pipelines].
 
 ## Setup
 
@@ -25,7 +21,7 @@ template"* button. This will take you through the creation of your new repo
 like normal, but it will contain all the content currently available on NBIS-SF
 in a single, initial commit. Name your new repository with the type of project
 it is (LTS, SMS or PP), the Redmine issue number, the year, plus a descriptive
-name and on the [NBISweden GitHub][nbissweden], *e.g.* *SMS-4412-18-mast* or
+name and on the [NBISweden GitHub][nbisweden], *e.g.* *SMS-4412-18-mast* or
 *LTS-3939-20-ctcf*. You can then clone your new repository like you would
 normally.
 
@@ -41,5 +37,5 @@ Questions and feedback can be sent to
 [Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
 [Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
 
-[nbissweden]: https://github.com/NBISweden
-[nbis-info]: https://github.com/NBISweden/NBIS-info
+[nbisweden]: https://github.com/NBISweden
+[nbis-pipelines]: https://github.com/NBISweden/pipelines/
