@@ -13,7 +13,8 @@ contract templates, *etc.*).
 
 You can read more about the separate sections here:
  * [Report templates](reports/)
- * [Tools and pipelines](tools/)
+ * [Pipelines](https://github.com/NBISweden/pipelines/) - Link to the NBIS
+pipeline registry.
  * [Data management guidelines](doc/data-management/)
 
 ## Setup
