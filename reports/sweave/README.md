@@ -1,6 +1,6 @@
-# knitr-PDF
+# Sweave
 
-`knitr-pdf/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
+`sweave/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
 can easily to compiled into a nice-looking PDF document using
 [knitr][knitr-home]. It contains several shorthand commands in the beginning of
 the document, which by default contain mock names and e-mails. These should be
@@ -14,7 +14,7 @@ changed prior to compilation:
 \newcommand{\staffName}{Erik Fasterius}
 ```
 
-The `knitr-pdf/report.Rnw` file can be compiled using the `knit2pdf` function
+The `sweave/report.Rnw` file can be compiled using the `knit2pdf` function
 R, either from inside R or from the command line, like so:
 
 ```bash

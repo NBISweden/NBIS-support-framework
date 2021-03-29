@@ -7,19 +7,24 @@ information][report-info] that has to be included.
 
 ## Included templates
 
-**knitr-PDF** \
-`knitr-pdf/report.Rnw` is a Sweave file, *i.e.* a mix between R and LaTeX, and
+**Sweave** \
+`sweave/report.Rnw` is a Sweave file, a mix between R and LaTeX, and
 can easily to compiled into a nice-looking PDF document.
 
-**jupyter-PDF** \
-An example jupyter notebook is included with details on how to convert it to 
-pdf using ipypublish and nbconvert. Note that this requires a LaTeX installation.
+**Jupyter** \
+An example Jupyter notebook is included with details on how to convert it to 
+PDF using `ipypublish` and `nbconvert`. Note that this requires a LaTeX
+installation.
+
+**RMarkdown** \
+`rmarkdown/report.Rmd` is a R Markdown file, a mix between R and markdown, which
+can easily to compiled into a nice-looking HTML document.
 
 ## Common files
 
-Some files common to all templates are also included, such as NBIS and SciLife
-logos (`logos`), a test bibliography (`references.bib`) and a custom LaTeX
-bibliography-style (`myunstr.bst`).
+Some files common to all templates are also included in the `common` directory,
+such as NBIS and SciLife logos (`logos`), a test bibliography
+(`references.bib`) and a custom LaTeX bibliography-style (`myunstr.bst`).
 
 ## Adding templates
 

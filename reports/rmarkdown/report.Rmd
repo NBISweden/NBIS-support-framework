@@ -1,0 +1,115 @@
+---
+params:
+    project_title: "Project Title"
+    redmine_issue: "#9999"
+    uppmax_project: "/b2000000"
+    requester_name: "Re Quester"
+    requester_mail: "re.quester@ki.se"
+    pi_name: "Prin Cipal"
+    pi_mail: "prin.cipal@ki.se"
+    organisation: "Karolinska Institutet"
+    staff_name: "Supp Ortstaff"
+    staff_mail: "supp.ortstaff@nbis.se"
+    staff_web: "https://nbis.se/about/staff/supp-ortstaff/"
+title: "`r params$project_title`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+    html_document:
+        code_folding: hide
+        toc: true
+        toc_float:
+            collapsed: false
+---
+
+```{r Setup, echo = FALSE}
+knitr::opts_chunk$set(fig.width  = 12,
+                      fig.height = 8,
+                      results    = "asis",
+                      message    = FALSE,
+                      warning    = FALSE)
+```
+
+```{r Report variables, echo = FALSE}
+affil <- paste("National Bioinformatics Infrastructure Sweden, Science for",
+    "Life Laboratory, Stockholm University")
+link_support <- "http://nbis.se/support/support.html"
+link_uppmax <- paste("http://uppmax.uu.se/support-sv/faq/general-",
+    "miscellaneous-faq/acknowledging-uppmax--snic--and-uppnex")
+link_authorship <- "http://www.icmje.org/recommendations/"
+link_agreement <- "http://nbis.se/assets/doc/nbis-support-useragreement.pdf"
+link_acknowledge <- paste("https://ngisweden.scilifelab.se/info/faq#how-do",
+                          "-i-acknowledge-ngi-in-my-publication")
+link_sensitive_data <- "https://nbis.se/support/human-data.html"
+```
+
+# Project information
+
+ * Remine issue: **`r params$redmine_issue`**
+ * NBIS staff: **`r params$staff_name`**
+ * Request by: **`r params$requester_name`**
+ * Principal investigator: **`r params$pi_name`**
+ * Organisation: **`r params$organisation`**
+
+# Work log
+*A brief summary if the project's key points.*
+
+ * **2018-12-19:** Meeting with the group to plan data analyses
+
+# Practical information
+
+## Data responsibilities
+Unfortunately, NBIS does not have resources to keep any files associated with
+the support request; we kindly suggest that you safely store the results
+delivered by us. In addition, we kindly ask that you remove the files from
+UPPMAX/UPPNEX. The main storage at UPPNEX is optimized for high-speed and
+parallel access, which makes it expensive and not the right place for long-term
+archiving. Please be considerate of your fellow researchers by not taking up
+this expensive space.
+
+The responsibility for data archiving lies with universities and we recommend
+asking your local IT for support with long-term data storage. The
+[Data Center](https://www.scilifelab.se/data/) at SciLifeLab may also be
+of help with discussing other options.
+
+Please note that special considerations may apply to human-derived, sensitive
+personal data. This should be handled according to specific laws and
+regulations as outlined at the [NBIS website](`r link_sensitive_data`).
+
+## Acknowledgements
+If you are presenting the results in a paper, at a workshop or at a conference,
+we kindly remind you to acknowledge us according to the signed
+[NBIS User Agreement](`r link_agreement`):
+
+[NBIS staff should be included as co-authors](`r params$staff_web`) if the
+support work leads to a publication and when this is merited in accordance to
+the ethical recommendations for authorship, *i.e.* the [ICMJE
+recommendations](`r link_authorship`). If applicable, please include
+*`r params$staff_name`, `r affil`* as co-author. If the above is not
+applicable, please acknowledge NBIS like so: *Support by NBIS (National
+Bioinformatics Infrastructure Sweden) is gratefully acknowledged.*
+
+In addition, Uppmax kindly asks you to [acknowledge UPPMAX and
+SNIC](`r link_uppmax`). If applicable, please add: *The computations were
+performed on resources provided by SNIC through Uppsala Multidisciplinary
+Center for Advanced Computational Science (UPPMAX) under Project
+`r params$uppmax_project`.*
+
+In any and all publications based on data from NGI Sweden, the authors
+must [acknowledge SciLifeLab, NGI and Uppmax](`r link_acknowledge`), like so:
+*The authors would like to acknowledge support from Science for Life
+Laboratory, the National Genomics Infrastructure, NGI, and Uppmax for providing
+assistance in massive parallel sequencing and computational infrastructure.*
+
+## Closing procedures
+You should soon be contacted by one of our managers, Jessica Lindvall
+*(jessica.lindvall@nbis.se)* or Henrik Lantz
+*(henrik.lantz@nbis.se)*, with a request to close down the project in our
+internal system and for invoicing matters. If we do not hear from you within
+**30 days** the project will be automatically closed and invoice sent.
+Again, we would like to remind you about data responsibility and
+acknowledgements, see the sections on data responsibilities and
+acknowledgments.
+
+You are naturally more than welcome to come back to us with further data
+analysis request at any time via [the support form](`r link_support`). Thank
+you for using NBIS, we wish you the best of luck with your future research!

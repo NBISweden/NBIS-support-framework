@@ -1,0 +1,14 @@
+channels:
+
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+
+  # Base R installations
+  - r=3.5
+
+  # Packages needed for compiling the report
+  - r-knitr=1.23
+  - r-tinytex=0.8
