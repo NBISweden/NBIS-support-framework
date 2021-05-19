@@ -13,6 +13,10 @@ doc/data-management/), consultation guidelines, contract templates, *etc.*).
 NBIS also has a separate repository for pipelines, which you can find at
 [NBISweden/pipelines][nbis-pipelines].
 
+You can find more complete examples of how to work reproducibly in NBIS support
+work at the following repositories:
+ * [Mahesh's NBIS project template](https://github.com/mahesh-panchal/NBIS_project_template)
+
 ## Setup
 
 First create a new repository for your project by using NBIS-SF as a template.
