@@ -13,9 +13,10 @@ doc/data-management/), consultation guidelines, contract templates, *etc.*).
 NBIS also has a separate repository for pipelines, which you can find at
 [NBISweden/pipelines][nbis-pipelines].
 
-You can find more complete examples of how to work reproducibly in NBIS support
-work at the following repositories:
+You can find more complete examples and inspiration of how to work reproducibly
+in NBIS support work at the following places:
  * [Mahesh's NBIS project template](https://github.com/mahesh-panchal/NBIS_project_template)
+ * [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
 
 ## Setup
 
