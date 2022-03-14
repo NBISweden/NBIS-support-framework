@@ -17,6 +17,7 @@ You can find more complete examples and inspiration of how to work reproducibly
 in NBIS support work at the following places:
  * [Mahesh's NBIS project template](https://github.com/mahesh-panchal/NBIS_project_template)
  * [Erik's NBIS project template](https://github.com/fasterius/nbis-support-template)
+ * [Roy's R Markdown templates](https://github.com/royfrancis/minty)
  * [Rasmus' project template](https://github.com/NBISweden/project_template)
  * [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
 
