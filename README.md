@@ -33,6 +33,14 @@ name and on the [NBISweden GitHub][nbisweden], *e.g.* *SMS-4412-18-mast* or
 *LTS-3939-20-ctcf*. You can then clone your new repository like you would
 normally.
 
+## Repo privacy settings
+
+by default repositories are public, meaning they are accessible to 
+anyone on the Internet. In case, you want to restrict access to the repo to inside NBIS only:
+* while creating repo choose "Private"
+* go to repository "Settings" -> "Collaborators and Teams" -> search field in "Manage Access" and type "Staff"
+* give appropriate access to "Staff" team (Read, Write, Triage etc.) and voilá, now all at NBIS have access
+
 ## Contributing
 
 All contributions are welcome, small and large! The central idea behind NBIS-SF
