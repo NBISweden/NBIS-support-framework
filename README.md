@@ -18,6 +18,7 @@ in NBIS support work at the following places:
  * [Mahesh's NBIS project template](https://github.com/mahesh-panchal/NBIS_project_template)
  * [Erik's NBIS project template](https://github.com/fasterius/nbis-support-template)
  * [Roy's R Markdown templates](https://github.com/royfrancis/minty)
+ * [Erik's NBIS Quarto template](https://github.com/NBISweden/nbis-templates-quarto)
  * [Rasmus' project template](https://github.com/NBISweden/project_template)
  * [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
 
