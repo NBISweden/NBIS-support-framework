@@ -1,0 +1,1142 @@
+---
+title-block-banner: true
+reference-location: margin
+citation-location: margin
+bibliography: ../common/my_references.bib
+format:
+  html:
+    theme: cosmo
+    fontsize: 1.0em
+    code-fold: true  
+    toc: true
+    toc-location: left 
+    toc-depth: 6
+    css: "../common/assets/report.css"
+    self-contained: true
+    embed-resources: true
+    include-before-body: ../common/assets/custom.html
+    grid:
+      sidebar-width: 100px
+      body-width: 1100px
+      margin-width: 100px
+      gutter-width: 1.5rem
+execute:
+    echo: false
+    warning: false
+subtitle: 'Redmine issue:              `r params$redmine_issue`'
+params:
+    project_title: ""
+    redmine_issue: "#"
+    uppmax_project: " (Computation) &   (Storage)"
+    requester_name: ""
+    requester_mail: "@"
+    pi_name: ""
+    pi_mail: "@"
+    organisation: ""
+    staff_name: "Nima Rafati"
+    staff_mail: "nima.rafati@nbis.se"
+    staff_web: "https://nbis.se/about/staff/nima-rafati/"
+    hours: "?? / ??"
+title: "`r params$project_title`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r Setup, echo = FALSE}
+knitr::opts_chunk$set(fig.width  = 12,
+                      fig.height = 8,
+                      results    = "asis",
+                      message    = FALSE,
+                      warning    = FALSE)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(drc)
+library(data.table)
+library(corrplot)
+library(RColorBrewer)
+library(PerformanceAnalytics)
+library(reshape2)
+library(DT)
+library(knitr)
+library(kableExtra)
+library(UpSetR)
+path <- ''
+```
+
+
+```{r run-analysis, echo = T, eval = F}
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(drc)
+library(data.table)
+library(corrplot)
+library(RColorBrewer)
+library(PerformanceAnalytics)
+library(reshape2)
+library(DT)
+library(DESeq2)
+library(Seurat)
+library(biomaRt)
+library(cowplot)
+library(pheatmap)
+library(harmony)
+library(reactable)
+path <- ''
+```
+
+```{r Report variables, echo = FALSE}
+affil <- paste("National Bioinformatics Infrastructure Sweden, Science for",
+    "Life Laboratory, Stockholm University")
+link_support <- "http://nbis.se/support/support.html"
+link_uppmax <- paste("http://uppmax.uu.se/support-sv/faq/general-",
+    "miscellaneous-faq/acknowledging-uppmax--snic--and-uppnex")
+link_authorship <- "http://www.icmje.org/recommendations/"
+link_agreement <- "http://nbis.se/assets/doc/nbis-support-useragreement.pdf"
+link_acknowledge <- paste("https://ngisweden.scilifelab.se/info/faq#how-do",
+                          "-i-acknowledge-ngi-in-my-publication")
+link_sensitive_data <- "https://nbis.se/support/human-data.html"
+```
+
+
+# Project information
+
+ * Remine issue: **`r params$redmine_issue`**
+ * NBIS staff: **`r params$staff_name`**
+ * Request by: **`r params$requester_name`**
+ * Principal investigator: **`r params$pi_name`**
+ * Organisation: **`r params$organisation`**
+ * Hourse used: **`r params$hours`**
+
+:::{#callout-1 .callout-note collapse='true'}   
+
+Click here to see the version and updates of this report  
+- Version 1.0: preliminary run (internal discussion about library complexity).   
+:::  
+
+  
+ 
+
+# Practical information
+
+## Data responsibilities
+Unfortunately, NBIS does not have resources to keep any files associated with
+the support request; we kindly suggest that you safely store the results
+delivered by us. In addition, we kindly ask that you remove the files from
+UPPMAX/UPPNEX. The main storage at UPPNEX is optimized for high-speed and
+parallel access, which makes it expensive and not the right place for long-term
+archiving. Please be considerate of your fellow researchers by not taking up
+this expensive space.
+
+The responsibility for data archiving lies with universities and we recommend
+asking your local IT for support with long-term data storage. The
+[Data Center](https://www.scilifelab.se/data/) at SciLifeLab may also be
+of help with discussing other options.
+
+Please note that special considerations may apply to human-derived, sensitive
+personal data. This should be handled according to specific laws and
+regulations as outlined at the [NBIS website](`r link_sensitive_data`).
+
+## Acknowledgements
+If you are presenting the results in a paper, at a workshop or at a conference,
+we kindly remind you to acknowledge us according to the signed
+[NBIS User Agreement](`r link_agreement`):
+
+[NBIS staff should be included as co-authors](`r params$staff_web`) if the
+support work leads to a publication and when this is merited in accordance to
+the ethical recommendations for authorship, *i.e.* the [ICMJE
+recommendations](`r link_authorship`). If applicable, please include
+*`r params$staff_name`, `r affil`* as co-author. If the above is not
+applicable, please acknowledge NBIS like so: *Support by NBIS (National
+Bioinformatics Infrastructure Sweden) is gratefully acknowledged.*
+
+In addition, Uppmax kindly asks you to [acknowledge UPPMAX and
+SNIC](`r link_uppmax`). If applicable, please add: *The computations were
+performed on resources provided by SNIC through Uppsala Multidisciplinary
+Center for Advanced Computational Science (UPPMAX) under Project
+`r params$uppmax_project`.*
+
+In any and all publications based on data from NGI Sweden, the authors
+must [acknowledge SciLifeLab, NGI and Uppmax](`r link_acknowledge`), like so:
+*The authors would like to acknowledge support from Science for Life
+Laboratory, the National Genomics Infrastructure, NGI, and Uppmax for providing
+assistance in massive parallel sequencing and computational infrastructure.*
+
+## Closing procedures
+You should soon be contacted by one of our managers, Jessica Lindvall
+*(jessica.lindvall@nbis.se)* or Henrik Lantz
+*(henrik.lantz@nbis.se)*, with a request to close down the project in our
+internal system and for invoicing matters. If we do not hear from you within
+**30 days** the project will be automatically closed and invoice sent.
+Again, we would like to remind you about data responsibility and
+acknowledgements, see the sections on data responsibilities and
+acknowledgments.
+
+You are naturally more than welcome to come back to us with further data
+analysis request at any time via [the support form](`r link_support`). Thank
+you for using NBIS, we wish you the best of luck with your future research!
+
+
+
+
+
+```{r}
+path <- '~/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/'
+```
+
+# Methods 
+In below you can find the structure of the files and description of each path:  
+- `results/nf_core_3.10.1_20230413/` main files generated  by nf-core pipeline and used for downstream analysis in this report.  Please note that you can find the intermediate files (bam files,...) on Uppmax `/crex/proj/snic2021-23-602/nobackup/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/intermediate/nf_core_3.10.1_20230413`   
+the intermediate files are located on **nobackup** storage which means that these files are not backed up. While the main results are backed up. Saying that please make sure that you make a local copy of the results and reports just in case.  
+- `results/nf_core_3.10.1_20230413/multiqc/` MultiQC report of nf-core pipeline run.  
+- `results/nf_core_3.10.1_20230413/QC_postmapping/` figures generated for post mapping QC.  
+
+## QC check:   
+[x] Top-overrepresented sequences  
+I blasted top 4 over-represented sequences to genome and got hits on _Mt_rRNA_, intronic region of _AMDH2_.  
+[x] IGV.  
+[x] featurecounts Biotype setting.  
+**[x] Changing genome version from version 10 to 11.  **
+
+
+
+
+## Reference genome  
+We downloaded the reference genome (version 11) from Ensembl as well as annotation (release 109; download data: 20230323).  
+```{bash reference, echo = T, eval = F}
+wget https://ftp.ensembl.org/pub/release-109/fasta/danio_rerio/dna/text=Danio_rerio.GRCz11.dna.toplevel.fa.gz
+wget https://ftp.ensembl.org/pub/release-109/gtf/danio_rerio/Danio_rerio.GRCz11.109.gtf.gz
+wget https://ftp.ensembl.org/pub/release-109/gff3/danio_rerio/Danio_rerio.GRCz11.109.gff3.gz
+```
+
+## Additional sequences added to the genome  
+The following are sequences were used for the construct and was added to the genome reference for mapping the reads. These were also added to the annotation file so that we can measure the expression of these fragments too.  
+
+### Additional sequences  
+```{r, echo = T, eval = F}
+>EFGP
+ATGGTGAGCAAGGGCGAGGAGCTGTTCACCGGGGTGGTGCCCATCCTGGTCGAGCTGGACGGCGACGTAAACGGCCACAA
+GTTCAGCGTGTCCGGCGAGGGCGAGGGCGATGCCACCTACGGCAAGCTGACCCTGAAGTTCATCTGCACCACCGGCAAGC
+TGCCCGTGCCCTGGCCCACCCTCGTGACCACCCTGACCTACGGCGTGCAGTGCTTCAGCCGCTACCCCGACCACATGAAG
+CAGCACGACTTCTTCAAGTCCGCCATGCCCGAAGGCTACGTCCAGGAGCGCACCATCTTCTTCAAGGACGACGGCAACTA
+CAAGACCCGCGCCGAGGTGAAGTTCGAGGGCGACACCCTGGTGAACCGCATCGAGCTGAAGGGCATCGACTTCAAGGAGG
+ACGGCAACATCCTGGGGCACAAGCTGGAGTACAACTACAACAGCCACAACGTCTATATCATGGCCGACAAGCAGAAGAAC
+GGCATCAAGGTGAACTTCAAGATCCGCCACAACATCGAGGACGGCAGCGTGCAGCTCGCCGACCACTACCAGCAGAACAC
+CCCCATCGGCGACGGCCCCGTGCTGCTGCCCGACAACCACTACCTGAGCACCCAGTCCGCCCTGAGCAAAGACCCCAACG
+AGAAGCGCGATCACATGGTCCTGCTGGAGTTCGTGACCGCCGCCGGGATCACTCTCGGCATGGACGAGCTGTACAAGTAA
+
+>GAL4FF
+GCCACCATGAAACTGCTGAGCTCCATTGAACAGGCCTGTGATATCTGCAGGCTGAAGAAGCTGAAGTGTAGCAAGGAGAA
+GCCTAAGTGTGCTAAGTGTCTGAAGAACAACTGGGAGTGTAGATACAGCCCTAAGACAAAGAGAAGCCCTCTGACAAGGG
+CTCACCTGACAGAGGTGGAGAGCAGACTGGAGAGACTGGAGCAGCTGTTCCTGCTGATCTTCCCTAGAGAGGACCTGGAC
+ATGATCCTGAAGATGGACAGCCTCCAGGACATCAAGGCTCTGCTGACAGGACTGTTTGTGCAGGACAATGTGAACAAGGA
+TGCTGTGACAGACAGACTGGCTTCTGTGGAGACAGACATGCCTCTGACACTGAGACAGCACAGAATCTCTGCTACAAGCA
+GCTCTGAGGAGAGCAGCAACAAGGGACAGAGACAGCTGACAGTGAGCCCTGAGTTCCCTGCTGATGCTCTGGATGACTTT
+GACCTGGACATGCTGCCTGCTGATGCTCTGGATGACTTTGACCTGGACATGCTGCCTGGAAACTAA
+
+>TDTOMATO
+ATGGTGAGCAAGGGCGAGGAGGTCATCAAAGAGTTCATGCGCTTCAAGGTGCGCATGGAGGGCTCCATGAACGGCCACGA
+GTTCGAGATCGAGGGCGAGGGCGAGGGCCGCCCCTACGAGGGCACCCAGACCGCCAAGCTGAAGGTGACCAAGGGCGGCC
+CCCTGCCCTTCGCCTGGGACATCCTGTCCCCCCAGTTCATGTACGGCTCCAAGGCGTACGTGAAGCACCCCGCCGACATC
+CCCGATTACAAGAAGCTGTCCTTCCCCGAGGGCTTCAAGTGGGAGCGCGTGATGAACTTCGAGGACGGCGGTCTGGTGAC
+CGTGACCCAGGACTCCTCCCTGCAGGACGGCACGCTGATCTACAAGGTGAAGATGCGCGGCACCAACTTCCCCCCCGACG
+GCCCCGTAATGCAGAAGAAGACCATGGGCTGGGAGGCCTCCACCGAGCGCCTGTACCCCCGCGACGGCGTGCTGAAGGGC
+GAGATCCACCAGGCCCTGAAGCTGAAGGACGGCGGCCACTACCTGGTGGAGTTCAAGACCATCTACATGGCCAAGAAGCC
+CGTGCAACTGCCCGGCTACTACTACGTGGACACCAAGCTGGACATCACCTCCCACAACGAGGACTACACCATCGTGGAAC
+AGTACGAGCGCTCCGAGGGCCGCCACCACCTGTTCCTGGGGCATGGCACCGGCAGCACCGGCAGCGGCAGCTCCGGCACC
+GCCTCCTCCGAGGACAACAACATGGCCGTCATCAAAGAGTTCATGCGCTTCAAGGTGCGCATGGAGGGCTCCATGAACGG
+CCACGAGTTCGAGATCGAGGGCGAGGGCGAGGGCCGCCCCTACGAGGGCACCCAGACCGCCAAGCTGAAGGTGACCAAGG
+GCGGCCCCCTGCCCTTCGCCTGGGACATCCTGTCCCCCCAGTTCATGTACGGCTCCAAGGCGTACGTGAAGCACCCCGCC
+GACATCCCCGATTACAAGAAGCTGTCCTTCCCCGAGGGCTTCAAGTGGGAGCGCGTGATGAACTTCGAGGACGGCGGTCT
+GGTGACCGTGACCCAGGACTCCTCCCTGCAGGACGGCACGCTGATCTACAAGGTGAAGATGCGCGGCACCAACTTCCCCC
+CCGACGGCCCCGTAATGCAGAAGAAGACCATGGGCTGGGAGGCCTCCACCGAGCGCCTGTACCCCCGCGACGGCGTGCTG
+AAGGGCGAGATCCACCAGGCCCTGAAGCTGAAGGACGGCGGCCACTACCTGGTGGAGTTCAAGACCATCTACATGGCCAA
+GAAGCCCGTGCAACTGCCCGGCTACTACTACGTGGACACCAAGCTGGACATCACCTCCCACAACGAGGACTACACCATCG
+TGGAACAGTACGAGCGCTCCGAGGGCCGCCACCACCTGTTCCTGTACGGCATGGACGAGCTGTACAAGTAG
+```
+
+## nfcore/rnaseq. 
+* The pipeline
+  https://doi.org/10.5281/zenodo.1400710
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/rnaseq/blob/master/CITATIONS.md
+```{bash nfcore, echo = T, eval = F}
+# Fixing gtf file for ERRCC
+cat /crex/proj/snic2021-23-602/nobackup/nbis/data/reference/ercc/ERCC92.gtf | awk '{OFS="\t";print $1,"unknown","gene","1",$5,$6,$7,$8,"gene_id \""$1"\"; gene_version \"1\"; gene_name \""$1"\"; gene_source \"unknown\"; gene_biotype \"ERCC\"\n"$1,"unknown","transcript","1",$5,$6,$7,$8,"gene_id \""$1"\"; gene_version \"1\"; gene_name \""$1"\"; gene_source \"unknown\"; gene_biotype \"ERCC\"; transcript_id \""$1"\"; transcript_name \""$1"\"; transcript_biotype \""$1"\"; transcript_version \"1\";\n"$1,"unknown","exon","1",$5,$6,$7,$8,"gene_id \""$1"\"; gene_version \"1\"; gene_name \""$1"\"; gene_source \"unknown\"; gene_biotype \"ERCC\"; transcript_id \""$1"\"; transcript_name \""$1"\"; transcript_biotype \""$1"\"; exon_number \"1\"; transcript_version \"1\"; exon_id \""$1"\"; exon_version \"1\";" }' 
+
+nextflow run nf-core/rnaseq -profile uppmax \
+-r 3.10.1 \
+--save_trimmed \
+--save_align_intermeds \
+--input /crex/proj/snic2021-23-602/private/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/code/Samples_read.csv \
+--outdir /crex/proj/snic2021-23-602/private/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/intermediate/nf_core_3.10.1_20230404 \
+--multiqc_title SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line \
+--gff /crex/proj/snic2021-23-602/private/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/data/meta_data/annotation/genes.gff \
+--fasta /crex/proj/snic2021-23-602/private/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/data/meta_data/reference/genome.fa \
+--skip_preseq 0 \
+--email nimarafati@gmail.com \
+--project snic2022-22-1037
+```
+
+
+### Loading annotation. 
+```{r load-annotation, echo = T, eval = F}
+
+tmp_annotation <- read.table('../../results/nf_core_3.10.1_20230413/star_salmon/salmon_tx2gene.tsv', header = F)
+colnames(tmp_annotation) <- c('tmp_gene_id', 'ensembl_gene_id', 'gene_name')
+
+mart <- useMart("ENSEMBL_MART_ENSEMBL", host = 'https://www.ensembl.org')
+mart <- useDataset(mart=mart,dataset="drerio_gene_ensembl")
+myattributes <- c("ensembl_gene_id",
+                  "entrezgene_id",
+                  "external_gene_name",
+                  "chromosome_name",
+                  "start_position",
+                  "end_position",
+                  "strand",
+                  "gene_biotype",
+                  "description")
+bdata <- getBM(mart=mart,attributes=myattributes,uniqueRows=T, useCache=FALSE)
+# remove duplicated gene_ids
+bdata <- bdata[!duplicated(bdata$ensembl_gene_id, fromLast = FALSE),] 
+bdata[(bdata$external_gene_name == ''), 'external_gene_name'] <- bdata[(bdata$external_gene_name == ''), 'ensembl_gene_id'] 
+annotation <- bdata[,c('chromosome_name', 'ensembl_gene_id', 'external_gene_name', 'entrezgene_id')]
+
+# annotation[(annotation$external_gene_name == ''), 'external_gene_name'] <- 'Uncharacterised'
+annotation <- merge(annotation, tmp_annotation[,2:3], 'ensembl_gene_id')[!duplicated(tmp_annotation$ensembl_gene_id),]
+
+# rRNA
+rRNA_genes <- as.vector(toupper(bdata[(bdata$gene_biotype == 'rRNA'), 'external_gene_name']))
+
+# mitochondrial
+mito_genes <- as.vector(toupper(unique(annotation[(annotation$chromosome_name == 'MT'), 'external_gene_name'])))
+mito_genes <- mito_genes[!is.na(mito_genes)]
+
+# ribosomal proteins
+ribosomal_protein_genes <- as.vector(toupper(bdata[grep(x = toupper(bdata$external_gene_name), pattern = "^RP[SL]", perl = T), 'external_gene_name']))
+
+```
+
+### Post mapping QC 
+#### Loading the expression values  
+Here we load expression values generated by Salmon (1.4.0) [@Patro2017] in nf-core/rnaseq pipeline and load the expression values as Seurat object by Seurat [@Hao2021].  
+In order to run downstream analysis in Seurat (e.g. cell-cycle regression) we replace ensembl gene ids with gene_names. Because genes associated with cell cycle are available by gene_names in this package. There are some duplicated gene_names for which we concatenated the gene_name with ensembl gene_id (e.g. **COLGALT1-ENSDARG00000073974**).  
+```{r Seurat-object, echo = T, eval = F}
+samples_info <- read.csv('../../code/Samples_read.csv')[,c(1,4)]
+samples_info$Cell_Type <- gsub(x = gsub(x = samples_info$sample, pattern = 'UL-3158-', replacement = ''),
+                               pattern = '[0-9]*', 
+                               replacement = '',
+                               perl = T)
+dds <- readRDS('../../results/nf_core_3.10.1_20230413/star_salmon/salmon.merged.gene_counts.rds')
+
+counts <- round(assay(dds))
+
+##  Replacing the ensembl_gene id with gene_name (for duplicates the gene name is : paste0(external_gene_name, '_', ensembl_gene_id) )
+
+tmp <- merge(counts, bdata[,c('ensembl_gene_id', 'external_gene_name')], by.x = 'row.names', by.y = 'ensembl_gene_id')
+tmp$external_gene_name <- toupper(tmp$external_gene_name)
+tmp[duplicated(tmp$external_gene_name), 'external_gene_name'] <- paste0(tmp[duplicated(tmp$external_gene_name), 'external_gene_name'], '_', tmp[duplicated(tmp$external_gene_name), 'Row.names']) 
+tmp <- rbind.data.frame(tmp,c('GAL4FF',t(counts[(rownames(counts) == 'GAL4FF'), ]), 'GAL4FF'))
+tmp <- rbind.data.frame(tmp,c('TDTOMATO',t(counts[(rownames(counts) == 'TDTOMATO'), ]), 'TDTOMATO'))
+rownames(tmp) <- tmp$external_gene_name
+counts <- tmp[,c(2:55)]
+## 
+# rownames(counts) <- bdata$external_gene_name[match(rownames(counts), bdata$ensembl_gene_id)]
+colnames(counts) <- gsub(x = colnames(counts), 
+     pattern = 'UL.3158.',
+     replacement = '')
+# 
+# all_data <- CreateSeuratObject(counts = counts, 
+#                                min.cells = 3, 
+#                                min.genes = 200, 
+#                                project = gsub(x = colnames(counts), pattern = '[0-9]*', replacement = '',perl = T))
+tmp_samples_info <- samples_info
+tmp_samples_info$sample <- gsub(x = tmp_samples_info$sample, 
+                                pattern = 'UL-3158-', replacement = '')
+colnames(tmp_samples_info)[1] <- 'orig.ident'
+all_data<- CreateSeuratObject(counts = counts,
+                               orig.ident = colnames(counts),
+                               project = colnames(counts))
+all_data$Cell_type <- gsub(x = all_data$orig.ident, pattern = '[0-9]*', replacement = '',perl = T)
+head(tmp_samples_info);head(all_data)
+```
+
+Checking for mitochondrial, rRNA, and ribosomal protein content in all samples. 
+```{r mito-rRNA-ribo-protein, echo = T, eval = F}
+
+
+# Mitochondrial genes
+all_data <- PercentageFeatureSet(all_data, features = mito_genes[mito_genes %in% rownames(all_data)], col.name = "percent_mito", assay = 'RNA')
+
+summary(all_data$percent_mito)
+# rRNA
+all_data <- PercentageFeatureSet(all_data, features = rRNA_genes[rRNA_genes %in% rownames(all_data)], col.name = "percent_rRNA", assay = 'RNA')
+
+#Finding ribosomal proteins
+all_data <- PercentageFeatureSet(all_data, features = ribosomal_protein_genes[ribosomal_protein_genes %in% rownames(all_data)], col.name = "percent_ribo")
+
+# tmp_df <- reshape2::melt(all_data@meta.data, value.name = 'Percentage')
+# colnames(tmp_df)[1:2] <- c('Cell_type', 'Feature')
+# tmp_df$Cell_type <- gsub(x = tmp_df$Cell_type,
+#                           pattern = '[0-9]*',
+#                           replacement = '',
+#                           perl = T)
+# plot_list <- list()
+# for(feature in c('percent_ribo', 'percent_mito', 'percent_rRNA')){
+#   p <- ggplot(data = tmp_df[(tmp_df$Feature == feature),], 
+#          aes(x = Cell_type,
+#              y = Percentage,
+#              fill = Cell_type)) +
+#     geom_boxplot(outlier.shape = NA) +
+#     geom_point(aes(fill = Cell_type), size = 2, shape = 21, position = position_jitterdodge()) +
+#     ggtitle(feature) +
+#     theme(plot.title = element_text(hjust = 0.5)) +
+#     ylim(0,50)
+#     plot_list[[feature]] <- p
+# }
+# p <- plot_grid(ncol = 3, plotlist = plot_list)
+
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/percent_ribo_mito_hb_plat.png', width = 4000, height = 2000, res = 200)
+feats <- c('percent_ribo', 'percent_mito', 'percent_rRNA')
+VlnPlot(all_data, group.by = "Cell_type", features = feats, pt.size = 1, ncol = 3) +
+    NoLegend()
+
+dev.off()
+
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/nFeature_nCounter.png', width = 4000, height = 2000, res = 200)
+feats <- c("nFeature_RNA", "nCount_RNA")
+VlnPlot(all_data, group.by = "Cell_type", features = feats, pt.size = 1, ncol = 2) +
+    NoLegend()
+dev.off()
+```
+
+Here we plot the percentage of counts for top 20 most expressed genes.  
+```{r top20-most-expressed, eval = F, chunk.title = T, echo = T}
+# Compute the relative expression of each gene per cell Use sparse matrix
+# operations, if your dataset is large, doing matrix devisions the regular way will take a very long time.
+
+C <- all_data@assays$RNA@counts
+C <- Matrix::t(Matrix::t(C)/Matrix::colSums(C)) * 100
+most_expressed <- order(apply(C, 1, median), decreasing = T)[20:1]
+# rownames(C)[most_expressed] <- bdata[bdata$ensembl_gene_id %in% rownames(C[most_expressed,]), 'external_gene_name'] 
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/Top20_expressed_genes.png', width = 4000, height = 2000, res = 200)
+par(mar = c(4, 8, 2, 1))
+boxplot(as.matrix(t(C[most_expressed, ])), cex = 0.1, las = 1, xlab = "% total count per cell",
+        col = (scales::hue_pal())(20)[20:1], horizontal = TRUE)
+dev.off()
+gc()
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/Outliers_top_20_expressed_heatmap.png', width = 3000, height = 3000, res = 300)  
+pheatmap(log2(C[most_expressed,] +1))
+dev.off()
+```
+
+## Filtering  
+Here we will only consider cells with at least **100** detected genes and genes need to be expressed in at least **3** cells.  
+```{r, eval = F, chunk.title = T}
+selected_c <- WhichCells(all_data, expression = nFeature_RNA > 100)
+selected_f <- rownames(all_data)[ Matrix::rowSums(all_data) > 3]
+data.filt <- subset(all_data, features=selected_f, cells=selected_c)
+```
+
+
+## Cell cycle  
+A list of cell cycle markers, from [@Itay2016], is loaded with Seurat. We can segregate this list into markers of G2/M phase and markers of S phase.  
+```{r cell-cyle, eval = F}
+s.genes <- cc.genes$s.genes
+g2m.genes <- cc.genes$g2m.genes
+# Groups <- c('REN',  'ROLE', 'RELL' ,'NP', 'WB')
+
+
+tmp_obj <- data.filt
+tmp_obj <- NormalizeData(tmp_obj, normalization.method = "LogNormalize", scale.factor = 1e6)
+tmp_obj <- FindVariableFeatures(tmp_obj, selection.method = "vst")
+tmp_obj <- ScaleData(tmp_obj, features = rownames(tmp_obj))
+gc()
+tmp_obj <- RunPCA(tmp_obj, features = VariableFeatures(tmp_obj), ndims.print = 6:10, nfeatures.print = 10, reduction.name = "PCA", npcs = ncol(tmp_obj)-1, approx=FALSE)
+gc()
+tmp_obj <- RunUMAP(tmp_obj, reduction = 'PCA', dims = 1:ncol(tmp_obj)-1, n.components=2,
+                 n.neighbors=ncol(tmp_obj)-1,
+                 n.epochs=200,
+                 min.dist=0.3,
+                 learning.rate=1,
+                 spread=1, reduction.name = 'UMAP')
+gc()
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_UMAP.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "UMAP", pt.size = 2, group.by = 'Cell_type') + ggtitle('All filtered data') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_PCA.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "PCA", pt.size = 2, group.by = 'Cell_type') + ggtitle('All filtered data') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+
+# Assign Cell-Cycle Scores
+tmp_obj <- CellCycleScoring(tmp_obj, s.features = s.genes, g2m.features = g2m.genes, set.ident = TRUE)
+#Regress out cell cycle scores during data scaling
+tmp_obj <- ScaleData(tmp_obj, vars.to.regress = c("S.Score", "G2M.Score"), features = rownames(tmp_obj))
+gc()
+# Now, a PCA on the variable genes no longer returns components associated with cell cycle
+tmp_obj <- RunPCA(tmp_obj, features = VariableFeatures(tmp_obj), nfeatures.print = 10, reduction.name = 'PCA_cellcycle_regressed', npcs = ncol(tmp_obj)-1)
+names(tmp_obj)
+#Run UMAP here
+tmp_obj <- RunUMAP(tmp_obj, reduction = "PCA_cellcycle_regressed", dims = 1:20,
+                   n.components=2,
+                   n.neighbors= ncol(tmp_obj)-1,
+                   n.epochs=200,
+                   min.dist=0.3,
+                   learning.rate=1,
+                   spread=1, reduction.name = "UMAP_cellcycle_regressed")
+gc()
+# Plotting  UMAP before and after regressing out cell cycle.  
+## Before
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/PCA_with_Cell_Cycle_annotation.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "PCA", pt.size = 2, group.by = 'Cell_type') + ggtitle(' before regressing cell cycle') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+##  After 
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/PCA_Cell_Cycle_regressed.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "PCA_cellcycle_regressed", pt.size = 2, group.by = 'Cell_type') + ggtitle('after regressing cell cycle') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+## S.score and G2M.score distribution
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/Cell_Cycle_scores.png', width = 3000, height = 2000, res = 200)
+p <- VlnPlot(tmp_obj, features = c("S.Score", "G2M.Score"), group.by = "Cell_type",
+  ncol = 2, pt.size = 2)
+print(p)
+dev.off()
+gc()
+data.filt <- tmp_obj
+saveRDS(data.filt, '../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_cell_cycle_regressed_with_DR.rds')
+rm(tmp_obj)
+```
+Two samples (**2REN**, **3REN**) are very far from the rest of the samples in the PCA plot and thus we generate PCA plots without these two samples.  
+```{r , eval = F}
+exclude_samples <- c('2REN', '3REN')
+tmp_obj <- subset(data.filt, subset = orig.ident %in% exclude_samples, invert = T)
+tmp_obj <- RunPCA(tmp_obj, features = VariableFeatures(tmp_obj), ndims.print = 6:10, nfeatures.print = 10, reduction.name = "PCA", npcs = ncol(tmp_obj)-1, approx=FALSE)
+gc()
+tmp_obj <- RunUMAP(tmp_obj, reduction = 'PCA', dims = 1:ncol(tmp_obj)-1, n.components=2,
+                 n.neighbors=ncol(tmp_obj)-1,
+                 n.epochs=200,
+                 min.dist=0.3,
+                 learning.rate=1,
+                 spread=1, reduction.name = 'UMAP')
+gc()
+
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_exclude_2REN_3REN_PCA.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "PCA", pt.size = 2, group.by = 'Cell_type')  + ggtitle('All filtered data excluding 2REN, 3REN samples') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+
+png('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_exclude_2REN_3REN_UMAP.png', width = 3000, height = 2000, res = 200)
+p <- DimPlot(tmp_obj, reduction = "UMAP", pt.size = 2, group.by = 'Cell_type')  + ggtitle('All filtered data excluding 2REN, 3REN samples') + theme(plot.title = element_text(hjust = 0.5))
+print(p)
+dev.off()
+
+## Explained variance by PCs
+# mat <- Seurat::GetAssayData(tmp_obj, assay = "RNA", slot = "scale.data")
+# mat <- Seurat::GetAssayData(object = tmp_obj, assay = 'RNA', slot = 'scale.data')
+# pca <- tmp_obj[["PCA"]]
+# total_variance <- sum(matrixStats::rowVars(mat))
+# 
+# eigValues = (pca@stdev)^2  ## EigenValues
+# varExplained = eigValues / total_variance
+# as.data.frame(sum(varExplained, 2))
+##
+```
+The Seurat object with cell_cycle regression is in:
+`results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_cell_cycle_regressed_with_DR.rds`  
+
+## Dimensionality reduction   
+Reduce dimensionality; Seurat first identify the most variable genes (2000 genes) to use for downstream analysis by `FindVariableFeatures`. This function calculates the average expression and dispersion for each gene, and then these genes are placed into bins. For dispersion within each bin a z-score is calculated. By this approach the relationship between average expression and variability is controlled. In another word, we try to identify outliers.  
+For scaling we scale the data by regressing mitochondrial gene percentage as well as number of features (`percent_mito` & `nFeature_RNA`).  
+```{r reduce-dimonsionality, echo = T, eval = F}
+tmp_path <- ('../../results/nf_core_3.10.1_20230413/Dimension_reduction/')
+data.filt <- run_DR(my_path = tmp_path, my_obj = data.filt, sample = 'All_filtered', n_variant_gene = 2000)
+saveRDS(file = paste0(tmp_path, 'data.filt_cell_cycle_regressed_DR_scaled_data.rds'), object = data.filt)
+```
+
+I further tried to associate the QC metrics (@tbl-metrics) with outliers in PCA plot by annotating the samples in the plot.    
+```{r features-qc-pca, echo = T, eval = T}
+#| label: tbl-metrics
+#| tbl-cap: List of metrics used to annotate samples in PCA Plot.  
+features <- data.frame(Metrics = 
+                         c( "Half_saturation", "R0.Conc..Current..ng.ul.", "R0.Amount..ng.", "R0.input.for.library.preparation..ng.", "Library.Conc..Current..nM.", "Total.Sequences", "total_deduplicated_percentage", "X.GC", "mature_slope", "percent_mito", "nCounter_RNA", "nFeature_RNA", "percent_ribo", "rRNA", "TDTOMATO"),
+                       Info = c('Half saturation measured by dose-response model; here we tried to fit a model to measure the half-saturation',
+                                'Concentration ng/ul',
+                                'Amoung ng',
+                                'Input for library preparation ng',
+                                'Library concentration nM',
+                                'Total number of paired sequences M ',
+                                'Duplication %',
+                                'GC content %', 
+                                'Mature slope; another measuremetric to measure the slope/half-saturation. It is highly correlated with Half_satiration',
+                                'percent_mito; mitochondrial content/expressed genes',
+                                'nCounter_RNA; number of RNAs assigned to features/genes',
+                                'nFeature_RNA; number of features/genes with expression',
+                                'percent_ribo; percentage of expressed ribosomal proteins',
+                                'rRNA; percentation of expressed rRNA',
+                                'TDTOMATO; Expression level of TDTOMATO used in the construct'))
+# DT::datatable(features,
+#               options = list(pageLength = nrow(features)))
+
+kable(features)
+```
+
+We generated PCA plots with annotating samples with metrics in @tbl-metrics using following code.  
+```{r annotate-lab-QC, eval = F, echo = T}
+data.filt <- readRDS(paste0(tmp_path, 'data.filt_cell_cycle_regressed_DR_scaled_data.rds'))
+tmp_obj <- data.filt
+preseq_clean_half_saturation_tmp <- read.csv('../../results/preseq/preseq_clean_half_saturation.txt', header = T, sep = '\t')
+tmp_obj@meta.data <- 
+merge(x = data.filt@meta.data, y = preseq_clean_half_saturation_tmp, by = 'orig.ident')
+rownames(tmp_obj@meta.data) <- tmp_obj@meta.data$orig.ident
+
+features <- c( "Half_saturation", "R0.Conc..Current..ng.ul.", "R0.Amount..ng.", "R0.input.for.library.preparation..ng.", "Library.Conc..Current..nM.", "Total.Sequences", "total_deduplicated_percentage", "X.GC", "mature_slope", "percent_mito", "nCounter_RNA", "nFeature_RNA", "percent_ribo", "rRNA", "TDTOMATO")
+features <- c("nFeature_RNA", "percent_ribo", "rRNA", "TDTOMATO")
+for(i in features){
+  cat('\r', i)
+  png(paste0('../../results/nf_core_3.10.1_20230413/Dimension_reduction/All_filtered_PCA_1_4_', i, '.png'), width = 2000, height = 1500, res = 200)
+  p <- FeaturePlot(object = tmp_obj, reduction = 'PCA_cellcycle_regressed_top_2000', features = i, pt.size = 3)
+  print(p)
+  dev.off()
+}
+```
+
+## Differential expression
+We performed differential expression analysis by using **wilcoxon Rank Sum test**, **MAST**, as well as **DESeq2** methods. To select differentially expressed genes (DEG), we used following cut-offs:  
+- logFC > |1|.  
+- FDR(p_adj_val) <= 0.05.  
+- Minimum 20% of cells in either group should have expression.   
+
+```{r DEG, echo = T, eval = F, out.width = '150%', out.height = '150%'}
+samples_info <- read.csv('../../code/Samples_read.csv')
+data.filt <- readRDS('../../results/nf_core_3.10.1_20230413/Dimension_reduction/data.filt_cell_cycle_regressed_DR_scaled_data.rds')
+# all_genes_wilcox <- FindAllMarkers(tmp_obj, logfc.threshold = -Inf, test.use = "wilcox",
+#     min.pct = 0.1, min.diff.pct = 0.00, only.pos = FALSE, max.cells.per.ident = 50,
+#     assay = "RNA")
+# write.table(x = all_genes_wilcox, file = paste0(tmp_path, 'all_tested_genes_expression_cell_pct_10_wilcox.csv'), quote = F, col.names = T, row.names = F, sep = ',')
+# markers_genes_wilcox <- FindAllMarkers(tmp_obj, logfc.threshold = 0.2, test.use = "wilcox",
+    # min.pct = 0.1, min.diff.pct = 0.20, only.pos = FALSE, max.cells.per.ident = 50,
+    # assay = "RNA")
+
+gr1 <- as.list(c('REN',  'REN',  'ROLE', 'REN'      , 'NP',          'WB'))
+gr2 <- as.list(c('RELL', 'ROLE', 'RELL', 
+                 list(c('RELL', 'ROLE')), 
+                 list(c('REN' , 'RELL', 'ROLE')), 
+                 list(c('REN' , 'RELL', 'ROLE'))))
+
+tmp_obj <- SetIdent(data.filt, value = 'Cell_type')
+  
+for(i in 1:length(gr1)){
+  g1 <- gr1[[i]]
+  g2 <- gr2[[i]]
+  contrast <- paste0(g1, '_vs_', paste(g2,collapse  = '_'))
+  print(contrast)
+  
+  tmp_path <- paste0('../../results/nf_core_3.10.1_20230413/DE/', contrast) 
+  dir.create(tmp_path, showWarnings = F)
+
+  for(tst in c('DESeq2', 'MAST', 'wilcox')){
+    print(tst)
+    tmp_path <- paste0('../../results/nf_core_3.10.1_20230413/DE/', contrast, '/', tst, '/')
+    dir.create(tmp_path, showWarnings = F)
+    
+    DE_genes <- FindMarkers(object = tmp_obj, ident.1 = gr1[[i]], ident.2 = gr2[[i]], test.use = tst, min.pct = 0.2)
+    DE_genes$Gene_name <- rownames(DE_genes)
+    
+    DE_genes_tmp <- DE_genes
+    DE_genes_tmp[,c(1,5)] <- apply(DE_genes_tmp[,c(1, 5)], 2, function(x) format(x, scientific = TRUE, digits = 4))
+    rownames(DE_genes_tmp) <- NULL
+    write.table(DE_genes_tmp[,c(6, 1:2,5,3,4)], paste0(tmp_path, 'DE_results.txt'), col.names = T, row.names = F, quote = F, sep = '\t')
+    
+    png(paste0(tmp_path, '/volcano.png'), width = 2000, height = 1500, res = 300)
+    p <- plot_Volcano(data = DE_genes[!is.na(DE_genes$p_val_adj),], p_val_adj = 'p_val_adj', avg_log2FC = 'avg_log2FC', p_value_cutoff = 0.05, logFC_cutoff = 1, title = 'REN vs RELL')
+    print(p)
+    dev.off()
+    # DE_list[[contrast]] <- DE_genes
+    DE_table <- DE_genes %>% filter(p_val_adj <= 0.05 &
+                                  abs(avg_log2FC) >= 1)
+    if(nrow(DE_table) > 0){
+      tmp_obj_1 <- subset(tmp_obj, subset = Cell_type %in% unlist(strsplit(x = contrast,  split = '_'))[-2])
+      DE_table <- DE_table[order(DE_table$p_val_adj, decreasing = F),]
+      tmp_obj_1 <- ScaleData(tmp_obj_1, features = rownames(DE_table), assay = "RNA")
+      png(paste0(tmp_path, '/DE_heatmap.png'), width = 2000, height = 3000, res = 300)
+      p <- DoHeatmap(tmp_obj_1, features = rownames(DE_table), group.by = 'Cell_type',
+          assay = "RNA")
+      print(p)
+      dev.off()
+    }
+  }
+}
+# 
+# 
+# for(i in 1:length(gr1)){
+#   g1 <- gr1[[i]]
+#   g2 <- gr2[[i]]
+#   contrast <- paste0(g1, '_vs_', paste(g2,collapse  = '_'))
+#   print(contrast)
+#   
+#   tmp_path <- paste0('../../results/nf_core_3.10.1_20230413/DE/', contrast) 
+#   dir.create(tmp_path, showWarnings = F)
+# 
+#   for(tst in c('DESeq2', 'MAST', 'wilcox')){
+#     tmp_path <- paste0('../../results/nf_core_3.10.1_20230413/DE/', contrast, '/', tst, '/')
+#     DE_genes <- read.table(paste0(tmp_path, 'DE_results.txt'), header = T)
+#     DE_table <- DE_genes %>% filter(p_val_adj <= 0.05 &
+#                                   abs(avg_log2FC) >= 1)
+#     print(dim(DE_table))
+#     print(table(tmp_obj_1$Cell_type[tmp_obj_1$Cell_type %in% unlist(strsplit(x = contrast,  split = '_'))]))
+#     if(nrow(DE_table) > 0){
+#       tmp_obj_1 <- subset(tmp_obj, subset = Cell_type %in% unlist(strsplit(x = contrast,  split = '_'))[-2])
+#       DE_table <- DE_table[order(DE_table$p_val_adj, decreasing = F),]
+#       tmp_obj_1 <- ScaleData(tmp_obj_1, features = DE_table$Gene_name, assay = "RNA")
+#       png(paste0(tmp_path, '/DE_heatmap.png'), width = 2000, height = 3000, res = 300)
+#       p <- DoHeatmap(tmp_obj_1, features = (DE_table$Gene_name), group.by = 'Cell_type',
+#           assay = "RNA")
+#       print(p)
+#       dev.off()
+#     }
+#   }
+# }
+
+
+```
+
+
+
+# Results  
+## Notes from NGI  
+
+- Note that four RNA samples were “re-QC:ed” (UL-3158_RNA_QC_220610_2.pdf) since they were heavily overloaded on the original run (UL-3158_RNA_QC_220610_1.pdf)     
+- The user decided to exclude eight RNA samples due to low concentration (Marked in grey). 
+
+```{r UL-3158-NGI-excluded, echo = F, eval = T}
+UL3158_df <- read.csv('../../doc/UL-3158_QC_summary_RNA_Library_ToNimaR_230306_YMZ.txt', header = T, sep = '\t')
+UL3158_df %>% arrange(Library.Conc..Current..nM.) %>% 
+    datatable(list(columnDefs = list(list(visible = FALSE, targets = c(6))))) %>% 
+    formatStyle("Library.Conc..Current..nM.", target = 'row', 
+                backgroundColor = styleEqual(c(50, 100, 0), c('yellow', 'white', 'grey')))
+```
+
+ 
+ 
+ 
+ 
+-  Information on sample names which have been changed are listed below.   
+
+```{r UL-3158-NGI-names, echo = F, eval = T}
+UL3158_df <- read.csv('../../doc/UL-3158_QC_summary_RNA_Library_ToNimaR_230306_YMZ.txt', header = T, sep = '\t')
+UL3158_df <- UL3158_df[(UL3158_df$FI0L.Sample.0me != UL3158_df$OLD.Sample.0me),]
+DT::datatable(UL3158_df)
+```
+
+- For library preparation we used 100 ng RNA input except for three samples (yellow marked in excel list column **R0.input.for.library.preparation..ng.**).  
+
+```{r UL-3158-NGI-input, echo = F, eval = T}
+UL3158_df <- read.csv('../../doc/UL-3158_QC_summary_RNA_Library_ToNimaR_230306_YMZ.txt', header = T, sep = '\t')
+UL3158_df %>% arrange(R0.input.for.library.preparation..ng.) %>% 
+  filter(R0.input.for.library.preparation..ng. >= 50) %>%
+    datatable(list(columnDefs = list(list(visible = FALSE, targets = c(6))))) %>% 
+    formatStyle("R0.input.for.library.preparation..ng.", target = 'row', 
+                backgroundColor = styleEqual(c(50, 100), c('yellow', 'white')))
+
+```
+
+- Comments regarding library preparation: All samples were QC:ed as if they were “RNA” samples. The kits we used for QC are only compatible with RNA.  
+ 
+- Sequencing libraries were prepared from 50ng or 100ng total RNA using the TruSeq stranded mRNA library preparation kit (cat# 20020595, Illumina Inc.) **excluding polyA selection**. For isolated mRNA, Illumina recommendations specified in the introduction of the Purify and Fragment mRNA procedures were followed (Incubate RFP step prior to first strand cDNA synthesis). Unique dual indexes (cat# 20022371, Illumina Inc.) were used. The library preparation was performed according to the manufacturers’ protocol (#1000000040498).  
+ 
+- Our bioinformatician Pontus ran RNA-seq analysis on their data which was delivered to them with the comment:  
+
+
+This is the delivery of the Best Practice Analysis and Pontus have prior to the analysis, the FASTQ files were filtered for presence of reads mapping to the human reference GRCh38 using the bbsplit tool from the BBMap software package (version 38.93).
+ 
+The results indicate varying quality of the sequenced libraries and balance of the pool but it's difficult to drill down into the details of each library without more domain-specific knowledge of the genome and annotations. Therefore, Pontus just note the following (**bullets in bold, I could replicate**):
+ 
+**- The total number of reads for the different samples range from 7.7M up to 264M which is quite a large range.**  
+- The libraries do not appear to show consistent strand-specificity. (**Nima: After running the pipeline marking all samples as unstranded; all the samples were identified as forward stranded**).   
+
+- Based on expression profiles, two samples (51RELL and 31REN) stand out from the rest. (**Nima: I did not find these samples as as outlier while 2REN and 3REN were. It could be due to the fact that these samples were evaluated by bulk-RNASeq pipeline at NGI. Please note that NGI run the pipeline for sanity check not for aim of analyzing the data.**)
+**- Some libraries show poor complexity.  **
+
+
+
+## MultiQC  
+MultiQC generated by nf-core pipeline consists of FastQC of raw and trimmed reads as well as statistics related to mapping of the reads.  
+Few important features found in MultiQC report:  
+- Strandness: all the samples looks to be forward strand.  
+- Complexity curve: there are some samples which looks to have low complexity; the saturation plots reaches a plateau very quickly. It suggests that there are few number of molecules which have been sequenced many times (more in @sec-saturation).  
+- Duplication: There are many duplicated reads detected in this dataset (more in @sec-duplication).  
+
+
+
+```{r MultiQC-strandness, echo = F, eval = T}
+samples_info <- read.csv(paste0(path, 'code/Samples_read.csv'))
+for(i in 1:length(samples_info)){
+  paste0('mkdir ', path, 'intermediate/', samples_info$sample[i])
+}
+```
+
+### FastQ screen  
+To monitor potential contamitation we used fastq_screen (version 0.15.1)[@Wingett2018] to align the reads to few selected genomes in addition to zebrafish. This tool uses ~100,000 selected reads to align to the genomes using bowtie2 (version 2.4.5)[@Langmead2012].   
+```{r fastqc-screen, echo = F, eval = F}
+session <- ssh_connect("nimar@rackham.uppmax.uu.se")
+
+for(s in 1:nrow(samples_info[-28,])){
+  cat('\r', samples_info$sample[s])
+  ssh_exec_wait(session, 
+  command = paste0(
+  'cd ', path, 'code/
+  echo "#!/bin/bash -l
+#SBATCH -A snic2022-22-1037
+#SBATCH --mail-type=all
+#SBATCH --mail-user=nimarafati@gmail.com
+#SBATCH -p core -n 2
+#SBATCH -t 1:00:00
+#SBATCH -J ', 
+samples_info$sample[s],
+'
+ml bioinfo-tools fastq_screen bowtie2 
+fastq_screen \\
+--aligner bowtie2 \\
+--threads 20  \\
+--conf fastq_screen.conf \\
+--force \\
+--outdir ~/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/intermediate/fastq_screen/',
+samples_info$sample[s], ' ',
+samples_info$fastq_1[s], ' ',
+samples_info$fastq_2[s], ' " >Sbatch_fastq_screen_', samples_info$sample[s],'.script
+sbatch Sbatch_fastq_screen_', samples_info$sample[s],'.script'))
+}
+```
+
+```{r fastqc-screen-result, echo = F, eval = T}
+fastq_screen_multiqc <- read.csv(paste0(path, 'results/fastq_screen/multiqc_data/mqc_fastq_screen_plot_1.txt'), header = T, sep = '\t')
+
+fastq_screen_multiqc <- data.frame(Sample = gsub(fastq_screen_multiqc$Sample, pattern = '_S.*screen', replacement = ''),  round(100*fastq_screen_multiqc[,2:ncol(fastq_screen_multiqc)]/apply(fastq_screen_multiqc[,2:ncol(fastq_screen_multiqc)], 1, sum), 2))
+fastq_screen_multiqc_melt <- reshape2::melt(fastq_screen_multiqc, value.name = 'percentage', varnames = c(
+  'Genome' ))
+
+
+ggplot(fastq_screen_multiqc_melt, aes(fill=variable, x=percentage, y=Sample)) + 
+    geom_bar(position="fill", stat="identity") +
+  scale_fill_viridis_d(option="plasma")
+
+```
+
+### Library satuaration  (complexity level) {#sec-saturation}  
+As explained in the methods section we correlated the slope of saturation plot with QC metrics received from NGI and duplication% of the reads as well as total number of paired sequences.  The high correlation detected in this analysis is between half-saturation (or slope of the saturation line) with total number of reads which is expected; By more sequencing we can capture/sequence more molecules. On the other hand, there is no strong correlation with duplication. 
+```{r Preseq, echo = F, eval = T}
+# Loading NGI QC data
+UL3158_df <- read.csv('../../doc/UL-3158_QC_summary_RNA_Library_ToNimaR_230306_YMZ.txt', header = T, sep = '\t')
+UL3158_df$Sample <- UL3158_df$FI0L.Sample.0me
+UL3158_df <- UL3158_df[,(sapply(UL3158_df, class) == 'integer' |
+                         sapply(UL3158_df, class) == 'numeric' |
+                           colnames(UL3158_df) == 'Sample')]
+
+# Loading nReads from samtools_stat
+fastqc_report <-  read.csv(paste0(path, 'results/NGI-results/star_salmon/multiqc_fastqc_1.txt'), header  = T, sep= '\t')
+fastqc_report <- as_tibble(fastqc_report[(grep(fastqc_report$Sample, pattern = '_1', invert = T)),c('Sample', 'Total.Sequences', 'total_deduplicated_percentage', 'X.GC')])
+fastqc_report$Total.Sequences <- fastqc_report$Total.Sequences/1000000
+
+# Loading preseq results
+preseq <- read.csv(text = paste0(readLines(paste0(path, 'results/NGI-results/star_salmon/mqc_preseq_plot_1.txt'), -3),collapse="\n"), sep = '\t', header = T)
+colnames(preseq)[1] <- 'Sample'
+preseq_clean <- t(preseq[seq(1,nrow(preseq)-1,2),2:ncol(preseq)])
+colnames(preseq_clean) <- preseq[seq(1,nrow(preseq)-1,2),1]
+preseq_clean <- as_tibble(preseq_clean[-1,])
+
+# 
+# # x <- as_tibble(cbind.data.frame(t(Total_molecule), Unique_molecule = t(preseq[1,2:ncol(preseq)])))
+# 
+# growth_rate <- function(x){
+#   # print(head(x))
+#   # cat('\r', sample_id)
+#   x <- as_tibble(x)#[(seq(1,nrow(x),nM)),])
+#   colnames(x) <- 'Unique_molecule'
+#   x <- x %>% mutate(diff = log(Unique_molecule) - lag(log(Unique_molecule)))
+#   return(which.max(x$diff))
+# }
+# preseq_clean_growth <- (as.data.frame(sapply(preseq_clean, growth_rate)))
+# 
+# find_slope <- function(y){
+#   x <- as.vector(t(preseq[2,3:ncol(preseq)]))
+#   # return(lm(log2(y) ~ x)$coefficient[2])
+#   return(  lm((y) ~ x)$coefficient[2])
+# }
+# preseq_clean_slope <- as_tibble(data.frame(Sample = (colnames(preseq_clean)), slope = (sapply(preseq_clean, find_slope)))) %>% 
+#   arrange(slope)
+# 
+# preseq_clean_slope <- left_join(preseq_clean_slope, UL3158_df, 'Sample')
+# # plot(preseq_clean_slope$slope, preseq_clean_slope$Library.Conc..Current..nM.)
+# # preseq_clean_slope_tmp <- preseq_clean_slope[,(sapply(preseq_clean_slope, class) == 'integer' |
+# #                                               sapply(preseq_clean_slope, class) == 'numeric' )]
+# # preseq_clean_slope_tmp <- data.frame(preseq_clean_slope[,(sapply(preseq_clean_slope, class) == 'integer' |
+# #                                                sapply(preseq_clean_slope, class) == 'numeric' )], preseq_clean_slope$Sample)
+# # preseq_clean_slope_tmp <- data.frame(Sample = preseq_clean_slope$Sample,
+# #                                      preseq_clean_slope_tmp)
+# 
+
+# # Finding correlation between saturation results and NGI QC data
+# preseq_clean_slope_tmp <- left_join(preseq_clean_slope, fastqc_report, 'Sample')
+# chart.Correlation(preseq_clean_slope_tmp[,c(2,4,6,7,8)], histogram = T, pch = 19)
+
+
+fit_model <- function(x, preseq_data, fastqc_data){
+  sample <- x
+  # select_preseq_data <- seq(1, 2 * (as.integer(fastqc_data[(fastqc_data$Sample == sample), 'Total.Sequences'])))
+  select_preseq_data <- 1:nrow(preseq_data)
+  data <- data.frame(y = as.vector(preseq_data[select_preseq_data,sample]),
+                       x = select_preseq_data)
+    colnames(data)[1] <- 'y'
+    model <- drm(formula = log2(y) ~ x, data = data, fct = MM.3())
+    mmdf <- data.frame(x = data$x)
+    mmdf$y <- predict(model, newdata = mmdf)
+    ggplot(data = data,
+           aes(x = x, y = log2(y))) +
+      xlab('Total molecules (including duplicates)') +
+      ylab('Unique molecules') + 
+      geom_point(alpha = 0.5) +
+      geom_line(data = mmdf, 
+                aes(x = x, y = y), 
+                colour = "green")
+  # summary(model$fit$par)
+  return(model$fit$par[3])
+}
+preseq_clean_half_saturation <- as_tibble(data.frame(Sample = colnames(preseq_clean), Half_saturation = unlist(lapply(colnames(preseq_clean), function(x) {fit_model(x, preseq_data = preseq_clean, fastqc_data = fastqc_report)})))) %>% arrange(Half_saturation)
+preseq_clean_half_saturation_tmp <- left_join(preseq_clean_half_saturation, UL3158_df, 'Sample')
+preseq_clean_half_saturation_tmp <- left_join(preseq_clean_half_saturation_tmp, fastqc_report, 'Sample') %>% arrange(R0.input.for.library.preparation..ng.)
+
+
+mature_slope <- read.table('~/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line/results/preseq/Mature_slope.tsv', header = T)
+preseq_clean_half_saturation_tmp <- left_join(preseq_clean_half_saturation_tmp, mature_slope, 'Sample')
+chart.Correlation(preseq_clean_half_saturation_tmp[,c(2,4,6,7,8,9,10,11)], histogram = T, pch = 19)
+preseq_clean_half_saturation_tmp$orig.ident <- gsub(x = preseq_clean_half_saturation_tmp$Sample, pattern = 'UL-3158-', replacement = '')
+write.table(preseq_clean_half_saturation_tmp, '../../results/preseq/preseq_clean_half_saturation.txt', col.names = T, row.names = F, quote = F, sep = '\t')
+```
+
+**In general this analysis did not reveal any information with regard to pattern saw in complexity analysis.**  
+
+### Duplication {#sec-duplication}   
+As shown in MultiQC report (@fig-duplevel) there are many duplicate reads.  
+
+```{r duplication}
+#| label: fig-duplevel
+#| fig-cap: "Duplication level"
+#| echo: false
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/multiqc/star_salmon/Sequence_Duplication_Levels.png')
+```
+
+We can also see that there is no linear correlation between number of sequenced reads and duplication level (@fig-totalreadsdupperc). In this figure you can also see that there are three samples which have highest number of sequenced reads (11ROLE, 47REN, 31REN).  
+
+
+```{r multiqc-general-stats, eval = T, echo = F}
+#| label: fig-totalreadsdupperc
+#| fig-cap: "Total number of reads vs duplication percentage"
+#| echo: false  
+mqc_general_stats <- read.csv('../../results/nf_core_3.10.1_20230413/multiqc/star_salmon/SMS_6425_23_scRNA_Inhibitory_Efferents_Lateral_Line_multiqc_report_data//multiqc_general_stats.txt', header = T, sep = '\t')  
+mqc_general_stats <- mqc_general_stats[seq(from = 1, to  = nrow(mqc_general_stats), by = 3),]
+colnames(mqc_general_stats)[c(2,6)] <- c('Total_reads', 'Dupl_perc')
+p <- ggplot(data = mqc_general_stats, 
+       aes(x = Total_reads/1000000, y = Dupl_perc * 100, label = Sample)) + 
+  xlab('Total sequence (M reads)') +
+  ylab('Duplication %') +
+  ggtitle('Total reads vs Duplication %') +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_point() 
+ggplotly(p)
+```
+
+
+## Post mapping QC 
+After loading the expression matrix to Seurat object, we generated some basic metrics such as mitochondrial/ribosomal protein/rRNA content which are shown for each cell-type in @fig-mitocontent.  
+```{r mito-rRNA-ribo-protein-results}
+#| echo: false
+#| fig-cap: Mitochondrial/ribosomal protein/rRNA content of samples in each cell-type
+#| label: fig-mitocontent
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/percent_ribo_mito_hb_plat.png')
+```
+
+Samples in WB group, with only 4 samples, show distinct distribution compared to other groups.   
+In addition, in @fig-nfeaturecounter, you see the distribution of number of features and reads assigned to genes in all cell types. Here, you can also see sampels from WB have higher number of detected features and while number of reads assigned to features oeverlaps among cell-types.  
+```{r nfeature-ncounter}
+#| echo: false
+#| fig-cap: Number of features and reads in each cell-type
+#| label: fig-nfeaturecounter
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/nFeature_nCounter.png')
+```
+
+@fig-top20expressed shows top 20 genes with highest expression where top 7 genes are mitochondrial genes.  (Filtering?)   
+```{r top20-most-expressed-result, eval = T, chunk.title = T}
+#| label: fig-top20expressed
+#| fig-cap: Top 20 expressed genes among all samples
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/Top20_expressed_genes.png')
+```
+
+## Filtering  
+Here we  only kept cells/samples with at least **100** detected genes and genes need to be expressed in at least **3** cells.  
+**Please note that since "GAL4FF" was not expressed in any of the samples, this gene was excluded in filtering step. That is why you do not see the figure with expression of this gene in following analysis.**  
+@fig-pcaall shows PCA and there are two samples from REN group (2REN and 3REN) which stand out. WB samples, on the other hand looks to be separated from other cell types.  
+```{r pca-all-filtered, eval = T, chunk.title = T}
+#| label: fig-pcaall
+#| fig-cap: PCA of all filtered samples
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_PCA.png')
+```
+
+For better visualization we excluded the outlier samples (2REN and 3REN) and calculated PCs again and generated a new PCA plot (@fig-pcanooutliers).  In this new plot (with a changes in the orientation) we still see WB cell type (with four samples) looks to be separated from other cell type. 
+```{r pca-no-outlier, eval = T, echo = F}
+#| label: fig-pcanooutliers
+#| fig-cap: PCA of all filtered samples excluding the outliers (2REN and 3REN)
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/data.filt_exclude_2REN_3REN_PCA.png')  
+```
+
+Regarding the outliers:  
+- MultiQC report did not reveal any significant bias for these samples; They had lower duplication rate in fact.  
+- I also checked the expression profile of these two samples for top 20 expressed genes and it was not any striking difference compared to other samples. Both samples together with few others from different cell types had more or less same expression level (@fig-outliertop20heatmap).  
+```{r heatmap-top20, echo = F, eval = T}
+#| label: fig-outliertop20heatmap
+#| fig-cap: Heatmap of expression values of top 20 highly expressed genes (2REN and 3REN) (log2 +1 expression)
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/Outliers_top_20_expressed_heatmap.png')  
+```
+
+## Cell cycle  
+@fig-cellcycle shows cell cycle scores of cells/samples in each celltype.  WB seems to have cells that are not in S phase
+```{r cell-cyle-result, eval = T, echo = F}
+#| label: fig-cellcycle
+#| fig-cap: Cell cycle scores for each cell type 
+include_graphics('../../results/nf_core_3.10.1_20230413/QC_postmapping/Cell_Cycle_scores.png')
+```
+
+## Dimensionality reduction   
+We first identified the most variable genes (top 2000 genes) to calculate the average expression and dispersion for each gene, and then these genes are placed into bins. For dispersion within each bin a z-score is calculated. By this approach the relationship between average expression and variability is controlled. After dimensionality reduction we can see slight improvement in separation of the WB samples however the outliers in REN group is still standing out.  
+```{r reduce-dimonsionality-all-filtered-result, eval = T, chunk.title = T}
+#| label: fig-drall
+#| fig-cap: PCA of all filtered samples after dimensionality (PC1 vs PC2 and PC3 vs PC4).  
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/Dimension_reduction/All_filtered_PCA_1_4.png')
+```
+
+An additional QC, I annotated the cells/samples by metrics shown in @tbl-metrics to check for any association between these metrics and outliers as well as sanity check of the presence of sequences used in construct.  
+- _TDTOMATO_ was only expressed in three cells/samples.    
+- _GAL4FF_, as explained above, was filtered out due to no expression in any of the cells/samples.  
+- Low number of features/percent_mito/percent_ribo in outliers (2REN/3REN) seems to be low. However, there are samples with lowe features that seen together with other samples. Thus, this cannot explain why these samples behave  differently.  
+
+```{r function-to-list-figures, echo = F, eval = T}
+list_png <- function(path, patt){
+  cons <- list.files(path = paste0(path, '/'), pattern = paste0(patt, '.*.png'))
+  con1 <- as.list(gsub(".png", "", cons))
+  return(con1)
+}
+
+
+temp_code <- mapply(function(path, patt) {
+  knitr::knit_expand("figures.qmd")}, 
+  c("../../results/nf_core_3.10.1_20230413/Dimension_reduction/"), 
+  c("All_filtered_PCA_1_4_"))
+res <- knitr::knit_child(text = unlist(temp_code), quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+## Differential expression   
+Differential expression by **DESeq2** methods showed significant DEGs in all the contrasts. While we could identify potential gene markers with this method, by using **wilcoxon Rank Sum test** and **MAST** we could identify DEGs only in WB vs REN_RELL_ROL. There were only three DEGs for WB vs REN_RELL_ROL using **DESeq2**.  Hence, in the following you will see results of **DESeq2** for all contrasts and for WB vs REN_RELL_ROL both **DESeq2** as well as **wilcoxon Rank Sum test** results.  
+
+```{r DEG-results, eval = T, echo = F}
+contrasts <- c("REN_vs_RELL", "REN_vs_ROLE", "ROLE_vs_RELL", "REN_vs_RELL_ROLE", "NP_vs_REN_RELL_ROLE", "WB_vs_REN_RELL_ROLE")
+# DE_table <- DE_list[['WB_vs_REN_RELL_ROLE']]
+# contrast <- 'WB_vs_REN_RELL_ROLE'
+for(contrast in contrasts){
+  # DE_table
+  temp_code <- mapply(function(title) {
+      knitr::knit_expand('DEG_DE_Table.qmd')},
+      c(contrast))
+      res <- knitr::knit_child(text = unlist(temp_code), quiet = TRUE)
+      cat(res, sep = '\n')
+  # Heatmap
+  temp_code <- mapply(function(title) {
+      knitr::knit_expand('DEG_heatmap.qmd')},
+      c(contrast))
+      res <- knitr::knit_child(text = unlist(temp_code), quiet = TRUE)
+      cat(res, sep = '\n')
+}
+```
+
+As explained above we identified three DEGs by **DESeq2** methods while more DEGs could be captured using **wilcoxon Rank Sum test** which you can find the list of these genes as well as corresponding heatmap in below. 
+You can find complete list of all tested genes in `results/nf_core_3.10.1_20230413/DE/WB_vs_REN_RELL_ROLE/wilcox/DE_results.txt`.   
+
+```{r DEG-WB_vs_REN_RELL_ROLE, eval = T, echo = F}
+DE_table <- read.table('../../results/nf_core_3.10.1_20230413/DE/WB_vs_REN_RELL_ROLE/wilcox/DE_results.txt', header = T)
+DE_table <- DE_table %>% filter(p_val_adj <= 0.05 &
+                                  abs(avg_log2FC) >= 1)
+DT::datatable(data = DE_table, rownames = TRUE,
+        extensions = c('Buttons', 'Scroller'),
+        options = list(dom = 'Bfrtip', buttons = c('copy', 'csv'),
+                       deferRender = TRUE, scrollX = T,
+                       scrollY = 200,
+                       scroller = TRUE,
+                       caption = 'DE  genes in WB_vs_REN_RELL_ROLE contrast'))
+knitr::include_graphics('../../results/nf_core_3.10.1_20230413/DE/WB_vs_REN_RELL_ROLE/wilcox/DE_heatmap.png')
+```
+
+# Conclusion  
+## 20230427
+Although the quality of the reads look to be fine however there were some issues identified during QC:  
+- Large duplication rate. High number of sequenced reads can contribute to this picture (some samples had more than 200 M reads). However, there was not a linear relationship between number of reads and duplication reads; duplication rate varied between 40% and +80%.  
+- Some of the samples had low complexity (e.g. 57NP). In Prseq output, we could see a sharp slope in the plot indicative of early saturation which means that there could be small number of molecules sequenced in these samples. In this analysis, there is a large variation among the samples.  
+- Moreover, some samples had high alignment in intergenic regions which may suggest potential contamination with DNA samples.   
+- During downstream analysis two samples from REN group/cell (2REN and 3REN) type stood out which correlation with QC data did not reveal any sensible result.  
+- Based on observation in previous notes, I contacted NGI and got additional information on library qualities and tried to correlate it with complexity (saturation) results. This analysis was not very conclusive; I could see neither correlation between low complexity samples and QC data nor between the outliers (2REN & 3REN) and QC data.  
+- After standard analysis of the data in Seurat (which is an R package for scRNASeq data analysis), we can see samples from WB tend to separate from rest of the samples while other samples are overlapping to very large extend and we cannot see any separation/clustering. Number of cells/samples are quite low compared to standard scRNASeq project and we used PCA instead of UMAP for visulaization of the samples.  
+
+
+## 20230529 
+- Based on the comparisons there are several genes which may be used as gene markers to differentiate the cell-types.  
+- By using **DESeq2** method we identified potential gene markers for all the contrasts. 
+- Since **wilcoxon Rank Sum test** resulted in more significant DEGs for WB_vs_REN_RELL_ROLE contrast we also showed this result only for this contrast.  **Please note that there are certain statistical differences between these methodologies and thus the output of comparisons of these methods may not be directly comparable. ** 
+- Among all contrasts performed by **DESeq2**, except WB_vs_REN_RELL_ROLE, RELL_vs_ROLE showed highest number of DEGs (49). @fig-upsetr shows overlapping genes among contrasts. While WB_vs_REN_RELL_ROLE by **wilcoxon Rank Sum test** shows highest number of DEGs (334) without overlap with any other contrasts.     
+
+
+```{r Upsetr, eval = T, echo = F}
+#| label: fig-upsetr
+#| fig-cap: Overlap of DEGs among all the contrasts performed by DESeq2 and WB_vs_REN_RELL_ROLE based on wilcoxon rank sum test
+contrasts <- c("REN_vs_RELL", "REN_vs_ROLE", "ROLE_vs_RELL", "REN_vs_RELL_ROLE", "NP_vs_REN_RELL_ROLE", "WB_vs_REN_RELL_ROLE")
+DE_list <- list()
+for(contrast in contrasts){
+   DE_table <- read.table(paste0('../../results/nf_core_3.10.1_20230413/DE/', contrast, '/DESeq2/DE_results.txt'), header = T)
+   DE_table <- DE_table %>% filter(p_val_adj <= 0.05 &
+                                  abs(avg_log2FC) >= 1)
+  DE_list[[contrast]] <- DE_table$Gene_name
+}
+
+# WB_vs_REN_RELL_ROLE_wilcox
+DE_table <- read.table('../../results/nf_core_3.10.1_20230413/DE/WB_vs_REN_RELL_ROLE/wilcox/DE_results.txt', header = T)
+DE_table <- DE_table %>% filter(p_val_adj <= 0.05 &
+                              abs(avg_log2FC) >= 1)
+DE_list[['WB_vs_REN_RELL_ROLE_wilcox']] <- DE_table$Gene_name
+
+# UpsetR
+upset_data <- fromList(DE_list)
+upset_plot <- upset(upset_data, main.bar.color = "dodgerblue", sets.bar.color = "lightblue", nsets = 7, 
+                    keep.order=TRUE, sets = names(DE_list))
+
+# Display the plot
+print(upset_plot)
+```
+
+
+# Reproducibility
+```{r sessioninfo, echo = F, eval = T}
+ # df <- read.csv('../../results/nf_core_3.10.1_20230413//pipeline_info/software_versions.tsv', sep = '\t', header = F)
+# colnames(df) <- c('Tool', 'Version')
+# kable(df , longtable = F, booktabs = T, caption = 'Tools version used in nf-core pipeline.')  %>% kable_styling()
+sessionInfo()
+```
+
+# References
