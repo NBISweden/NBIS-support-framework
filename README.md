@@ -65,8 +65,10 @@ NBIS is welcome to contribute! If you want to contribute something, please see
 the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Questions and feedback can be sent to
-[Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
-[Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
+[Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]),
+[Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]) or
+[John Sundh](mailto:john.sundh@nbis.se?subject=[NBIS-SF]).
+
 
 [nbisweden]: https://github.com/NBISweden
 [nbis-pipelines]: https://github.com/NBISweden/pipelines/
