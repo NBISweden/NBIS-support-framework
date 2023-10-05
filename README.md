@@ -40,7 +40,7 @@ the year, plus a descriptive name, *e.g.* *NBIS-4412-18-mast*. You can then clon
 the project. The WABI ID is comprised of the PI's first name initial(s), the PI's surname, 
 and the year and month (YYMM) of the application deadline. For example: NBIS-M_Bergö_1305
 
-> **What WABI ID??**
+> **Note**
 If you don't know the WABI ID for the project, you can ask your manager or search for the 
 project in Redmine. The Redmine issue for the project should have a field "WABI ID" containing 
 the ID. 
