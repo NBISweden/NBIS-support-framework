@@ -26,13 +26,24 @@ in NBIS support work at the following places:
 
 First create a new repository for your project by using NBIS-SF as a template.
 You can do this directly from the NBIS-SF GitHub by pressing the *"Use this
-template"* button. This will take you through the creation of your new repo
-like normal, but it will contain all the content currently available on NBIS-SF
-in a single, initial commit. Name your new repository with the type of project
-it is (LTS, SMS or PP), the Redmine issue number, the year, plus a descriptive
-name and on the [NBISweden GitHub][nbisweden], *e.g.* *SMS-4412-18-mast* or
-*LTS-3939-20-ctcf*. You can then clone your new repository like you would
-normally.
+template"* button and select *"Create new repository"*. This will take you through 
+the creation of your new repo like normal, but it will contain all the content currently 
+available on NBIS-SF in a single, initial commit. Set the *Owner* to 
+[NBISweden](https://github.com/NBISweden/).
+
+### Naming the repository
+
+- For *user-fee projects*, name your new repository with _NBIS_, the Redmine issue number, 
+the year, plus a descriptive name, *e.g.* *NBIS-4412-18-mast*. You can then clone your new repository like you would normally.
+
+- For *peer-review projects*, name your new repository with _NBIS_ followed by the WABI ID of
+the project. The WABI ID is comprised of the PI's first name initial(s), the PI's surname, 
+and the year and month (YYMM) of the application deadline. For example: _NBIS-M\_Bergö\_1305_
+
+> **Note**
+If you don't know the WABI ID for the project, you can ask your manager or search for the 
+project in Redmine. The Redmine issue for the project should have a field "WABI ID" containing 
+the ID. 
 
 ## Repo privacy settings
 
@@ -54,8 +65,10 @@ NBIS is welcome to contribute! If you want to contribute something, please see
 the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Questions and feedback can be sent to
-[Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]) or
-[Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]).
+[Erik Fasterius](mailto:erik.fasterius@nbis.se?subject=[NBIS-SF]),
+[Olga Dethlefsen](mailto:olga.dethlefsen@nbis.se?subject=[NBIS-SF]) or
+[John Sundh](mailto:john.sundh@nbis.se?subject=[NBIS-SF]).
+
 
 [nbisweden]: https://github.com/NBISweden
 [nbis-pipelines]: https://github.com/NBISweden/pipelines/
