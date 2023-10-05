@@ -38,7 +38,7 @@ the year, plus a descriptive name, *e.g.* *NBIS-4412-18-mast*. You can then clon
 
 - For *peer-review projects*, name your new repository with _NBIS_ followed by the WABI ID of
 the project. The WABI ID is comprised of the PI's first name initial(s), the PI's surname, 
-and the year and month (YYMM) of the application deadline. For example: NBIS-M_Bergö_1305
+and the year and month (YYMM) of the application deadline. For example: _NBIS-M\_Bergö\_1305_
 
 > **Note**
 If you don't know the WABI ID for the project, you can ask your manager or search for the 
