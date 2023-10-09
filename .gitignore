@@ -1,27 +1,68 @@
-# General files
+# General
 .DS_Store
-.Rhistory
+
+# Project
+data/*
+!data/README.md
+results/*
+!results/README.md
 *.un*
-
-# Project-specific files and directories
-.snakemake/
-*-env/
-
-# Partially ignored directories
-**/data/*
-**/results/*
 
 reports/*
 reports/knitr-pdf/*
 
-**/scratch/*
+# Apptainer/Singularity
+*.sif
+*.img
+
+# Conda
+conda
+
+# Nextflow
+.nextflow*
+work/
+
+# Quarto
+.quarto/
+_site/
+_book/
+**/.gitignore
+
+# R
+.Rhistory
+
+# Snakemake
+.snakemake/
+*-env/
+
+# Common Bioinformatic file formats
+*.sam
+*.bam
+*.cram
+*.fasta
+*.fna
+*.fa
+*.fastq
+*.fast5
+*.gz
+*.tar
+*.bz2
+*.gff
+*.gtf
+*.bed
+*.vcf
+*.bcf
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.pdb
+*.ped
+*.map
 
 # Exceptions
 !*/README.md
 !*/*/README.md
-
-!data/test_data/
-!data/data_management/
 
 !doc/
 
@@ -30,5 +71,3 @@ reports/knitr-pdf/*
 !reports/*/
 !reports/*/*.Rnw
 !reports/*/*.pdf
-
-!scratch/README.md
