@@ -14,5 +14,4 @@ repository instead and use this folder purely for raw-data.
 
 [*(back to project home directory)*][sf-home]
 
-[sf-dmp]: https://github.com/NBISweden/NBIS-support-framework/tree/master/data/data_management
 [sf-home]: https://github.com/NBISweden/NBIS-support-framework
