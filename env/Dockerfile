@@ -1,6 +1,6 @@
 FROM condaforge/mambaforge:4.10.1-0
 LABEL description = "Dockerfile for the #0000 NBIS support project"
-MAINTAINER "Supp Ortstaff" supp.ortstaff@nbis.se
+LABEL maintainer="Supp Ortstaff supp.ortstaff@nbis.se"
 
 # Use bash as shell
 SHELL ["/bin/bash", "-c"]
