@@ -15,7 +15,7 @@ reports/knitr-pdf/*
 *.img
 
 # Conda
-conda
+conda/
 
 # Nextflow
 .nextflow*
