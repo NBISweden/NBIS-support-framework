@@ -1,4 +1,4 @@
-FROM condaforge/mambaforge:4.10.1-0
+FROM condaforge/mambaforge:23.3.1-1
 LABEL description = "Dockerfile for the #0000 NBIS support project"
 LABEL maintainer="Supp Ortstaff supp.ortstaff@nbis.se"
 
