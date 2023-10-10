@@ -1,5 +1,7 @@
 # General
 .DS_Store
+test.*
+*test/
 
 # Project
 data/*
