@@ -7,9 +7,6 @@ data/*
 results/*
 !results/README.md
 
-reports/*
-reports/knitr-pdf/*
-
 # Apptainer/Singularity
 *.sif
 *.img
@@ -59,14 +56,3 @@ _book/
 *.ped
 *.map
 
-# Exceptions
-!*/README.md
-!*/*/README.md
-
-!doc/
-
-!reports/myunsrt.bst
-!reports/references.bib
-!reports/*/
-!reports/*/*.Rnw
-!reports/*/*.pdf
