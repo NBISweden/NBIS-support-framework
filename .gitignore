@@ -8,6 +8,8 @@ data/*
 !data/README.md
 results/*
 !results/README.md
+outputs/*
+!outputs/README.md
 
 # Apptainer/Singularity
 *.sif
