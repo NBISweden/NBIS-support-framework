@@ -2,6 +2,8 @@
 .DS_Store
 test.*
 *test/
+*.tmp
+*tmp/
 
 # Project
 data/*
