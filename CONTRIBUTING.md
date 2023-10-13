@@ -1,8 +1,8 @@
 # Contributing to NBIS-SF
 
-To contribute, first create a new feature branch to work on. The `master`
+To contribute, first create a new feature branch to work on. The `main`
 branch should always be deployable, and any new feature should ideally have
-been tested before merging it into master. 
+been tested before merging it into main. 
 
 ```bash
 # Clone NBIS-SF
@@ -25,7 +25,7 @@ should not end with a period. You can read more about good commit messages
 [here][git-commits].
 
 Once you have pushed your code to `origin <branch>`, open a new pull-request at
-GitHub. The code will then be reviewed and subsequently merged into `master`,
+GitHub. The code will then be reviewed and subsequently merged into `main`,
 at which point other people can start using it as well.
 
 [git-commits]: https://chris.beams.io/posts/git-commit/

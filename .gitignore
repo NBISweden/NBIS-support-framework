@@ -1,34 +1,81 @@
-# General files
+# General
 .DS_Store
-.Rhistory
-*.un*
+test.*
+*test/
+*.tmp
+*tmp/
 
-# Project-specific files and directories
+# Project
+data/*
+!data/README.md
+results/*
+!results/README.md
+outputs/*
+!outputs/README.md
+
+# Apptainer/Singularity
+*.sif
+*.img
+
+# Conda
+conda/
+
+# Nextflow
+.nextflow*
+work/
+
+# Quarto
+.quarto/
+_site/
+_book/
+**/.gitignore
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
+*-Ex.R
+/*.Rcheck/
+.Rproj.user/
+vignettes/*.html
+vignettes/*.pdf
+.httr-oauth
+*_cache/
+/cache/
+*.utf8.md
+*.knit.md
+.Renviron
+po/*~
+rsconnect/
+
+# Snakemake
 .snakemake/
 *-env/
 
-# Partially ignored directories
-**/data/*
-**/results/*
+# Common Bioinformatic file formats
+*.sam
+*.bam
+*.cram
+*.fasta
+*.fna
+*.fa
+*.fastq
+*.fast5
+*.gz
+*.tar
+*.bz2
+*.gff
+*.gtf
+*.bed
+*.vcf
+*.bcf
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.pdb
+*.ped
+*.map
 
-reports/*
-reports/knitr-pdf/*
-
-**/scratch/*
-
-# Exceptions
-!*/README.md
-!*/*/README.md
-
-!data/test_data/
-!data/data_management/
-
-!doc/
-
-!reports/myunsrt.bst
-!reports/references.bib
-!reports/*/
-!reports/*/*.Rnw
-!reports/*/*.pdf
-
-!scratch/README.md

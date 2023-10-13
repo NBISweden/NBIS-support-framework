@@ -7,7 +7,7 @@ for NBIS support projects and the related data management plans. The idea is to
 have a common framework and knowledge-base that NBIS experts may choose to adopt
 and expand as they perform support-related work. This includes tools for
 reproducibility (*e.g.* Conda, Snakemake, Docker), version control (git,
-GitHub), [report templates](reports/) (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter)
+GitHub), [report templates](doc/report/) (*e.g.* RMarkdown, LaTeX, KnitR, Jupyter)
 and support-related information ([data management guidelines](
 doc/data-management/), consultation guidelines, contract templates, *etc.*).
 NBIS also has a separate repository for pipelines, which you can find at
