@@ -20,6 +20,7 @@ in NBIS support work at the following places:
  * [Roy's R Markdown templates](https://github.com/royfrancis/minty)
  * [Erik's NBIS Quarto template](https://github.com/NBISweden/nbis-templates-quarto)
  * [Rasmus' project template](https://github.com/NBISweden/project_template)
+ * [Cormac's peer review track project template](https://github.com/NBISweden/CMK-NBIS-PRT-project-template)
  * [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
 
 ## Setup
