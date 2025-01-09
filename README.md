@@ -19,6 +19,7 @@ in NBIS support work at the following places:
  * [Erik's NBIS project template](https://github.com/fasterius/nbis-support-template)
  * [Roy's R Markdown templates](https://github.com/royfrancis/minty)
  * [Erik's NBIS Quarto template](https://github.com/NBISweden/nbis-templates-quarto)
+ * [NBIS Assembly project template](https://github.com/NBISweden/assembly-project-template)
  * [Rasmus' project template](https://github.com/NBISweden/project_template)
  * [Cormac's peer review track project template](https://github.com/NBISweden/CMK-NBIS-PRT-project-template)
  * [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
@@ -27,24 +28,24 @@ in NBIS support work at the following places:
 
 First create a new repository for your project by using NBIS-SF as a template.
 You can do this directly from the NBIS-SF GitHub by pressing the *"Use this
-template"* button and select *"Create new repository"*. This will take you through 
-the creation of your new repo like normal, but it will contain all the content currently 
-available on NBIS-SF in a single, initial commit. Set the *Owner* to 
+template"* button and select *"Create new repository"*. This will take you through
+the creation of your new repo like normal, but it will contain all the content currently
+available on NBIS-SF in a single, initial commit. Set the *Owner* to
 [NBISweden](https://github.com/NBISweden/).
 
 ### Naming the repository
 
-- For *user-fee projects*, name your new repository with _NBIS_, the Redmine issue number, 
+- For *user-fee projects*, name your new repository with _NBIS_, the Redmine issue number,
 the year, plus a descriptive name, *e.g.* *NBIS-4412-18-mast*. You can then clone your new repository like you would normally.
 
 - For *peer-review projects*, name your new repository with _NBIS_ followed by the WABI ID of
-the project. The WABI ID is comprised of the PI's first name initial(s), the PI's surname, 
+the project. The WABI ID is comprised of the PI's first name initial(s), the PI's surname,
 and the year and month (YYMM) of the application deadline. For example: _NBIS-M\_Bergö\_1305_
 
 > **Note**
-If you don't know the WABI ID for the project, you can ask your manager or search for the 
-project in Redmine. The Redmine issue for the project should have a field "WABI ID" containing 
-the ID. 
+If you don't know the WABI ID for the project, you can ask your manager or search for the
+project in Redmine. The Redmine issue for the project should have a field "WABI ID" containing
+the ID.
 
 ## Repo privacy settings
 
