@@ -11,7 +11,9 @@ GitHub), [report templates](doc/report/) (_e.g._ RMarkdown, LaTeX, KnitR,
 Jupyter) and support-related information ([data management
 guidelines](doc/data-management/), consultation guidelines, contract templates,
 _etc._). NBIS also has a separate repository for pipelines, which you can find
-at [NBISweden/pipelines][nbis-pipelines].
+at [NBISweden/pipelines][nbis-pipelines]. For more information regarding working
+reproducibly in NBIS, please check out the NBIS course [Tools for Reproducible
+Research](https://nbisweden.github.io/workshop-reproducible-research/).
 
 You can find more complete examples and inspiration of how to work reproducibly
 in NBIS support work at the following places:
