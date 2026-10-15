@@ -89,7 +89,7 @@
     _f2c52d955b.pdf}
 \newcommand{\ngiSweden}{https://ngisweden.scilifelab.se/resources/%
     getting-started-at-ngi/}
-\newcommand{\sensitiveData}{https://data-guidelines.scilifelab.se/topics/%
+\newcommand{\sensitiveData}{https://rdm-guidelines.scilifelab.se/topics/%
     sharing-human-data/}
 \newcommand{\dataCenter}{https://www.scilifelab.se/data/}
 
