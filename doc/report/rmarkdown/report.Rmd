@@ -38,7 +38,7 @@ link_authorship <- "http://www.icmje.org/recommendations/"
 link_agreement <- "https://nbis.se/uploads/nbis_support_useragreement_f2c52d955b.pdf"
 link_acknowledge <- paste("https://ngisweden.scilifelab.se/resources/",
                           "getting-started-at-ngi/")
-link_sensitive_data <- "https://data-guidelines.scilifelab.se/topics/sharing-human-data/"
+link_sensitive_data <- "https://rdm-guidelines.scilifelab.se/topics/sharing-human-data/"
 link_data_center <- "https://www.scilifelab.se/data/"
 ```
 
